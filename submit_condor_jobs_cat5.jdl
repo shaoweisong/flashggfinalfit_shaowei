@@ -1,0 +1,172 @@
++JobFlavour   = "workday"
+Executable = submit_condor_jobs_cat5.sh
+Universe = vanilla
+Notification = ERROR
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+x509userproxy = $ENV(X509_USER_PROXY)
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M250_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M250_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M250_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M250 Datacard_M250_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M260_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M260_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M260_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M260 Datacard_M260_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M270_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M270_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M270_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M270 Datacard_M270_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M280_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M280_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M280_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M280 Datacard_M280_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M300_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M300_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M300_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M300 Datacard_M300_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M350_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M350_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M350_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M350 Datacard_M350_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M400_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M400_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M400_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M400 Datacard_M400_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M450_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M450_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M450_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M450 Datacard_M450_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M500_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M500_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M500_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M500 Datacard_M500_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M550_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M550_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M550_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M550 Datacard_M550_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M600_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M600_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M600_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M600 Datacard_M600_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M650_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M650_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M650_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M650 Datacard_M650_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M700_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M700_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M700_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M700 Datacard_M700_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M750_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M750_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M750_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M750 Datacard_M750_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M800_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M800_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M800_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M800 Datacard_M800_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M850_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M850_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M850_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M850 Datacard_M850_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M900_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M900_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M900_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M900 Datacard_M900_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_1000_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_1000_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_1000_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_1000 Datacard_1000_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1100_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1100_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1100_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M1100 Datacard_M1100_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1200_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1200_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1200_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M1200 Datacard_M1200_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1300_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1300_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1300_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M1300 Datacard_M1300_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1400_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1400_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1400_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M1400 Datacard_M1400_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1500_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1500_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1500_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M1500 Datacard_M1500_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1600_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1600_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1600_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M1600 Datacard_M1600_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1700_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1700_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1700_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M1700 Datacard_M1700_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1800_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1800_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1800_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M1800 Datacard_M1800_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1900_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1900_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M1900_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M1900 Datacard_M1900_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M2000_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M2000_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M2000_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M2000 Datacard_M2000_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M2200_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M2200_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M2200_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M2200 Datacard_M2200_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M2400_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M2400_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M2400_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M2400 Datacard_M2400_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M2600_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M2600_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M2600_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M2600 Datacard_M2600_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M2800_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M2800_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M2800_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M2800 Datacard_M2800_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 
+Output = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M3000_$(Process).stdout
+Error  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M3000_$(Process).err
+Log  = ./condor_logs/cat5/231122_191348/2018/combineFHSL_cat5_M3000_$(Process).log
+Arguments = 2018cat5 combineFHSL_cat5_M3000 Datacard_M3000_cat5.root condor_output /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9
+Queue 

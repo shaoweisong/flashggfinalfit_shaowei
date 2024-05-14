@@ -1,0 +1,32 @@
+mkdir 2017datacard/datacard_MX1000_MH125/
+mkdir 2017datacard/datacard_MX1100_MH125/
+mkdir 2017datacard/datacard_MX1200_MH125/
+mkdir 2017datacard/datacard_MX1300_MH125/
+mkdir 2017datacard/datacard_MX1400_MH125/
+mkdir 2017datacard/datacard_MX1500_MH125/
+mkdir 2017datacard/datacard_MX1600_MH125/
+mkdir 2017datacard/datacard_MX1700_MH125/
+mkdir 2017datacard/datacard_MX1800_MH125/
+mkdir 2017datacard/datacard_MX1900_MH125/
+mkdir 2017datacard/datacard_MX2000_MH125/
+mkdir 2017datacard/datacard_MX2200_MH125/
+mkdir 2017datacard/datacard_MX2400_MH125/
+mkdir 2017datacard/datacard_MX2600_MH125/
+mkdir 2017datacard/datacard_MX2800_MH125/
+mkdir 2017datacard/datacard_MX3000_MH125/
+cp Datacard_MX1000_MH125_2017_*_cat12*.txt 2017datacard/datacard_MX1000_MH125/
+cp Datacard_MX1100_MH125_2017_*_cat12*.txt 2017datacard/datacard_MX1100_MH125/
+cp Datacard_MX1200_MH125_2017_*_cat12*.txt 2017datacard/datacard_MX1200_MH125/
+cp Datacard_MX1300_MH125_2017_*_cat12*.txt 2017datacard/datacard_MX1300_MH125/
+cp Datacard_MX1400_MH125_2017_*_cat12*.txt 2017datacard/datacard_MX1400_MH125/
+cp Datacard_MX1500_MH125_2017_*_cat12*.txt 2017datacard/datacard_MX1500_MH125/
+cp Datacard_MX1600_MH125_2017_*_cat12*.txt 2017datacard/datacard_MX1600_MH125/
+cp Datacard_MX1700_MH125_2017_*_cat12*.txt 2017datacard/datacard_MX1700_MH125/
+cp Datacard_MX1800_MH125_2017_*_cat12*.txt 2017datacard/datacard_MX1800_MH125/
+cp Datacard_MX1900_MH125_2017_*_cat12*.txt 2017datacard/datacard_MX1900_MH125/
+cp Datacard_MX2000_MH125_2017_*_cat12*.txt 2017datacard/datacard_MX2000_MH125/
+cp Datacard_MX2200_MH125_2017_*_cat12*.txt 2017datacard/datacard_MX2200_MH125/
+cp Datacard_MX2400_MH125_2017_*_cat12*.txt 2017datacard/datacard_MX2400_MH125/
+cp Datacard_MX2600_MH125_2017_*_cat12*.txt 2017datacard/datacard_MX2600_MH125/
+cp Datacard_MX2800_MH125_2017_*_cat12*.txt 2017datacard/datacard_MX2800_MH125/
+cp Datacard_MX3000_MH125_2017_*_cat12*.txt 2017datacard/datacard_MX3000_MH125/

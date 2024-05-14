@@ -1,0 +1,11 @@
+combine -M AsymptoticLimits -m 125 -n combineFHSL_cat5_M250 -d Datacard_M250_cat5.txt --run expected    --rMax 50000
+combine -M AsymptoticLimits -m 125 -n combineFHSL_cat5_M300 -d Datacard_M300_cat5.txt --run expected    --rMax 50000
+combine -M AsymptoticLimits -m 125 -n combineFHSL_cat5_M400 -d Datacard_M400_cat5.txt --run expected    --rMax 50000
+combine -M AsymptoticLimits -m 125 -n combineFHSL_cat5_M500 -d Datacard_M500_cat5.txt --run expected    --rMax 50000
+combine -M AsymptoticLimits -m 125 -n combineFHSL_cat5_M600 -d Datacard_M600_cat5.txt --run expected    --rMax 50000
+combine -M AsymptoticLimits -m 125 -n combineFHSL_cat5_M700 -d Datacard_M700_cat5.txt --run expected    --rMax 50000
+combine -M AsymptoticLimits -m 125 -n combineFHSL_cat5_M800 -d Datacard_M800_cat5.txt --run expected    --rMax 50000
+combine -M AsymptoticLimits -m 125 -n combineFHSL_cat5_M900 -d Datacard_M900_cat5.txt --run expected    --rMax 50000
+combine -M AsymptoticLimits -m 125 -n combineFHSL_cat5_M1000 -d Datacard_M1000_cat5.txt --run expected    --rMax 50000
+combine -M AsymptoticLimits -m 125 -n combineFHSL_cat5_M2000 -d Datacard_M2000_cat5.txt --run expected    --rMax 50000
+combine -M AsymptoticLimits -m 125 -n combineFHSL_cat5_M3000 -d Datacard_M3000_cat5.txt --run expected    --rMax 50000

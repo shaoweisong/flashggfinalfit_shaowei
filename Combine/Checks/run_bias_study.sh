@@ -1,0 +1,4 @@
+rm -rf Bias*
+python RunBiasStudy.py -d /afs/cern.ch/user/z/zhenxuan/CMSSW_10_6_20/src/flashggFinalFit/Combine/Datacard_Mtest_FH_2017_FHSLCombine_SL_merged_boosted_cat.root -t -n 1000 -e 0.0001
+python RunBiasStudy.py -d /afs/cern.ch/user/z/zhenxuan/CMSSW_10_6_20/src/flashggFinalFit/Combine/Datacard_Mtest_FH_2017_FHSLCombine_SL_merged_boosted_cat.root -n 1000 -f -e 0.0001 -c "--cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2 --freezeParameters MH" > Fitlog.log 2>&1
+python RunBiasStudy.py -d /afs/cern.ch/user/z/zhenxuan/CMSSW_10_6_20/src/flashggFinalFit/Combine/Datacard_Mtest_FH_2017_FHSLCombine_SL_merged_boosted_cat.root -p --gaussianFit

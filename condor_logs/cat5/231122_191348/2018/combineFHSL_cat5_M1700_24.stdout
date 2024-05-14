@@ -1,0 +1,23 @@
+Starting job on  Tue Feb 13 08:11:57 PM CET 2024
+Running on: Linux b9s14p2116.cern.ch 5.14.0-362.13.1.el9_3.x86_64 #1 SMP PREEMPT_DYNAMIC Fri Nov 24 01:57:57 EST 2023 x86_64 x86_64 x86_64 GNU/Linux
+System software: Red Hat Enterprise Linux release 9.3 (Plow)
+copy cmssw tar file from store area
+SCRAM warning: You are trying to compile/build for architecture slc7_amd64_gcc700 on EL9 OS which might not work.
+If you know this SCRAM_ARCH/OS combination works then please first run 'scram build --ignore-arch'.
+Done: ProjectRename
+=========================================
+...
+====> Getting limit : 
+ <<< Combine >>> 
+>>> random number generator seed is 123456
+>>> method used is AsymptoticLimits
+SimNLL created with 2 channels, 0 generic constraints, 18 fast gaussian constraints, 0 fast poisson constraints, 0 fast group constraints, 
+
+ -- AsymptoticLimits ( CLs ) --
+Expected  2.5%: r < 1.2476
+Expected 16.0%: r < 1.8115
+Expected 50.0%: r < 2.8516
+Expected 84.0%: r < 5.4431
+Expected 97.5%: r < 8.6460
+
+Done in 0.11 min (cpu), 0.12 min (real)

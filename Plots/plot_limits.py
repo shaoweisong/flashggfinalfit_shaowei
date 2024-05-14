@@ -47,7 +47,7 @@ parser.add_argument("--campaignOne",type=str, default="UnLabeled", help="Campaig
 parser.add_argument("--campaignTwo",type=str, default="UnLabeled", help="Campaign of second limits in ratio", required=False)
 
 args = parser.parse_args()
-ol = '/afs/cern.ch/user/z/zhenxuan/CMSSW_10_6_20/src/flashggFinalFit/Plots/FinalResults/'
+ol = '/afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Plots/FinalResults/'
  
 # GET limits from root file
 def getLimits(file_name):
@@ -84,13 +84,8 @@ def plotUpperLimits(labels,values,resultType):
     up2s = [ ]
     nonBRvals = [] 
     for i in range(N):
-        # file_name = "/eos/user/z/zhenxuan/hhwwgg_root/hhwwgg_root_FH_SL/higgsCombine%s_SL_FH.AsymptoticLimits.mH125.root"%(labels[i]) # all
-        # file_name = "/eos/user/z/zhenxuan/hhwwgg_root/hhwwgg_root_FH/1jet_limit/higgsCombine%s_1jet.AsymptoticLimits.mH125.root"%(labels[i]) # FH
-        # file_name = "/eos/user/z/zhenxuan/hhwwgg_root/hhwwgg_root_FH/2jets_3jets_limit/higgsCombine%s_2jets_3jets.AsymptoticLimits.mH125.root"%(labels[i]) # FH
-        # file_name = "/eos/user/z/zhenxuan/hhwwgg_root/hhwwgg_root_FH/4jets_limit/higgsCombine%s_4jets.AsymptoticLimits.mH125.root"%(labels[i]) # FH
-        # file_name = "/eos/user/z/zhenxuan/hhwwgg_root/hhwwgg_root_FH/combined_limit/higgsCombine%s_FH.AsymptoticLimits.mH125.root"%(labels[i]) # FH
-        # file_name = "/eos/user/z/zhenxuan/hhwwgg_root/hhwwgg_root_SL/combined_limit/higgsCombine%s_SL.AsymptoticLimits.mH125.root"%(labels[i]) # FH
-        file_name = "/afs/cern.ch/user/z/zhenxuan/CMSSW_10_6_20/src/flashggFinalFit/Datacard/higgsCombineFHSL_1jets_%s.AsymptoticLimits.mH125.root"%(labels[i]) # FH
+        # file_name = "/afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/higgsCombineFHSL_2016pre_combineFHSL_cat3_%s.AsymptoticLimits.mH125.root"%(labels[i]) # FH
+        file_name = "/afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/higgsCombineSL_2016pre_combineFHSL_cat3_%s.AsymptoticLimits.mH125.root"%(labels[i]) # FH
         print "file: ",file_name
         limit = getLimits(file_name)
         up2s.append(limit[4])
@@ -273,8 +268,8 @@ def plotUpperLimits(labels,values,resultType):
     c.Close()
 
 def main():
-    labels = ["M1400","M2000","M2400","M2800"]
-    values = [1400,2000,2400,2800]
+    labels = ["M1000","M2000","M3000"]
+    values = [1000,2000,3000]
     resultType = args.resultType
     plotUpperLimits(labels,values,resultType)
 if __name__ == '__main__':

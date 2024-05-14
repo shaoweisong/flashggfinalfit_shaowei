@@ -3,11 +3,11 @@
 backgroundScriptCfg = {
   
   # Setup
-  'inputWSDir':'/eos/user/z/zhenxuan/hhwwgg_root/ws', # location of 'allData.root' file
+  'inputWSDir':'/eos/user/s/shsong/HHWWgg_limit/optimise/cat3/2016pre/flashgginput/ws_lowpt', # location of 'allData.root' file
   'cats':'auto', # auto: automatically inferred from input ws
   'catOffset':0, # add offset to category numbers (useful for categories from different allData.root files)  
-  'ext':'test', # extension to add to output directory
-  'year':'2017', # Use combined when merging all years in category (for plots)
+  'ext':'combineFHSL_cat3lowpt', # extension to add to output directory
+  'year':'2016pre', # Use combined when merging all years in category (for plots)
 
   # Job submission options
   'batch':'local', # [condor,SGE,IC,local]

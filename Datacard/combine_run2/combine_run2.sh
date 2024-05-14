@@ -1,0 +1,132 @@
+combineCards.py  Datacard_run2allcat_M250=Datacard_M250_2016preallcat.txt Datacard_M250_2016postallcat.txt Datacard_M250_2017allcat.txt Datacard_M250_2018allcat.txt  > Datacard_M250_run2allcat.txt
+text2workspace.py Datacard_M250_run2allcat.txt -m 125
+mv Datacard_M250_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M260=Datacard_M260_2016preallcat.txt Datacard_M260_2016postallcat.txt Datacard_M260_2017allcat.txt Datacard_M260_2018allcat.txt  > Datacard_M260_run2allcat.txt
+text2workspace.py Datacard_M260_run2allcat.txt -m 125
+mv Datacard_M260_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M270=Datacard_M270_2016preallcat.txt Datacard_M270_2016postallcat.txt Datacard_M270_2017allcat.txt Datacard_M270_2018allcat.txt  > Datacard_M270_run2allcat.txt
+text2workspace.py Datacard_M270_run2allcat.txt -m 125
+mv Datacard_M270_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M280=Datacard_M280_2016preallcat.txt Datacard_M280_2016postallcat.txt Datacard_M280_2017allcat.txt Datacard_M280_2018allcat.txt  > Datacard_M280_run2allcat.txt
+text2workspace.py Datacard_M280_run2allcat.txt -m 125
+mv Datacard_M280_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M300=Datacard_M300_2016preallcat.txt Datacard_M300_2016postallcat.txt Datacard_M300_2017allcat.txt Datacard_M300_2018allcat.txt  > Datacard_M300_run2allcat.txt
+text2workspace.py Datacard_M300_run2allcat.txt -m 125
+mv Datacard_M300_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M320=Datacard_M320_2016preallcat.txt Datacard_M320_2016postallcat.txt Datacard_M320_2017allcat.txt Datacard_M320_2018allcat.txt  > Datacard_M320_run2allcat.txt
+text2workspace.py Datacard_M320_run2allcat.txt -m 125
+mv Datacard_M320_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M350=Datacard_M350_2016preallcat.txt Datacard_M350_2016postallcat.txt Datacard_M350_2017allcat.txt Datacard_M350_2018allcat.txt  > Datacard_M350_run2allcat.txt
+text2workspace.py Datacard_M350_run2allcat.txt -m 125
+mv Datacard_M350_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M450=Datacard_M450_2016preallcat.txt Datacard_M450_2016postallcat.txt Datacard_M450_2017allcat.txt Datacard_M450_2018allcat.txt  > Datacard_M450_run2allcat.txt
+text2workspace.py Datacard_M450_run2allcat.txt -m 125
+mv Datacard_M450_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M500=Datacard_M500_2016preallcat.txt Datacard_M500_2016postallcat.txt Datacard_M500_2017allcat.txt Datacard_M500_2018allcat.txt  > Datacard_M500_run2allcat.txt
+text2workspace.py Datacard_M500_run2allcat.txt -m 125
+mv Datacard_M500_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M550=Datacard_M550_2016preallcat.txt Datacard_M550_2016postallcat.txt Datacard_M550_2017allcat.txt Datacard_M550_2018allcat.txt  > Datacard_M550_run2allcat.txt
+text2workspace.py Datacard_M550_run2allcat.txt -m 125
+mv Datacard_M550_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M600=Datacard_M600_2016preallcat.txt Datacard_M600_2016postallcat.txt Datacard_M600_2017allcat.txt Datacard_M600_2018allcat.txt  > Datacard_M600_run2allcat.txt
+text2workspace.py Datacard_M600_run2allcat.txt -m 125
+mv Datacard_M600_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M650=Datacard_M650_2016preallcat.txt Datacard_M650_2016postallcat.txt Datacard_M650_2017allcat.txt Datacard_M650_2018allcat.txt  > Datacard_M650_run2allcat.txt
+text2workspace.py Datacard_M650_run2allcat.txt -m 125
+mv Datacard_M650_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M700=Datacard_M700_2016preallcat.txt Datacard_M700_2016postallcat.txt Datacard_M700_2017allcat.txt Datacard_M700_2018allcat.txt  > Datacard_M700_run2allcat.txt
+text2workspace.py Datacard_M700_run2allcat.txt -m 125
+mv Datacard_M700_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M750=Datacard_M750_2016preallcat.txt Datacard_M750_2016postallcat.txt Datacard_M750_2017allcat.txt Datacard_M750_2018allcat.txt  > Datacard_M750_run2allcat.txt
+text2workspace.py Datacard_M750_run2allcat.txt -m 125
+mv Datacard_M750_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M800=Datacard_M800_2016preallcat.txt Datacard_M800_2016postallcat.txt Datacard_M800_2017allcat.txt Datacard_M800_2018allcat.txt  > Datacard_M800_run2allcat.txt
+text2workspace.py Datacard_M800_run2allcat.txt -m 125
+mv Datacard_M800_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M850=Datacard_M850_2016preallcat.txt Datacard_M850_2016postallcat.txt Datacard_M850_2017allcat.txt Datacard_M850_2018allcat.txt  > Datacard_M850_run2allcat.txt
+text2workspace.py Datacard_M850_run2allcat.txt -m 125
+mv Datacard_M850_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M900=Datacard_M900_2016preallcat.txt Datacard_M900_2016postallcat.txt Datacard_M900_2017allcat.txt Datacard_M900_2018allcat.txt  > Datacard_M900_run2allcat.txt
+text2workspace.py Datacard_M900_run2allcat.txt -m 125
+mv Datacard_M900_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M1000=Datacard_M1000_2016preallcat.txt Datacard_M1000_2016postallcat.txt Datacard_M1000_2017allcat.txt Datacard_M1000_2018allcat.txt  > Datacard_M1000_run2allcat.txt
+text2workspace.py Datacard_M1000_run2allcat.txt -m 125
+mv Datacard_M1000_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M1100=Datacard_M1100_2016preallcat.txt Datacard_M1100_2016postallcat.txt Datacard_M1100_2017allcat.txt Datacard_M1100_2018allcat.txt  > Datacard_M1100_run2allcat.txt
+text2workspace.py Datacard_M1100_run2allcat.txt -m 125
+mv Datacard_M1100_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M1200=Datacard_M1200_2016preallcat.txt Datacard_M1200_2016postallcat.txt Datacard_M1200_2017allcat.txt Datacard_M1200_2018allcat.txt  > Datacard_M1200_run2allcat.txt
+text2workspace.py Datacard_M1200_run2allcat.txt -m 125
+mv Datacard_M1200_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M1300=Datacard_M1300_2016preallcat.txt Datacard_M1300_2016postallcat.txt Datacard_M1300_2017allcat.txt Datacard_M1300_2018allcat.txt  > Datacard_M1300_run2allcat.txt
+text2workspace.py Datacard_M1300_run2allcat.txt -m 125
+mv Datacard_M1300_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M1400=Datacard_M1400_2016preallcat.txt Datacard_M1400_2016postallcat.txt Datacard_M1400_2017allcat.txt Datacard_M1400_2018allcat.txt  > Datacard_M1400_run2allcat.txt
+text2workspace.py Datacard_M1400_run2allcat.txt -m 125
+mv Datacard_M1400_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M1500=Datacard_M1500_2016preallcat.txt Datacard_M1500_2016postallcat.txt Datacard_M1500_2017allcat.txt Datacard_M1500_2018allcat.txt  > Datacard_M1500_run2allcat.txt
+text2workspace.py Datacard_M1500_run2allcat.txt -m 125
+mv Datacard_M1500_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M1600=Datacard_M1600_2016preallcat.txt Datacard_M1600_2016postallcat.txt Datacard_M1600_2017allcat.txt Datacard_M1600_2018allcat.txt  > Datacard_M1600_run2allcat.txt
+text2workspace.py Datacard_M1600_run2allcat.txt -m 125
+mv Datacard_M1600_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M1700=Datacard_M1700_2016preallcat.txt Datacard_M1700_2016postallcat.txt Datacard_M1700_2017allcat.txt Datacard_M1700_2018allcat.txt  > Datacard_M1700_run2allcat.txt
+text2workspace.py Datacard_M1700_run2allcat.txt -m 125
+mv Datacard_M1700_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M1800=Datacard_M1800_2016preallcat.txt Datacard_M1800_2016postallcat.txt Datacard_M1800_2017allcat.txt Datacard_M1800_2018allcat.txt  > Datacard_M1800_run2allcat.txt
+text2workspace.py Datacard_M1800_run2allcat.txt -m 125
+mv Datacard_M1800_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M1900=Datacard_M1900_2016preallcat.txt Datacard_M1900_2016postallcat.txt Datacard_M1900_2017allcat.txt Datacard_M1900_2018allcat.txt  > Datacard_M1900_run2allcat.txt
+text2workspace.py Datacard_M1900_run2allcat.txt -m 125
+mv Datacard_M1900_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M2000=Datacard_M2000_2016preallcat.txt Datacard_M2000_2016postallcat.txt Datacard_M2000_2017allcat.txt Datacard_M2000_2018allcat.txt  > Datacard_M2000_run2allcat.txt
+text2workspace.py Datacard_M2000_run2allcat.txt -m 125
+mv Datacard_M2000_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M2200=Datacard_M2200_2016preallcat.txt Datacard_M2200_2016postallcat.txt Datacard_M2200_2017allcat.txt Datacard_M2200_2018allcat.txt  > Datacard_M2200_run2allcat.txt
+text2workspace.py Datacard_M2200_run2allcat.txt -m 125
+mv Datacard_M2200_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M2400=Datacard_M2400_2016preallcat.txt Datacard_M2400_2016postallcat.txt Datacard_M2400_2017allcat.txt Datacard_M2400_2018allcat.txt  > Datacard_M2400_run2allcat.txt
+text2workspace.py Datacard_M2400_run2allcat.txt -m 125
+mv Datacard_M2400_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M2600=Datacard_M2600_2016preallcat.txt Datacard_M2600_2016postallcat.txt Datacard_M2600_2017allcat.txt Datacard_M2600_2018allcat.txt  > Datacard_M2600_run2allcat.txt
+text2workspace.py Datacard_M2600_run2allcat.txt -m 125
+mv Datacard_M2600_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M2800=Datacard_M2800_2016preallcat.txt Datacard_M2800_2016postallcat.txt Datacard_M2800_2017allcat.txt Datacard_M2800_2018allcat.txt  > Datacard_M2800_run2allcat.txt
+text2workspace.py Datacard_M2800_run2allcat.txt -m 125
+mv Datacard_M2800_run2allcat.root condor_input/
+
+combineCards.py  Datacard_run2allcat_M3000=Datacard_M3000_2016preallcat.txt Datacard_M3000_2016postallcat.txt Datacard_M3000_2017allcat.txt Datacard_M3000_2018allcat.txt  > Datacard_M3000_run2allcat.txt
+text2workspace.py Datacard_M3000_run2allcat.txt -m 125
+mv Datacard_M3000_run2allcat.root condor_input/
+

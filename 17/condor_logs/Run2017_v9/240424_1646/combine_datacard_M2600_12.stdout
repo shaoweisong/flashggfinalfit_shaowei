@@ -1,0 +1,23 @@
+Starting job on  Wed Apr 24 08:55:45 PM CEST 2024
+Running on: Linux b9g11p8691.cern.ch 5.14.0-284.30.1.el9_2.x86_64 #1 SMP PREEMPT_DYNAMIC Tue Sep 12 09:28:32 EDT 2023 x86_64 x86_64 x86_64 GNU/Linux
+System software: AlmaLinux release 9.3 (Shamrock Pampas Cat)
+copy cmssw tar file from store area
+SCRAM warning: You are trying to compile/build for architecture slc7_amd64_gcc700 on EL9 OS which might not work.
+If you know this SCRAM_ARCH/OS combination works then please first run 'scram build --ignore-arch'.
+gmake: *** [There are compilation/build errors. Please see the detail log above.] Error 2
+=========================================
+...
+====> Getting limit : 
+ <<< Combine >>> 
+>>> random number generator seed is 123456
+>>> method used is AsymptoticLimits
+SimNLL created with 2 channels, 0 generic constraints, 23 fast gaussian constraints, 0 fast poisson constraints, 0 fast group constraints, 
+
+ -- AsymptoticLimits ( CLs ) --
+Expected  2.5%: r < 170.7773
+Expected 16.0%: r < 245.5627
+Expected 50.0%: r < 383.5000
+Expected 84.0%: r < 618.9117
+Expected 97.5%: r < 1144.7903
+
+Done in 1.01 min (cpu), 1.02 min (real)

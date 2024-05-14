@@ -14,7 +14,7 @@ from systematics import theory_systematics, experimental_systematics, signal_sha
 def get_options():
   parser = OptionParser()
   parser.add_option('--ext', dest='ext', default='', help="Extension (used when running RunYields.py)")
-  parser.add_option('--years', dest='years', default='2016,2017,2018', help="Comma separated list of years in makeYields output")
+  parser.add_option('--years', dest='years', default='2016,2017,2018,2016pre,2016post', help="Comma separated list of years in makeYields output")
   # For pruning processes
   parser.add_option('--prune', dest='prune', default=False, action="store_true", help="Prune proc x cat which make up less than pruneThreshold (default 0.1%) of given total category")
   parser.add_option('--pruneThreshold', dest='pruneThreshold', default=0.001, type='float', help="Threshold with which to prune proc x cat as fraction of total category yield (default=0.1%)")

@@ -1,0 +1,177 @@
++JobFlavour   = "workday"
+Executable = submit_condor_jobs_lnujj_Run2017_v9.sh
+Universe = vanilla
+Notification = ERROR
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+x509userproxy = $ENV(X509_USER_PROXY)
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M250_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M250_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M250_$(Process).log
+Arguments = 2017datacard datacard_MX250_MH125 M250_MH125_allcat Datacard_MX250_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M260_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M260_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M260_$(Process).log
+Arguments = 2017datacard datacard_MX260_MH125 M260_MH125_allcat Datacard_MX260_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M270_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M270_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M270_$(Process).log
+Arguments = 2017datacard datacard_MX270_MH125 M270_MH125_allcat Datacard_MX270_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M280_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M280_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M280_$(Process).log
+Arguments = 2017datacard datacard_MX280_MH125 M280_MH125_allcat Datacard_MX280_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M300_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M300_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M300_$(Process).log
+Arguments = 2017datacard datacard_MX300_MH125 M300_MH125_allcat Datacard_MX300_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M320_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M320_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M320_$(Process).log
+Arguments = 2017datacard datacard_MX320_MH125 M320_MH125_allcat Datacard_MX320_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M350_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M350_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M350_$(Process).log
+Arguments = 2017datacard datacard_MX350_MH125 M350_MH125_allcat Datacard_MX350_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M400_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M400_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M400_$(Process).log
+Arguments = 2017datacard datacard_MX400_MH125 M400_MH125_allcat Datacard_MX400_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M450_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M450_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M450_$(Process).log
+Arguments = 2017datacard datacard_MX450_MH125 M450_MH125_allcat Datacard_MX450_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M500_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M500_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M500_$(Process).log
+Arguments = 2017datacard datacard_MX500_MH125 M500_MH125_allcat Datacard_MX500_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M550_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M550_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M550_$(Process).log
+Arguments = 2017datacard datacard_MX550_MH125 M550_MH125_allcat Datacard_MX550_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M600_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M600_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M600_$(Process).log
+Arguments = 2017datacard datacard_MX600_MH125 M600_MH125_allcat Datacard_MX600_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M650_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M650_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M650_$(Process).log
+Arguments = 2017datacard datacard_MX650_MH125 M650_MH125_allcat Datacard_MX650_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M700_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M700_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M700_$(Process).log
+Arguments = 2017datacard datacard_MX700_MH125 M700_MH125_allcat Datacard_MX700_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M750_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M750_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M750_$(Process).log
+Arguments = 2017datacard datacard_MX750_MH125 M750_MH125_allcat Datacard_MX750_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M800_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M800_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M800_$(Process).log
+Arguments = 2017datacard datacard_MX800_MH125 M800_MH125_allcat Datacard_MX800_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M850_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M850_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M850_$(Process).log
+Arguments = 2017datacard datacard_MX850_MH125 M850_MH125_allcat Datacard_MX850_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M900_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M900_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M900_$(Process).log
+Arguments = 2017datacard datacard_MX900_MH125 M900_MH125_allcat Datacard_MX900_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1000_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1000_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1000_$(Process).log
+Arguments = 2017datacard datacard_MX1000_MH125 M1000_MH125_allcat Datacard_MX1000_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1100_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1100_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1100_$(Process).log
+Arguments = 2017datacard datacard_MX1100_MH125 M1100_MH125_allcat Datacard_MX1100_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1200_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1200_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1200_$(Process).log
+Arguments = 2017datacard datacard_MX1200_MH125 M1200_MH125_allcat Datacard_MX1200_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1300_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1300_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1300_$(Process).log
+Arguments = 2017datacard datacard_MX1300_MH125 M1300_MH125_allcat Datacard_MX1300_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1400_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1400_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1400_$(Process).log
+Arguments = 2017datacard datacard_MX1400_MH125 M1400_MH125_allcat Datacard_MX1400_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1500_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1500_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1500_$(Process).log
+Arguments = 2017datacard datacard_MX1500_MH125 M1500_MH125_allcat Datacard_MX1500_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1600_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1600_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1600_$(Process).log
+Arguments = 2017datacard datacard_MX1600_MH125 M1600_MH125_allcat Datacard_MX1600_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1700_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1700_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1700_$(Process).log
+Arguments = 2017datacard datacard_MX1700_MH125 M1700_MH125_allcat Datacard_MX1700_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1800_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1800_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1800_$(Process).log
+Arguments = 2017datacard datacard_MX1800_MH125 M1800_MH125_allcat Datacard_MX1800_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1900_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1900_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M1900_$(Process).log
+Arguments = 2017datacard datacard_MX1900_MH125 M1900_MH125_allcat Datacard_MX1900_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M2000_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M2000_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M2000_$(Process).log
+Arguments = 2017datacard datacard_MX2000_MH125 M2000_MH125_allcat Datacard_MX2000_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M2200_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M2200_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M2200_$(Process).log
+Arguments = 2017datacard datacard_MX2200_MH125 M2200_MH125_allcat Datacard_MX2200_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M2400_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M2400_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M2400_$(Process).log
+Arguments = 2017datacard datacard_MX2400_MH125 M2400_MH125_allcat Datacard_MX2400_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M2600_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M2600_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M2600_$(Process).log
+Arguments = 2017datacard datacard_MX2600_MH125 M2600_MH125_allcat Datacard_MX2600_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M2800_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M2800_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M2800_$(Process).log
+Arguments = 2017datacard datacard_MX2800_MH125 M2800_MH125_allcat Datacard_MX2800_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 
+Output = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M3000_$(Process).stdout
+Error  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M3000_$(Process).err
+Log  = ./condor_logs/Run2017_v9/240424_1646/combine_datacard_M3000_$(Process).log
+Arguments = 2017datacard datacard_MX3000_MH125 M3000_MH125_allcat Datacard_MX3000_MH125_2017allcat.root  /eos/user/s/shsong
+Queue 

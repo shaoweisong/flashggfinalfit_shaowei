@@ -84,8 +84,8 @@ if [ ${WhichSamples} -eq 2 ]
 fi
 if [ ${WhichSamples} -eq 3 ]
   then
-    combineCards.py FHSL_1jets_M3000_cat0=Datacard_M3000_1jets_cat0_FHSL.txt FHSL_1jets_M3000_cat1=Datacard_M3000_1jets_cat1_FHSL.txt FHSL_1jets_M3000_cat2=Datacard_M3000_1jets_cat2_FHSL.txt FHSL_1jets_M3000_cat3=Datacard_M3000_1jets_cat3_FHSL.txt   > Datacard_combined_FHSL_1jets_M3000.txt
-    combine -M AsymptoticLimits -m 125 -n FHSL_1jets_M3000 Datacard_combined_FHSL_1jets_M3000.txt --run expected >datacard_limits_FHSL_1jets_M3000.log 2>&1 
+    combineCards.py  cat3_M2000=Datacard_M2000_cat3lowpt.txt Datacard_M2000_cat3highpt.txt > Datacard_M2000_cat32.txt
+    combine -M AsymptoticLimits -m 125 -n combineFHSL_cat3_M2000 -d Datacard_M2000_cat3.txt --run expected    --rMax 50000
     # combineCards.py SL_M500=Datacard_combined_M500_SL.txt FH_M500=Datacard_combined_M500_FH.txt  > Datacard_combined_M500_SL_FH.txt
     # combine SL
     # combineCards.py SL_1jet_M500=Datacard_M500_1jet_SL.txt SL_2jets_M500=Datacard_M500_2jets_SL.txt  > Datacard_combined_M500_SL.txt

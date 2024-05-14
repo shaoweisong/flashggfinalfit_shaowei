@@ -1,0 +1,23 @@
+Starting job on  Sun Feb 4 08:47:57 PM CET 2024
+Running on: Linux b9g18p3814.cern.ch 5.14.0-362.8.1.el9_3.x86_64 #1 SMP PREEMPT_DYNAMIC Tue Nov 7 14:54:22 EST 2023 x86_64 x86_64 x86_64 GNU/Linux
+System software: AlmaLinux release 9.3 (Shamrock Pampas Cat)
+copy cmssw tar file from store area
+SCRAM warning: You are trying to compile/build for architecture slc7_amd64_gcc700 on EL9 OS which might not work.
+If you know this SCRAM_ARCH/OS combination works then please first run 'scram build --ignore-arch'.
+Done: ProjectRename
+=========================================
+...
+====> Getting limit : 
+ <<< Combine >>> 
+>>> random number generator seed is 123456
+>>> method used is AsymptoticLimits
+SimNLL created with 15 channels, 0 generic constraints, 27 fast gaussian constraints, 0 fast poisson constraints, 0 fast group constraints, 
+
+ -- AsymptoticLimits ( CLs ) --
+Expected  2.5%: r < 11.3306
+Expected 16.0%: r < 15.8805
+Expected 50.0%: r < 22.7500
+Expected 84.0%: r < 35.8990
+Expected 97.5%: r < 52.7992
+
+Done in 2.83 min (cpu), 2.86 min (real)

@@ -23,7 +23,7 @@ crabConfig_*
 *\#*
 .\#*
 AutoDict_*
-
+*.root
 # Other temp files
 *.txt
 *.log
