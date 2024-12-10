@@ -40,4 +40,4 @@ Signal/config_ggh*.py
 Signal/outdir_*
 Background/outdir_*
 Datacard/yield*
-createddatacard_condor/condor_logs/
+createddatacard_condor/condor_logs/log.sh
