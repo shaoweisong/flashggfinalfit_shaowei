@@ -424,7 +424,7 @@ def plotSplines(_finalModel,_outdir="./",_nominalMass='125',splinesToPlot=['xs',
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Function for plotting final signal model: neat
 def plotSignalModel(_hists,_opt,_outdir=".",offset=0.02):
-  colorMap = {'2016':38,'2017':30,'2018':46}
+  colorMap = {'2016':38,'2017':30,'2018':46,'2016pre':55,'2016post':38}
   canv = ROOT.TCanvas("c","c",650,600)
   canv.SetBottomMargin(0.12)
   canv.SetLeftMargin(0.15)
@@ -435,6 +435,7 @@ def plotSignalModel(_hists,_opt,_outdir=".",offset=0.02):
   h_axes.SetMaximum(_hists['data'].GetMaximum()*1.2)
   h_axes.SetMinimum(0.)
   h_axes.GetXaxis().SetRangeUser(105,140)
+  # h_axes.GetXaxis().SetRangeUser(123,127)
   h_axes.SetTitle("")
   h_axes.GetXaxis().SetTitle("%s (%s)"%(_opt.xvar.split(":")[1],_opt.xvar.split(":")[2]))
   h_axes.GetXaxis().SetTitleSize(0.05)
@@ -442,13 +443,22 @@ def plotSignalModel(_hists,_opt,_outdir=".",offset=0.02):
   h_axes.GetYaxis().SetTitleSize(0.05)
   h_axes.GetYaxis().SetTitleOffset(1.2)
   h_axes.Draw()
-    
+  
   # Extract effSigma
   effSigma = getEffSigma(_hists['pdf'])
   effSigma_low, effSigma_high = _hists['pdf'].GetMean()-effSigma, _hists['pdf'].GetMean()+effSigma
   h_effSigma = _hists['pdf'].Clone()
   h_effSigma.GetXaxis().SetRangeUser(effSigma_low,effSigma_high)
-
+  
+  # line = ROOT.TLine(_hists['pdf'].GetMean(), h_axes.GetMinimum(), _hists['pdf'].GetMean(), h_axes.GetMaximum())
+  # line.SetLineColor(ROOT.kRed)
+  # line.SetLineWidth(2)
+  # line.Draw()
+  # label = ROOT.TLatex()
+  # label.SetTextSize(0.03) 
+  # label.SetTextColor(ROOT.kRed) 
+  # label.DrawLatex(_hists['pdf'].GetMean(), h_axes.GetMaximum()*0.85, "x = %.2f"%_hists['pdf'].GetMean()) 
+  
   # Legend
   if len(_opt.years.split(","))>1:
     leg0 = ROOT.TLegend(0.15+offset,0.6,0.5+offset,0.82)
@@ -517,8 +527,12 @@ def plotSignalModel(_hists,_opt,_outdir=".",offset=0.02):
   _hists['pdf'].Draw("Same Hist C")
   if len(_opt.years.split(","))>1:
     for year in _opt.years.split(","):
+      print(colorMap)
+      print(colorMap[year])
+      
       _hists['pdf_%s'%year].SetLineColor( colorMap[year] )  
-      _hists['pdf_%s'%year].SetLineStyle(2)
+      _hists['pdf_%s'%year].SetLineStyle(1)
+      # _hists['pdf_%s'%year].SetLineStyle(2)
       _hists['pdf_%s'%year].SetLineWidth(2)
       _hists['pdf_%s'%year].Draw("Same Hist C")
   # Set style: data
@@ -528,6 +542,7 @@ def plotSignalModel(_hists,_opt,_outdir=".",offset=0.02):
   _hists['data'].SetLineWidth(2)
   _hists['data'].Draw("Same PE")
   
+
   # Add TLatex to plot
   lat0 = ROOT.TLatex()
   lat0.SetTextFont(42)
@@ -571,6 +586,8 @@ def plotSignalModel(_hists,_opt,_outdir=".",offset=0.02):
     for year in _opt.years.split(","): es[year] = getEffSigma(_hists['pdf_%s'%year])
     with open("%s/effSigma_%s.json"%(_outdir,catExt),"w") as jf: json.dump(es,jf)
 
+
   # Save canvas
+  # add mean line for scale smear smodel 
   canv.SaveAs("%s/smodel_%s%s%s.pdf"%(_outdir,catExt,procExt,yearExt))
   canv.SaveAs("%s/smodel_%s%s%s.png"%(_outdir,catExt,procExt,yearExt))

@@ -8,7 +8,6 @@ from commonObjects import *
 
 # For constant systematics:
 def addConstantSyst(sd,_syst,options):
-
   # Read json file into dict and set flag
   fromJson = False
   if "json" in _syst['value']:
@@ -42,12 +41,16 @@ def addConstantSyst(sd,_syst,options):
 
 def getValueFromJson(row,uncertainties,sname):
   # uncertainties is a dict of the form proc:{sname:X}
-  p = re.sub("_2016_%s"%decayMode,"",row['proc'])
-  p = re.sub("_2017_%s"%decayMode,"",p)
+
+  p = re.sub("_2017_%s"%decayMode,"",row['proc'])
+  p = re.sub("_2016pre_%s"%decayMode,"",p)
+  p = re.sub("_2016post_%s"%decayMode,"",p)
   p = re.sub("_2018_%s"%decayMode,"",p)
   if p in uncertainties: 
-    if type(uncertainties[p][sname])==list: return uncertainties[p][sname]
-    else: return [uncertainties[p][sname]]
+    if type(uncertainties[p][sname])==list: 
+      return uncertainties[p][sname]
+    else: 
+      return [uncertainties[p][sname]]
   else: return '-'
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -87,12 +90,14 @@ def factoryType(d,s):
 
     # If not found then move onto next entry in dataframe
     else:
-      ws.Delete()
-      f.Close()
+      if s['name'] == "PNXbb_sf_": return "a_w"
+      else:
+        ws.Delete()
+        f.Close()
 
-  # If never found:
-  print " --> [ERROR] systematic %s: cannot extract type in factoryType function. Doesn't match requirement for (anti)-symmetric weights or anti-symmetric histograms. Leaving..."
-  sys.exit(1)
+    # If never found:
+    print " --> [ERROR] systematic %s: cannot extract type in factoryType function. Doesn't match requirement for (anti)-symmetric weights or anti-symmetric histograms. Leaving..."
+    sys.exit(1)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Function to extract yield variations for signal row in dataFrame
@@ -122,14 +127,20 @@ def calcSystYields(_nominalDataName,_nominalDataContents,_inputWS,_systFactoryTy
   for s,f in _systFactoryTypes.iteritems():
     if f == "a_h": continue
     elif f == "a_w":
-      if( "%sUp01sigma"%s not in _nominalDataContents )|( "%sDown01sigma"%s not in _nominalDataContents ):
+      if(( "%sUp01sigma"%s not in _nominalDataContents )|( "%sDown01sigma"%s not in _nominalDataContents )) & (s=="PNXbb_sf_") & ("bbgg" not in proc):
+        systYields["%s_up"%s] =0
+        systYields["%s_down"%s] =0
+      elif( "%sUp01sigma"%s not in _nominalDataContents )|( "%sDown01sigma"%s not in _nominalDataContents ):
 	systToSkip.append(s)
 	print " --> [%s] Weight in nominal RooDataSet for systematic (%s) does not exist for (%s,%s). %s"%(errMessage,s,proc,year,errString)
 	if not ignoreWarnings: sys.exit(1) 
     else:
-      if s not in _nominalDataContents:
+      if s not in _nominalDataContents and (s=="PNXbb_sf_") and ("bbgg" not in proc):
+        systYields["%s_up"%s] =0
+        systYields["%s_down"%s] =0        
+      elif s not in _nominalDataContents and (s=="PNXbb_sf_") and ("bbgg" not in proc):
 	systToSkip.append(s)
-	print " --> [%s] Weight in nominal RooDataSet for systematic (%s) does not exist for (%s,%s). %s"%(errMessage,s,proc,year,errString)
+	print " --> [%s] Weight in nominal RooDataSet for systedmatic (%s) does not exist for (%s,%s). %s"%(errMessage,s,proc,year,errString)
 	if not ignoreWarnings: sys.exit(1)
 
   # Loop over events and extract reweighted yields
@@ -394,7 +405,11 @@ def compareYield(row,factoryType,sname,mode='default',mname=None):
       midpoint_yield = 0.5*(row["%s_down_yield"%sname]+row["%s_up_yield"%sname])
       if midpoint_yield == 0: return [1.,1.]
       else: return [(row["%s_down_yield"%sname]/midpoint_yield),(row["%s_up_yield"%sname]/midpoint_yield)]
-    elif factoryType == "a_w": return [(row["%s_down_yield"%sname]/row['nominal_yield']),(row["%s_up_yield"%sname]/row['nominal_yield'])]
+    # elif factoryType == "a_w": return [(row["%s_down_yield"%sname]/row['nominal_yield']),(row["%s_up_yield"%sname]/row['nominal_yield'])] FIXME: this is original
+    elif factoryType == "a_w" and 'PNXbb_sf__down_yield' in row:
+      return [(row["%s_down_yield"%sname]/row['nominal_yield']),(row["%s_up_yield"%sname]/row['nominal_yield'])]
+    elif factoryType == "a_w" and 'PNXbb_sf__down_yield' not in row: return [1.,1.]
+    ###FIXME: this is updated
     else: return [row["%s_yield"%sname]/row['nominal_yield']]
 
   elif mode=='shape':

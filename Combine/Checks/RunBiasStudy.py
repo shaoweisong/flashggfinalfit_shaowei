@@ -37,7 +37,6 @@ for pdf in pdfs:
         multipdfName = pdf.GetName()
         print 'Conduct bias study for multipdf called %s'%multipdfName
 multipdf = ws.pdf(multipdfName)
-print
 
 varlist = rooArgSetToList(ws.allCats())
 indexName = None
@@ -46,7 +45,6 @@ for var in varlist:
         if indexName is not None: raiseMultiError()
         indexName = var.GetName()
         print 'Found index called %s'%indexName
-print
 
 from collections import OrderedDict as od
 indexNameMap = od()
@@ -54,7 +52,9 @@ for ipdf in range(multipdf.getNumPdfs()):
     if opts.selectFunction is not None:
         if not multipdf.getPdf(ipdf).GetName().count(opts.selectFunction): continue
     indexNameMap[ipdf] = multipdf.getPdf(ipdf).GetName()
-
+print 'Will run bias study for %d pdfs'%len(indexNameMap)
+print 'indexNameMap:', indexNameMap
+# indexNameMap  OrderedDict([(0, 'env_pdf_0_2017_13TeV_bern2'), (1, 'env_pdf_0_2017_13TeV_lau2')])
 if opts.toys:
     if not path.isdir('BiasToysn'): system('mkdir -p BiasToys')
     toyCmdBase = 'combine -m %.4f -d %s -M GenerateOnly --expectSignal %.4f -s %g --saveToys %s'%(opts.mH, opts.datacard, opts.expectSignal, opts.seed, opts.combineOptions)
@@ -69,16 +69,17 @@ if opts.toys:
                 print('mv -f higgsCombine_%s* %s'%(name, toyName(name,split=isplit)))
                 toyCmd = toyCmdBase + ' -t %g -n _%s_split%g --setParameters %s=%g --freezeParameters %s'%(opts.split, name, isplit, indexName, ipdf, indexName)
                 run(toyCmd, dry=opts.dryRun)
+                print(toyCmd)
                 system('mv -f higgsCombine_%s* %s'%(name, toyName(name,split=isplit)))
         else: 
             toyCmd = toyCmdBase + ' -t %g -n _%s --setParameters %s=%g --freezeParameters %s'%(opts.nToys, name, indexName, ipdf, indexName)
             run(toyCmd, dry=opts.dryRun)
+            print(toyCmd)
             system('mv -f higgsCombine_%s* %s'%(name, toyName(name)))
-print
 
 if opts.fits:
     if not path.isdir('BiasFits'): system('mkdir -p BiasFits')
-    fitCmdBase = 'combine --rMin -10 -m %.4f -d %s -M MultiDimFit -P %s --algo singles %s'%(opts.mH, opts.datacard, opts.poi, opts.combineOptions)
+    fitCmdBase = 'combine --rMin -10 --rMax 10 -m %.4f -d %s -M MultiDimFit -P %s --algo singles %s'%(opts.mH, opts.datacard, opts.poi, opts.combineOptions)
     for ipdf,pdfName in indexNameMap.iteritems():
         name = shortName(pdfName)
         print("debug opts.nToys: %g"%opts.nToys)
@@ -91,11 +92,13 @@ if opts.fits:
             for isplit in range(opts.nToys//opts.split):
                 fitCmd = fitCmdBase + ' -t %g -n _%s_split%g --toysFile=%s'%(opts.split, name, isplit, toyName(name,split=isplit))
                 run(fitCmd, dry=opts.dryRun)
+                print("debug command: %s"%fitCmd)
                 system('mv -f higgsCombine_%s* %s'%(name, fitName(name,split=isplit)))
             run('hadd %s BiasFits/*%s*split*.root'%(fitName(name),name), dry=opts.dryRun)
         else:
             fitCmd = fitCmdBase + ' -t %g -n _%s --toysFile=%s'%(opts.nToys, name, toyName(name))
             run(fitCmd, dry=opts.dryRun)
+            print(fitCmd)
             system('mv -f higgsCombine_%s* %s'%(name, fitName(name)))
 
 if opts.plots:
@@ -103,6 +106,7 @@ if opts.plots:
     for ipdf,pdfName in indexNameMap.iteritems():
         name = shortName(pdfName)
         tfile = r.TFile(fitName(name))
+        print("debug tfile: %s"%tfile)
         tree = tfile.Get('limit')
         pullHist = r.TH1F('pullsForTruth_%s'%name, 'Pull distribution using the envelope to fit %s'%name, 80, -4., 4.)
         pullHist.GetXaxis().SetTitle('Pull')
@@ -125,6 +129,7 @@ if opts.plots:
             if not abs(getattr(tree,'quantileExpected')-0.32)<0.0001: 
                 raiseFailError(itoy,True) 
                 continue
+            print("pass")
             hi = getattr(tree, 'r')
             diff = bf - opts.expectSignal
             unc = 0.5 * (hi-lo)

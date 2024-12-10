@@ -1,0 +1,12 @@
++JobFlavour   = "microcentury"
+Executable = condor_cat12_nosys.sh
+Universe = vanilla
+Notification = ERROR
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+x509userproxy = $ENV(X509_USER_PROXY)
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX500_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX500_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX500_MH125_2018_$(Process).log
+Arguments = MX500_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff0/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_nosignal_constrain
+Queue 

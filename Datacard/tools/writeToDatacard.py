@@ -1,5 +1,6 @@
 # Hold defs of writing functions for datacard
 import os, sys, re
+import pandas as pd 
 from commonTools import *
 from commonObjects import *
 
@@ -15,6 +16,7 @@ def writePreamble(f,options):
   return True
 
 def writeProcesses(f,d,options):
+  
   f.write("\n")
   # If opt.prune then remove all rows from dataFrame with prune=1
   if options.prune: d = d[d['prune']==0]
@@ -40,12 +42,15 @@ def writeProcesses(f,d,options):
     lbin_cat += "%-55s "%cat
     lobs_cat += "%-55s "%"-1"
     sigID = 0
-    # Loop over rows for respective category
+    specialProcID = 2 
     for ir,r in d[d['cat']==cat].iterrows():
       if r['proc'] == "data_obs": continue
       lbin_procXcat += "%-55s "%cat
       lproc += "%-55s "%r['proc']
       if r['proc'] == "bkg_mass": lprocid += "%-55s "%"1"
+      elif any(keyword in r['proc'] for keyword in ["VBF", "GGH", "VH", "TTH"]):
+          lprocid += "%-55s "%specialProcID
+          specialProcID += 1 
       else:
         lprocid += "%-55s "%sigID
         sigID -= 1
@@ -59,14 +64,12 @@ def writeProcesses(f,d,options):
     
   f.write("\n")
   return True
-
-
 def writeSystematic(f,d,s,options,stxsMergeScheme=None,scaleCorrScheme=None):
-
   # For signal shape systematics add simple line
   if s['type'] == 'signal_shape':
     stitle = "%s_%s"%(outputWSNuisanceTitle__,s['title'])
-    if s['mode'] != 'other': stitle += "_%s"%outputNuisanceExtMap[s['mode']]
+    if s['mode'] != 'other': 
+      stitle += "_%s"%outputNuisanceExtMap[s['mode']]
     # If not correlated: separate nuisance per year
     if s['mode'] in ['scales','smears']:
       for year in options.years.split(","):
@@ -83,12 +86,15 @@ def writeSystematic(f,d,s,options,stxsMergeScheme=None,scaleCorrScheme=None):
   if options.prune:
     mask = (d['prune']==0)
     d = d[mask]
-
   # If theory: loop over tiers else run over once
   tiers = []
-  if 'tiers' in s: tiers = s['tiers']
-  if(not options.doSTXSMerging)&('mnorm' in tiers): tiers.remove("mnorm")
-  if len(tiers)==0: tiers = ['']
+  if 'tiers' in s: 
+    tiers = s['tiers']
+    
+  if(not options.doSTXSMerging)&('mnorm' in tiers): 
+    tiers.remove("mnorm")
+  if len(tiers)==0: 
+    tiers = ['']
   for tier in tiers:
     if tier != '': tierStr = "_%s"%tier
     else: tierStr = ''
@@ -116,6 +122,7 @@ def writeSystematic(f,d,s,options,stxsMergeScheme=None,scaleCorrScheme=None):
 	    lsyst = addSyst(lsyst,sval,stitle,r['proc'],cat)
 	# Remove final space from line and add to file
 	f.write("%s\n"%lsyst[:-1])
+
         # For uncorrelated scale weights: not for merged bins
         if options.doSTXSScaleCorrelationScheme:
           if(tier!='mnorm')&("scaleWeight" in s['name']):
@@ -161,9 +168,10 @@ def addSyst(l,v,s,p,c):
     return l
   elif type(v) is list: 
     # Symmetric:
-    if len(v) == 1: 
+    if len(v) == 1:
       # Check 1: variation is non-negligible. If not then skip
-      if abs(v[0]-1)<0.0005: l += "%-15s "%"-"
+      if abs(v[0]-1)<0.0005: 
+        l += "%-15s "%"-"
       # Check 2: variation is not negative. Print message and add - to datacard (cleaned later)
       elif v[0] < 0.: 
         print " --> [WARNING] systematic %s: negative variation for (%s,%s)"%(s,p,c)
@@ -182,11 +190,14 @@ def addSyst(l,v,s,p,c):
         #vstr = "%.3f/%.3f"%(v[0],v[1])
         vstr = "-"
         l += "%-15s "%vstr
+      #FIXME: Check 3: effect is approximately symmetric: then just add single up variation, omit for all BR unc.
       # Check 3: effect is approximately symmetric: then just add single up variation
-      elif( abs((v[0]*v[1])-1)<0.0005 ): l += "%-15.3f "%v[1]
+      # elif( abs((v[0]*v[1])-1)<0.0005 ): 
+      #   l += "%-15.3f "%v[1]
       else: 
         vstr = "%.3f/%.3f"%(v[0],v[1])
         l += "%-15s "%vstr
+        
     return l
   else:
     print " --> [ERROR] systematic %s: value does not have type string or list for (%s,%s). Leaving..."%(s['title'],p,c)

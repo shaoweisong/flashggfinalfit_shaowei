@@ -1,12 +1,12 @@
 +JobFlavour   = "workday"
-Executable = Run2_unblind_v9.sh
+Executable = Run2_limit.sh
 Universe = vanilla
 Notification = ERROR
 Should_Transfer_Files = YES
 WhenToTransferOutput = ON_EXIT
 x509userproxy = $ENV(X509_USER_PROXY)
-Output = ./condor_logs/Run2_v9/231122_191348/combine_datacard_M3000_$(Process).stdout
-Error  = ./condor_logs/Run2_v9/231122_191348/combine_datacard_M3000_$(Process).err
-Log  = ./condor_logs/Run2_v9/231122_191348/combine_datacard_M3000_$(Process).log
-Arguments = combine_run2 condor_input combineFHSL_run2allcat_M3000 Datacard_M3000_run2allcat.root  /eos/cms/store/group/phys_b2g/shsong/UL18_signal/Run2018_v9 condor_output
+Output = ./condor_logs/Run2_v9/Limit_M1000_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_M1000_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_M1000_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX1000_MH125.txt MX1000_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2/
 Queue 

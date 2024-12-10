@@ -51,8 +51,8 @@ else:
   for cat in opt.cats.split(","):
     # f = "%s/outdir_%s/CMS-HGG_sigfit_%s_%s_2016pre.root"%(swd__,opt.ext,opt.ext,cat) #attention: only have 2017 year result with the name *_2017 so we add the _2017 in the str here
     # f = "%s/outdir_%s/CMS-HGG_sigfit_%s_%s_2017.root"%(swd__,opt.ext,opt.ext,cat) #attention: only have 2017 year result with the name *_2017 so we add the _2017 in the str here
-    f = "%s/outdir_%s/CMS-HGG_sigfit_%s_%s_2018.root"%(swd__,opt.ext,opt.ext,cat) #attention: only have 2017 year result with the name *_2017 so we add the _2017 in the str here
-    # f = "%s/outdir_%s/CMS-HGG_sigfit_%s_%s.root"%(swd__,opt.ext,opt.ext,cat)
+    # f = "%s/outdir_%s/CMS-HGG_sigfit_%s_%s_2018.root"%(swd__,opt.ext,opt.ext,cat) #attention: only have 2017 year result with the name *_2017 so we add the _2017 in the str here
+    f = "%s/outdir_%s/CMS-HGG_sigfit_%s_%s.root"%(swd__,opt.ext,opt.ext,cat)
     inputFiles[cat] = f
     if citr == 0:
       w = ROOT.TFile(f).Get("wsig_13TeV")
@@ -172,4 +172,6 @@ for cat,f in inputFiles.iteritems():
 
 # Make plot
 if not os.path.isdir("%s/outdir_%s/Plots"%(swd__,opt.ext)): os.system("mkdir %s/outdir_%s/Plots"%(swd__,opt.ext))
+print("debug: hists:", hists)
+print("debug: opt:", opt)
 plotSignalModel(hists,opt,_outdir="%s/outdir_%s/Plots"%(swd__,opt.ext))

@@ -2,7 +2,6 @@
 import os, sys
 from optparse import OptionParser
 from collections import OrderedDict as od
-
 # Import tools
 from tools.submissionTools import *
 from commonTools import *

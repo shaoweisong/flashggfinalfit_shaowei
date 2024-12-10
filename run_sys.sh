@@ -38,10 +38,10 @@ combine -M AsymptoticLimits -m 125 -n test -d Datacard_M2200_FH_2016pre_combineF
 # combineTool.py -M Impacts -d Datacard.root -m 125 --freezeParameters MH -n .impacts --X-rt MINIMIZER_freezeDisassociatedParams   --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints  -o impacts_part3_cat3.json
 # plotImpacts.py -i impacts_part3_cat3.json -o impacts_part3_cat3
 #from fabio
-text2workspace.py Datacard_M500_SL_2016pre_combineFHSL_cat2lowpt.txt -m 125
-combineTool.py -v 10 -M Impacts -d Datacard_M500_SL_2016pre_combineFHSL_cat2lowpt.root -t -1 --toysFrequentist -m 125 --setParameters r=1.0 --redefineSignalPOIs r --saveSpecifiedNuis all --floatOtherPOIs 1 --saveInactivePOI 1 --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2 --setParameterRanges r=-40000.0,40000.0 --doInitialFit --task-name initialFit 2>&1 | tee initialFit.log
-combineTool.py -v 10 -M Impacts -d Datacard_M500_SL_2016pre_combineFHSL_cat2lowpt.root -t -1 --toysFrequentist -m 125 --setParameters r=1.0 --redefineSignalPOIs r --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2 --setParameterRanges r=-40000.0,40000.0 --doFits
-combineTool.py -v 10 -M Impacts -d Datacard_M500_SL_2016pre_combineFHSL_cat2lowpt.root -t -1 -m 125 --setParameters r=1.0 --redefineSignalPOIs r --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2 --setParameterRanges r=-40000.0,40000.0 --output impacts_r.json
+text2workspace.py Datacard_MX3000_MH125_2017_cat12.txt -m 125
+combineTool.py -v 10 -M Impacts -d Datacard_MX3000_MH125_2017_cat12.root -t -1 --toysFrequentist -m 125 --setParameters r=1.0 --redefineSignalPOIs r --saveSpecifiedNuis all --floatOtherPOIs 1 --saveInactivePOI 1 --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2 --setParameterRanges r=-40000.0,40000.0 --doInitialFit --task-name initialFit 2>&1 | tee initialFit.log
+combineTool.py -v 10 -M Impacts -d Datacard_MX3000_MH125_2017_cat12.root -t -1 --toysFrequentist -m 125 --setParameters r=1.0 --redefineSignalPOIs r --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2 --setParameterRanges r=-40000.0,40000.0 --doFits
+combineTool.py -v 10 -M Impacts -d Datacard_MX3000_MH125_2017_cat12.root -t -1 -m 125 --setParameters r=1.0 --redefineSignalPOIs r --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2 --setParameterRanges r=-40000.0,40000.0 --output impacts_r.json
 plotImpacts.py -i impacts_r.json -o impacts_r
 
 text2workspace.py Datacard_M500_FH_2016pre_combine.txt -m 125
@@ -54,22 +54,22 @@ combineTool.py -M Impacts -d Datacard_M500_FH_2016pre_combine.root -t -1 -m 125 
 
 
 
-combineTool.py -v 10 -M Impacts -d Datacard_M500_FH_2016pre_combine.root -t -1 --toysFrequentist -m 125 --setParameters r=1.0 --redefineSignalPOIs r --saveSpecifiedNuis all --floatOtherPOIs 1 --saveInactivePOI 1 --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2 --setParameterRanges r=-40000.0,40000.0 --doInitialFit --task-name initialFit 2>&1 | tee initialFit.log
+combineTool.py -v 10 -M Impacts -d Datacard_MX3000_MH125_2017_cat12.root -t -1 --toysFrequentist -m 125 --setParameters r=1.0 --redefineSignalPOIs r --saveSpecifiedNuis all --floatOtherPOIs 1 --saveInactivePOI 1 --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2 --setParameterRanges r=-600.0,600.0 --doInitialFit --task-name initialFit 2>&1 | tee initialFit.log
 
-combineTool.py -v 10 -M Impacts -d Datacard_M500_FH_2016pre_combine.root -t -1 --toysFrequentist -m 125 --setParameters r=1.0 --redefineSignalPOIs r --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2 --setParameterRanges r=-40000.0,40000.0 --doFits
+combineTool.py -v 10 -M Impacts -d Datacard_MX3000_MH125_2017_cat12.root -t -1 --toysFrequentist -m 125 --setParameters r=1.0 --redefineSignalPOIs r --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2 --setParameterRanges r=-600.0,600.0 --doFits
 
-combineTool.py -v 10 -M Impacts -d Datacard_M500_FH_2016pre_combine.root -t -1 -m 125 --setParameters r=1.0 --redefineSignalPOIs r --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2 --setParameterRanges r=-40000.0,40000.0 --output impacts_r.json
-
-
+combineTool.py -v 10 -M Impacts -d Datacard_MX3000_MH125_2017_cat12.root -t -1 -m 125 --setParameters r=1.0 --redefineSignalPOIs r --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2 --setParameterRanges r=-600.0,600.0 --output impacts_r.json
 
 
 
 
-text2workspace.py Datacard_M1000_2017allcat.txt -m 125
-combineTool.py -M Impacts -d Datacard_MX1500_MH125_2017allcat.root -m 125 --freezeParameters MH -n .impacts --setParameterRanges r=-1000,1000 --doInitialFit -t -1 --expectSignal 0 --robustFit 1 --X-rt MINIMIZER_freezeDisassociatedParams   --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints 
-combineTool.py -M Impacts -d Datacard_MX1500_MH125_2017allcat.root -m 125 --freezeParameters MH -n .impacts --setParameterRanges r=-1000,1000 --doFits -t -1 --expectSignal 0 --robustFit 1 --X-rt MINIMIZER_freezeDisassociatedParams   --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints 
 
-combineTool.py -M Impacts -d Datacard_MX1500_MH125_2017allcat.root -m 125 --freezeParameters MH -n .impacts --setParameterRanges r=-1000,1000  -t -1 --expectSignal 0 --robustFit 1 --X-rt MINIMIZER_freezeDisassociatedParams   --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --output impacts_run2.json
+
+text2workspace.py Datacard_MX3000_MH125_2017_cat12.txt -m 125
+combineTool.py -M Impacts -d Datacard_MX3000_MH125_2017_cat12.root -m 125 --freezeParameters MH -n .impacts --setParameterRanges r=-1000,1000 --doInitialFit -t -1 --expectSignal 1 --robustFit 1 --X-rt MINIMIZER_freezeDisassociatedParams   --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints 
+combineTool.py -M Impacts -d Datacard_MX3000_MH125_2017_cat12.root -m 125 --freezeParameters MH -n .impacts --setParameterRanges r=-1000,1000 --doFits -t -1 --expectSignal 1 --robustFit 1 --X-rt MINIMIZER_freezeDisassociatedParams   --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints 
+
+combineTool.py -M Impacts -d Datacard_MX3000_MH125_2017_cat12.root -m 125 --freezeParameters MH -n .impacts --setParameterRanges r=-1000,1000  -t -1 --expectSignal 1 --robustFit 1 --X-rt MINIMIZER_freezeDisassociatedParams   --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --output impacts_run2.json
 plotImpacts.py -i impacts_run2.json -o impacts_run2
 
 
@@ -176,3 +176,23 @@ python RunYields.py --inputWSDirMap 2017=/eos/user/s/shsong/HHWWgg_limit/optimis
 python makeDatacard.py --years 2016pre --prune --doSystematics --ext combineFHSL_cat3highpt_FH1000highpt --output Datacard_M100_combineFHSL_cat3highpt_FH
 
 
+text2workspace.py Datacard_MX3000_MH125_2017_cat12.txt -m 125
+combineTool.py -v 10 -M Impacts -d Datacard_MX3000_MH125_2017_cat12.root -t -1 --toysFrequentist -m 125 --setParameters r=1.0 --redefineSignalPOIs r --saveSpecifiedNuis all --floatOtherPOIs 1 --saveInactivePOI 1 --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2 --setParameterRanges r=-10000.0,10000.0 --doInitialFit --task-name initialFit 2>&1 | tee initialFit.log
+combineTool.py -v 10 -M Impacts -d Datacard_MX3000_MH125_2017_cat12.root -t -1 --toysFrequentist -m 125 --setParameters r=1.0 --redefineSignalPOIs r --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2 --setParameterRanges r=-1000.0,1000.0 --doFits
+combineTool.py -v 10 -M Impacts -d Datacard_MX3000_MH125_2017_cat12.root -t -1 -m 125 --setParameters r=1.0 --redefineSignalPOIs r --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2 --setParameterRanges r=-1000.0,1000.0 --output impacts_r.json
+plotImpacts.py -i impacts_r.json -o impacts_r
+
+
+
+
+combineTool.py -M FastScan -w workspace.root:w --setParameterRanges r=-0.1,0.1
+--setParameterRanges env_pdf_0_2017_13TeV*=-2000.0,2000.0
+--setParameterRanges env_pdf_0_2017_13TeV*=-2000.0,2000.0
+--setParameterRanges env_pdf_0_2017_13TeV*=-2000.0,2000.0
+
+text2workspace.py Datacard_MX850_MH125_run2_cat1234.txt -m 125
+combine -M AsymptoticLimits -m 125 -n test -d Datacard_MX850_MH125_run2_cat1234.root --run expected 
+combineTool.py -M Impacts -d Datacard_MX850_MH125_run2_cat1234.root -t -1 --toysFrequentist -m 125 --setParameterRanges r=-200.0,200.0 --freezeParameters MH   --setParameters r=3.8 --redefineSignalPOIs r --saveSpecifiedNuis all --floatOtherPOIs 1 --saveInactivePOI 1 --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2  --doInitialFit --task-name initialFit 
+combineTool.py -M Impacts -d Datacard_MX850_MH125_run2_cat1234.root -t -1 -m 125 --setParameterRanges r=-200.0,200.0 --freezeParameters MH   --setParameters r=3.8 --redefineSignalPOIs r --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2  --doFits  2>&1 | tee Fit.log
+combineTool.py -M Impacts -d Datacard_MX850_MH125_run2_cat1234.root -t -1 -m 125 --setParameterRanges r=-200.0,200.0 --freezeParameters MH   --setParameters r=3.8 --redefineSignalPOIs r --cminDefaultMinimizerStrategy 0 --X-rtd MINIMIZER_freezeDisassociatedParams --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2  --output impacts_r.json
+plotImpacts.py -i impacts_r.json -o impacts_r --blind

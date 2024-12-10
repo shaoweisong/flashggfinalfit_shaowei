@@ -1,0 +1,163 @@
+cd /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/2016postdatacard/datacard_MX250_MH125
+combineCards.py cat34FH_2=Datacard_MX250_MH125_cat34FHlowpurity.txt cat34SL_1=Datacard_MX250_MH125_cat34SLhighpurity.txt cat34SL_2=Datacard_MX250_MH125_cat34SLlowpurity.txt > Datacard_MX250_MH125_2016post_cat34.txt
+combineCards.py  cat34SLlowpurity=Datacard_MX250_MH125_2016post_combineFHSL_cat34SLlowpurity.txt cat34SLhighpurity=Datacard_MX250_MH125_2016post_combineFHSL_cat34SLhighpurity.txt cat34FHhowpurity=Datacard_MX250_MH125_2016post_combineFHSL_cat34FHlowpurity.txt > Datacard_MX250_MH125_2016post_cat34wwgg.txt
+sed -i 's/hgg 2 /hgg 200/g' Datacard_MX250_MH125_2016post_cat34*.txt
+text2workspace.py Datacard_MX250_MH125_2016post_cat34wwgg.txt -m 125
+text2workspace.py Datacard_MX250_MH125_2016post_cat34.txt -m 125
+combine -M AsymptoticLimits -m 125 -n MX250_MH125_2016post_cat34 -d Datacard_MX250_MH125_2016post_cat34.root
+combine -M AsymptoticLimits -m 125 -n MX250_MH125_2016post_cat34wwgg -d Datacard_MX250_MH125_2016post_cat34.root
+
+cd /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/2016postdatacard/datacard_MX260_MH125
+combineCards.py cat34FH_2=Datacard_MX260_MH125_cat34FHlowpurity.txt cat34SL_1=Datacard_MX260_MH125_cat34SLhighpurity.txt cat34SL_2=Datacard_MX260_MH125_cat34SLlowpurity.txt > Datacard_MX260_MH125_2016post_cat34.txt
+combineCards.py  cat34SLlowpurity=Datacard_MX260_MH125_2016post_combineFHSL_cat34SLlowpurity.txt cat34SLhighpurity=Datacard_MX260_MH125_2016post_combineFHSL_cat34SLhighpurity.txt cat34FHhowpurity=Datacard_MX260_MH125_2016post_combineFHSL_cat34FHlowpurity.txt  > Datacard_MX260_MH125_2016post_cat34wwgg.txt
+sed -i 's/hgg 2 /hgg 200/g' Datacard_MX260_MH125_2016post_cat34*.txt
+text2workspace.py Datacard_MX260_MH125_2016post_cat34wwgg.txt -m 125
+text2workspace.py Datacard_MX260_MH125_2016post_cat34.txt -m 125
+combine -M AsymptoticLimits -m 125 -n MX260_MH125_2016post_cat34 -d Datacard_MX260_MH125_2016post_cat34.root
+combine -M AsymptoticLimits -m 125 -n MX260_MH125_2016post_cat34wwgg -d Datacard_MX260_MH125_2016post_cat34.root
+
+cd /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/2016postdatacard/datacard_MX270_MH125
+combineCards.py  cat34FH_2=Datacard_MX270_MH125_cat34FHlowpurity.txt cat34SL_1=Datacard_MX270_MH125_cat34SLhighpurity.txt cat34SL_2=Datacard_MX270_MH125_cat34SLlowpurity.txt > Datacard_MX270_MH125_2016post_cat34.txt
+combineCards.py  cat34SLlowpurity=Datacard_MX270_MH125_2016post_combineFHSL_cat34SLlowpurity.txt cat34SLhighpurity=Datacard_MX270_MH125_2016post_combineFHSL_cat34SLhighpurity.txt cat34FHhowpurity=Datacard_MX270_MH125_2016post_combineFHSL_cat34FHlowpurity.txt cat34FHhighpurity=Datacard_MX270_MH125_2016post_combineFHSL_cat34FHhighpurity.txt > Datacard_MX270_MH125_2016post_cat34wwgg.txt
+sed -i 's/hgg 2 /hgg 200/g' Datacard_MX270_MH125_2016post_cat34*.txt
+text2workspace.py Datacard_MX270_MH125_2016post_cat34wwgg.txt -m 125
+text2workspace.py Datacard_MX270_MH125_2016post_cat34.txt -m 125
+combine -M AsymptoticLimits -m 125 -n MX270_MH125_2016post_cat34 -d Datacard_MX270_MH125_2016post_cat34.root
+combine -M AsymptoticLimits -m 125 -n MX270_MH125_2016post_cat34wwgg -d Datacard_MX270_MH125_2016post_cat34.root
+
+cd /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/2016postdatacard/datacard_MX280_MH125
+combineCards.py cat34FH_2=Datacard_MX280_MH125_cat34FHlowpurity.txt cat34SL_1=Datacard_MX280_MH125_cat34SLhighpurity.txt cat34SL_2=Datacard_MX280_MH125_cat34SLlowpurity.txt > Datacard_MX280_MH125_2016post_cat34.txt
+combineCards.py  cat34SLlowpurity=Datacard_MX280_MH125_2016post_combineFHSL_cat34SLlowpurity.txt cat34SLhighpurity=Datacard_MX280_MH125_2016post_combineFHSL_cat34SLhighpurity.txt cat34FHhowpurity=Datacard_MX280_MH125_2016post_combineFHSL_cat34FHlowpurity.txt > Datacard_MX280_MH125_2016post_cat34wwgg.txt
+sed -i 's/hgg 2 /hgg 200/g' Datacard_MX280_MH125_2016post_cat34*.txt
+text2workspace.py Datacard_MX280_MH125_2016post_cat34wwgg.txt -m 125
+text2workspace.py Datacard_MX280_MH125_2016post_cat34.txt -m 125
+combine -M AsymptoticLimits -m 125 -n MX280_MH125_2016post_cat34 -d Datacard_MX280_MH125_2016post_cat34.root
+combine -M AsymptoticLimits -m 125 -n MX280_MH125_2016post_cat34wwgg -d Datacard_MX280_MH125_2016post_cat34.root
+
+cd /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/2016postdatacard/datacard_MX300_MH125
+combineCards.py cat34FH_1=Datacard_MX300_MH125_cat34FHhighpurity.txt cat34FH_2=Datacard_MX300_MH125_cat34FHlowpurity.txt cat34SL_1=Datacard_MX300_MH125_cat34SLhighpurity.txt cat34SL_2=Datacard_MX300_MH125_cat34SLlowpurity.txt > Datacard_MX300_MH125_2016post_cat34.txt
+combineCards.py  cat34SLlowpurity=Datacard_MX300_MH125_2016post_combineFHSL_cat34SLlowpurity.txt cat34SLhighpurity=Datacard_MX300_MH125_2016post_combineFHSL_cat34SLhighpurity.txt cat34FHhowpurity=Datacard_MX300_MH125_2016post_combineFHSL_cat34FHlowpurity.txt cat34FHhighpurity=Datacard_MX300_MH125_2016post_combineFHSL_cat34FHhighpurity.txt > Datacard_MX300_MH125_2016post_cat34wwgg.txt
+sed -i 's/hgg 2 /hgg 200/g' Datacard_MX300_MH125_2016post_cat34*.txt
+text2workspace.py Datacard_MX300_MH125_2016post_cat34wwgg.txt -m 125
+text2workspace.py Datacard_MX300_MH125_2016post_cat34.txt -m 125
+combine -M AsymptoticLimits -m 125 -n MX300_MH125_2016post_cat34 -d Datacard_MX300_MH125_2016post_cat34.root
+combine -M AsymptoticLimits -m 125 -n MX300_MH125_2016post_cat34wwgg -d Datacard_MX300_MH125_2016post_cat34.root
+
+cd /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/2016postdatacard/datacard_MX320_MH125
+combineCards.py cat34FH_1=Datacard_MX320_MH125_cat34FHhighpurity.txt cat34FH_2=Datacard_MX320_MH125_cat34FHlowpurity.txt cat34SL_1=Datacard_MX320_MH125_cat34SLhighpurity.txt cat34SL_2=Datacard_MX320_MH125_cat34SLlowpurity.txt > Datacard_MX320_MH125_2016post_cat34.txt
+combineCards.py  cat34SLlowpurity=Datacard_MX320_MH125_2016post_combineFHSL_cat34SLlowpurity.txt cat34SLhighpurity=Datacard_MX320_MH125_2016post_combineFHSL_cat34SLhighpurity.txt cat34FHhowpurity=Datacard_MX320_MH125_2016post_combineFHSL_cat34FHlowpurity.txt cat34FHhighpurity=Datacard_MX320_MH125_2016post_combineFHSL_cat34FHhighpurity.txt > Datacard_MX320_MH125_2016post_cat34wwgg.txt
+sed -i 's/hgg 2 /hgg 200/g' Datacard_MX320_MH125_2016post_cat34*.txt
+text2workspace.py Datacard_MX320_MH125_2016post_cat34wwgg.txt -m 125
+text2workspace.py Datacard_MX320_MH125_2016post_cat34.txt -m 125
+combine -M AsymptoticLimits -m 125 -n MX320_MH125_2016post_cat34 -d Datacard_MX320_MH125_2016post_cat34.root
+combine -M AsymptoticLimits -m 125 -n MX320_MH125_2016post_cat34wwgg -d Datacard_MX320_MH125_2016post_cat34.root
+
+cd /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/2016postdatacard/datacard_MX350_MH125
+combineCards.py cat34FH_1=Datacard_MX350_MH125_cat34FHhighpurity.txt cat34FH_2=Datacard_MX350_MH125_cat34FHlowpurity.txt cat34SL_1=Datacard_MX350_MH125_cat34SLhighpurity.txt cat34SL_2=Datacard_MX350_MH125_cat34SLlowpurity.txt > Datacard_MX350_MH125_2016post_cat34.txt
+combineCards.py  cat34SLlowpurity=Datacard_MX350_MH125_2016post_combineFHSL_cat34SLlowpurity.txt cat34SLhighpurity=Datacard_MX350_MH125_2016post_combineFHSL_cat34SLhighpurity.txt cat34FHhowpurity=Datacard_MX350_MH125_2016post_combineFHSL_cat34FHlowpurity.txt cat34FHhighpurity=Datacard_MX350_MH125_2016post_combineFHSL_cat34FHhighpurity.txt > Datacard_MX350_MH125_2016post_cat34wwgg.txt
+sed -i 's/hgg 2 /hgg 200/g' Datacard_MX350_MH125_2016post_cat34*.txt
+text2workspace.py Datacard_MX350_MH125_2016post_cat34wwgg.txt -m 125
+text2workspace.py Datacard_MX350_MH125_2016post_cat34.txt -m 125
+combine -M AsymptoticLimits -m 125 -n MX350_MH125_2016post_cat34 -d Datacard_MX350_MH125_2016post_cat34.root
+combine -M AsymptoticLimits -m 125 -n MX350_MH125_2016post_cat34wwgg -d Datacard_MX350_MH125_2016post_cat34.root
+
+cd /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/2016postdatacard/datacard_MX400_MH125
+combineCards.py cat34FH_1=Datacard_MX400_MH125_cat34FHhighpurity.txt cat34FH_2=Datacard_MX400_MH125_cat34FHlowpurity.txt cat34SL_1=Datacard_MX400_MH125_cat34SLhighpurity.txt cat34SL_2=Datacard_MX400_MH125_cat34SLlowpurity.txt > Datacard_MX400_MH125_2016post_cat34.txt
+combineCards.py  cat34SLlowpurity=Datacard_MX400_MH125_2016post_combineFHSL_cat34SLlowpurity.txt cat34SLhighpurity=Datacard_MX400_MH125_2016post_combineFHSL_cat34SLhighpurity.txt cat34FHhowpurity=Datacard_MX400_MH125_2016post_combineFHSL_cat34FHlowpurity.txt cat34FHhighpurity=Datacard_MX400_MH125_2016post_combineFHSL_cat34FHhighpurity.txt > Datacard_MX400_MH125_2016post_cat34wwgg.txt
+sed -i 's/hgg 2 /hgg 200/g' Datacard_MX400_MH125_2016post_cat34*.txt
+text2workspace.py Datacard_MX400_MH125_2016post_cat34wwgg.txt -m 125
+text2workspace.py Datacard_MX400_MH125_2016post_cat34.txt -m 125
+combine -M AsymptoticLimits -m 125 -n MX400_MH125_2016post_cat34 -d Datacard_MX400_MH125_2016post_cat34.root
+combine -M AsymptoticLimits -m 125 -n MX400_MH125_2016post_cat34wwgg -d Datacard_MX400_MH125_2016post_cat34.root
+
+cd /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/2016postdatacard/datacard_MX450_MH125
+combineCards.py cat34FH_1=Datacard_MX450_MH125_cat34FHhighpurity.txt cat34FH_2=Datacard_MX450_MH125_cat34FHlowpurity.txt cat34SL_1=Datacard_MX450_MH125_cat34SLhighpurity.txt cat34SL_2=Datacard_MX450_MH125_cat34SLlowpurity.txt > Datacard_MX450_MH125_2016post_cat34.txt
+combineCards.py  cat34SLlowpurity=Datacard_MX450_MH125_2016post_combineFHSL_cat34SLlowpurity.txt cat34SLhighpurity=Datacard_MX450_MH125_2016post_combineFHSL_cat34SLhighpurity.txt cat34FHhowpurity=Datacard_MX450_MH125_2016post_combineFHSL_cat34FHlowpurity.txt cat34FHhighpurity=Datacard_MX450_MH125_2016post_combineFHSL_cat34FHhighpurity.txt > Datacard_MX450_MH125_2016post_cat34wwgg.txt
+sed -i 's/hgg 2 /hgg 200/g' Datacard_MX450_MH125_2016post_cat34*.txt
+text2workspace.py Datacard_MX450_MH125_2016post_cat34wwgg.txt -m 125
+text2workspace.py Datacard_MX450_MH125_2016post_cat34.txt -m 125
+combine -M AsymptoticLimits -m 125 -n MX450_MH125_2016post_cat34 -d Datacard_MX450_MH125_2016post_cat34.root
+combine -M AsymptoticLimits -m 125 -n MX450_MH125_2016post_cat34wwgg -d Datacard_MX450_MH125_2016post_cat34.root
+
+cd /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/2016postdatacard/datacard_MX500_MH125
+combineCards.py cat34FH_1=Datacard_MX500_MH125_cat34FHhighpurity.txt cat34FH_2=Datacard_MX500_MH125_cat34FHlowpurity.txt cat34SL_1=Datacard_MX500_MH125_cat34SLhighpurity.txt cat34SL_2=Datacard_MX500_MH125_cat34SLlowpurity.txt > Datacard_MX500_MH125_2016post_cat34.txt
+combineCards.py  cat34SLlowpurity=Datacard_MX500_MH125_2016post_combineFHSL_cat34SLlowpurity.txt cat34SLhighpurity=Datacard_MX500_MH125_2016post_combineFHSL_cat34SLhighpurity.txt cat34FHhowpurity=Datacard_MX500_MH125_2016post_combineFHSL_cat34FHlowpurity.txt cat34FHhighpurity=Datacard_MX500_MH125_2016post_combineFHSL_cat34FHhighpurity.txt > Datacard_MX500_MH125_2016post_cat34wwgg.txt
+sed -i 's/hgg 2 /hgg 200/g' Datacard_MX500_MH125_2016post_cat34*.txt
+text2workspace.py Datacard_MX500_MH125_2016post_cat34wwgg.txt -m 125
+text2workspace.py Datacard_MX500_MH125_2016post_cat34.txt -m 125
+combine -M AsymptoticLimits -m 125 -n MX500_MH125_2016post_cat34 -d Datacard_MX500_MH125_2016post_cat34.root
+combine -M AsymptoticLimits -m 125 -n MX500_MH125_2016post_cat34wwgg -d Datacard_MX500_MH125_2016post_cat34.root
+
+cd /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/2016postdatacard/datacard_MX550_MH125
+combineCards.py cat34FH_1=Datacard_MX550_MH125_cat34FHhighpurity.txt cat34FH_2=Datacard_MX550_MH125_cat34FHlowpurity.txt cat34SL_1=Datacard_MX550_MH125_cat34SLhighpurity.txt cat34SL_2=Datacard_MX550_MH125_cat34SLlowpurity.txt > Datacard_MX550_MH125_2016post_cat34.txt
+combineCards.py  cat34SLlowpurity=Datacard_MX550_MH125_2016post_combineFHSL_cat34SLlowpurity.txt cat34SLhighpurity=Datacard_MX550_MH125_2016post_combineFHSL_cat34SLhighpurity.txt cat34FHhowpurity=Datacard_MX550_MH125_2016post_combineFHSL_cat34FHlowpurity.txt cat34FHhighpurity=Datacard_MX550_MH125_2016post_combineFHSL_cat34FHhighpurity.txt > Datacard_MX550_MH125_2016post_cat34wwgg.txt
+sed -i 's/hgg 2 /hgg 200/g' Datacard_MX550_MH125_2016post_cat34*.txt
+text2workspace.py Datacard_MX550_MH125_2016post_cat34wwgg.txt -m 125
+text2workspace.py Datacard_MX550_MH125_2016post_cat34.txt -m 125
+combine -M AsymptoticLimits -m 125 -n MX550_MH125_2016post_cat34 -d Datacard_MX550_MH125_2016post_cat34.root
+combine -M AsymptoticLimits -m 125 -n MX550_MH125_2016post_cat34wwgg -d Datacard_MX550_MH125_2016post_cat34.root
+
+cd /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/2016postdatacard/datacard_MX600_MH125
+combineCards.py cat34FH_1=Datacard_MX600_MH125_cat34FHhighpurity.txt cat34FH_2=Datacard_MX600_MH125_cat34FHlowpurity.txt cat34SL_1=Datacard_MX600_MH125_cat34SLhighpurity.txt cat34SL_2=Datacard_MX600_MH125_cat34SLlowpurity.txt > Datacard_MX600_MH125_2016post_cat34.txt
+combineCards.py  cat34SLlowpurity=Datacard_MX600_MH125_2016post_combineFHSL_cat34SLlowpurity.txt cat34SLhighpurity=Datacard_MX600_MH125_2016post_combineFHSL_cat34SLhighpurity.txt cat34FHhowpurity=Datacard_MX600_MH125_2016post_combineFHSL_cat34FHlowpurity.txt cat34FHhighpurity=Datacard_MX600_MH125_2016post_combineFHSL_cat34FHhighpurity.txt > Datacard_MX600_MH125_2016post_cat34wwgg.txt
+sed -i 's/hgg 2 /hgg 200/g' Datacard_MX600_MH125_2016post_cat34*.txt
+text2workspace.py Datacard_MX600_MH125_2016post_cat34wwgg.txt -m 125
+text2workspace.py Datacard_MX600_MH125_2016post_cat34.txt -m 125
+combine -M AsymptoticLimits -m 125 -n MX600_MH125_2016post_cat34 -d Datacard_MX600_MH125_2016post_cat34.root
+combine -M AsymptoticLimits -m 125 -n MX600_MH125_2016post_cat34wwgg -d Datacard_MX600_MH125_2016post_cat34.root
+
+cd /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/2016postdatacard/datacard_MX650_MH125
+combineCards.py cat34FH_1=Datacard_MX650_MH125_cat34FHhighpurity.txt cat34FH_2=Datacard_MX650_MH125_cat34FHlowpurity.txt cat34SL_1=Datacard_MX650_MH125_cat34SLhighpurity.txt cat34SL_2=Datacard_MX650_MH125_cat34SLlowpurity.txt > Datacard_MX650_MH125_2016post_cat34.txt
+combineCards.py  cat34SLlowpurity=Datacard_MX650_MH125_2016post_combineFHSL_cat34SLlowpurity.txt cat34SLhighpurity=Datacard_MX650_MH125_2016post_combineFHSL_cat34SLhighpurity.txt cat34FHhowpurity=Datacard_MX650_MH125_2016post_combineFHSL_cat34FHlowpurity.txt cat34FHhighpurity=Datacard_MX650_MH125_2016post_combineFHSL_cat34FHhighpurity.txt > Datacard_MX650_MH125_2016post_cat34wwgg.txt
+sed -i 's/hgg 2 /hgg 200/g' Datacard_MX650_MH125_2016post_cat34*.txt
+text2workspace.py Datacard_MX650_MH125_2016post_cat34wwgg.txt -m 125
+text2workspace.py Datacard_MX650_MH125_2016post_cat34.txt -m 125
+combine -M AsymptoticLimits -m 125 -n MX650_MH125_2016post_cat34 -d Datacard_MX650_MH125_2016post_cat34.root
+combine -M AsymptoticLimits -m 125 -n MX650_MH125_2016post_cat34wwgg -d Datacard_MX650_MH125_2016post_cat34.root
+
+cd /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/2016postdatacard/datacard_MX700_MH125
+combineCards.py cat34FH_1=Datacard_MX700_MH125_cat34FHhighpurity.txt cat34FH_2=Datacard_MX700_MH125_cat34FHlowpurity.txt cat34SL_1=Datacard_MX700_MH125_cat34SLhighpurity.txt cat34SL_2=Datacard_MX700_MH125_cat34SLlowpurity.txt > Datacard_MX700_MH125_2016post_cat34.txt
+combineCards.py  cat34SLlowpurity=Datacard_MX700_MH125_2016post_combineFHSL_cat34SLlowpurity.txt cat34SLhighpurity=Datacard_MX700_MH125_2016post_combineFHSL_cat34SLhighpurity.txt cat34FHhowpurity=Datacard_MX700_MH125_2016post_combineFHSL_cat34FHlowpurity.txt cat34FHhighpurity=Datacard_MX700_MH125_2016post_combineFHSL_cat34FHhighpurity.txt > Datacard_MX700_MH125_2016post_cat34wwgg.txt
+sed -i 's/hgg 2 /hgg 200/g' Datacard_MX700_MH125_2016post_cat34*.txt
+text2workspace.py Datacard_MX700_MH125_2016post_cat34wwgg.txt -m 125
+text2workspace.py Datacard_MX700_MH125_2016post_cat34.txt -m 125
+combine -M AsymptoticLimits -m 125 -n MX700_MH125_2016post_cat34 -d Datacard_MX700_MH125_2016post_cat34.root
+combine -M AsymptoticLimits -m 125 -n MX700_MH125_2016post_cat34wwgg -d Datacard_MX700_MH125_2016post_cat34.root
+
+cd /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/2016postdatacard/datacard_MX750_MH125
+combineCards.py cat34FH_1=Datacard_MX750_MH125_cat34FHhighpurity.txt cat34FH_2=Datacard_MX750_MH125_cat34FHlowpurity.txt cat34SL_1=Datacard_MX750_MH125_cat34SLhighpurity.txt cat34SL_2=Datacard_MX750_MH125_cat34SLlowpurity.txt > Datacard_MX750_MH125_2016post_cat34.txt
+combineCards.py  cat34SLlowpurity=Datacard_MX750_MH125_2016post_combineFHSL_cat34SLlowpurity.txt cat34SLhighpurity=Datacard_MX750_MH125_2016post_combineFHSL_cat34SLhighpurity.txt cat34FHhowpurity=Datacard_MX750_MH125_2016post_combineFHSL_cat34FHlowpurity.txt cat34FHhighpurity=Datacard_MX750_MH125_2016post_combineFHSL_cat34FHhighpurity.txt > Datacard_MX750_MH125_2016post_cat34wwgg.txt
+sed -i 's/hgg 2 /hgg 200/g' Datacard_MX750_MH125_2016post_cat34*.txt
+text2workspace.py Datacard_MX750_MH125_2016post_cat34wwgg.txt -m 125
+text2workspace.py Datacard_MX750_MH125_2016post_cat34.txt -m 125
+combine -M AsymptoticLimits -m 125 -n MX750_MH125_2016post_cat34 -d Datacard_MX750_MH125_2016post_cat34.root
+combine -M AsymptoticLimits -m 125 -n MX750_MH125_2016post_cat34wwgg -d Datacard_MX750_MH125_2016post_cat34.root
+
+# cd /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/2016postdatacard/datacard_MX800_MH125
+# combineCards.py cat34FH_1=Datacard_MX800_MH125_cat34FHhighpurity.txt cat34FH_2=Datacard_MX800_MH125_cat34FHlowpurity.txt cat34SL_1=Datacard_MX800_MH125_cat34SLhighpurity.txt cat34SL_2=Datacard_MX800_MH125_cat34SLlowpurity.txt > Datacard_MX800_MH125_2016post_cat34.txt
+# combineCards.py  cat34SLlowpurity=Datacard_MX800_MH125_2016post_combineFHSL_cat34SLlowpurity.txt cat34SLhighpurity=Datacard_MX800_MH125_2016post_combineFHSL_cat34SLhighpurity.txt cat34FHhowpurity=Datacard_MX800_MH125_2016post_combineFHSL_cat34FHlowpurity.txt cat34FHhighpurity=Datacard_MX800_MH125_2016post_combineFHSL_cat34FHhighpurity.txt > Datacard_MX800_MH125_2016post_cat34wwgg.txt
+# sed -i 's/hgg 2 /hgg 200/g' Datacard_MX800_MH125_2016post_cat34*.txt
+# text2workspace.py Datacard_MX800_MH125_2016post_cat34wwgg.txt -m 125
+# text2workspace.py Datacard_MX800_MH125_2016post_cat34.txt -m 125
+# combine -M AsymptoticLimits -m 125 -n MX800_MH125_2016post_cat34 -d Datacard_MX800_MH125_2016post_cat34.root
+# combine -M AsymptoticLimits -m 125 -n MX800_MH125_2016post_cat34wwgg -d Datacard_MX800_MH125_2016post_cat34.root
+
+cd /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/2016postdatacard/datacard_MX850_MH125
+combineCards.py cat34FH_1=Datacard_MX850_MH125_cat34FHhighpurity.txt cat34FH_2=Datacard_MX850_MH125_cat34FHlowpurity.txt cat34SL_1=Datacard_MX850_MH125_cat34SLhighpurity.txt cat34SL_2=Datacard_MX850_MH125_cat34SLlowpurity.txt > Datacard_MX850_MH125_2016post_cat34.txt
+combineCards.py  cat34SLlowpurity=Datacard_MX850_MH125_2016post_combineFHSL_cat34SLlowpurity.txt cat34SLhighpurity=Datacard_MX850_MH125_2016post_combineFHSL_cat34SLhighpurity.txt cat34FHhowpurity=Datacard_MX850_MH125_2016post_combineFHSL_cat34FHlowpurity.txt cat34FHhighpurity=Datacard_MX850_MH125_2016post_combineFHSL_cat34FHhighpurity.txt > Datacard_MX850_MH125_2016post_cat34wwgg.txt
+sed -i 's/hgg 2 /hgg 200/g' Datacard_MX850_MH125_2016post_cat34*.txt
+text2workspace.py Datacard_MX850_MH125_2016post_cat34wwgg.txt -m 125
+text2workspace.py Datacard_MX850_MH125_2016post_cat34.txt -m 125
+combine -M AsymptoticLimits -m 125 -n MX850_MH125_2016post_cat34 -d Datacard_MX850_MH125_2016post_cat34.root
+combine -M AsymptoticLimits -m 125 -n MX850_MH125_2016post_cat34wwgg -d Datacard_MX850_MH125_2016post_cat34.root
+
+cd /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/2016postdatacard/datacard_MX1000_MH125
+combineCards.py cat34FH_1=Datacard_MX1000_MH125_cat34FHhighpurity.txt cat34FH_2=Datacard_MX1000_MH125_cat34FHlowpurity.txt cat34SL_1=Datacard_MX1000_MH125_cat34SLhighpurity.txt cat34SL_2=Datacard_MX1000_MH125_cat34SLlowpurity.txt > Datacard_MX1000_MH125_2016post_cat34.txt
+combineCards.py  cat34SLlowpurity=Datacard_MX1000_MH125_2016post_combineFHSL_cat34SLlowpurity.txt cat34SLhighpurity=Datacard_MX1000_MH125_2016post_combineFHSL_cat34SLhighpurity.txt cat34FHhowpurity=Datacard_MX1000_MH125_2016post_combineFHSL_cat34FHlowpurity.txt cat34FHhighpurity=Datacard_MX1000_MH125_2016post_combineFHSL_cat34FHhighpurity.txt > Datacard_MX1000_MH125_2016post_cat34wwgg.txt
+sed -i 's/hgg 2 /hgg 200/g' Datacard_MX1000_MH125_2016post_cat34*.txt
+text2workspace.py Datacard_MX1000_MH125_2016post_cat34wwgg.txt -m 125
+text2workspace.py Datacard_MX1000_MH125_2016post_cat34.txt -m 125
+combine -M AsymptoticLimits -m 125 -n MX1000_MH125_2016post_cat34 -d Datacard_MX1000_MH125_2016post_cat34.root
+combine -M AsymptoticLimits -m 125 -n MX1000_MH125_2016post_cat34wwgg -d Datacard_MX1000_MH125_2016post_cat34.root
+
+

@@ -1,0 +1,167 @@
++JobFlavour   = "workday"
+Executable = Run2_limit.sh
+Universe = vanilla
+Notification = ERROR
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+x509userproxy = $ENV(X509_USER_PROXY)
+Output = ./condor_logs/Run2_v9/Limit_MX250_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX250_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX250_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX250_MH125.txt MX250_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX260_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX260_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX260_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX260_MH125.txt MX260_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX270_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX270_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX270_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX270_MH125.txt MX270_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX280_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX280_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX280_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX280_MH125.txt MX280_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX300_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX300_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX300_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX300_MH125.txt MX300_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX320_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX320_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX320_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX320_MH125.txt MX320_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX350_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX350_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX350_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX350_MH125.txt MX350_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX400_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX400_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX400_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX400_MH125.txt MX400_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX450_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX450_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX450_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX450_MH125.txt MX450_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX500_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX500_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX500_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX500_MH125.txt MX500_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX550_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX550_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX550_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX550_MH125.txt MX550_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX600_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX600_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX600_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX600_MH125.txt MX600_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX650_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX650_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX650_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX650_MH125.txt MX650_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX700_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX700_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX700_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX700_MH125.txt MX700_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX750_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX750_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX750_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX750_MH125.txt MX750_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX800_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX800_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX800_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX800_MH125.txt MX800_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX850_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX850_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX850_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX850_MH125.txt MX850_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX1000_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX1000_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX1000_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX1000_MH125.txt MX1000_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX1100_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX1100_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX1100_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX1100_MH125.txt MX1100_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX1300_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX1300_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX1300_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX1300_MH125.txt MX1300_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX1400_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX1400_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX1400_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX1400_MH125.txt MX1400_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX1500_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX1500_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX1500_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX1500_MH125.txt MX1500_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX1600_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX1600_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX1600_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX1600_MH125.txt MX1600_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX1700_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX1700_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX1700_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX1700_MH125.txt MX1700_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX1800_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX1800_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX1800_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX1800_MH125.txt MX1800_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX1900_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX1900_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX1900_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX1900_MH125.txt MX1900_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX2000_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX2000_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX2000_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX2000_MH125.txt MX2000_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX2200_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX2200_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX2200_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX2200_MH125.txt MX2200_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX2400_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX2400_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX2400_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX2400_MH125.txt MX2400_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX2600_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX2600_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX2600_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX2600_MH125.txt MX2600_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX2800_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX2800_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX2800_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX2800_MH125.txt MX2800_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue
+Output = ./condor_logs/Run2_v9/Limit_MX3000_MH125_$(Process).stdout
+Error  = ./condor_logs/Run2_v9/Limit_MX3000_MH125_$(Process).err
+Log  = ./condor_logs/Run2_v9/Limit_MX3000_MH125_$(Process).log
+Arguments = /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard MX3000_MH125.txt MX3000_MH125 /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/run2_unblind/
+Queue

@@ -1,0 +1,105 @@
++JobFlavour   = "workday"
+Executable = condor_cat34.sh
+Universe = vanilla
+Notification = ERROR
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+MY.SingularityImage = '/cvmfs/unpacked.cern.ch/gitlab-registry.cern.ch/cms-cat/cmssw-lxplus/cmssw-el7-lxplus:latest/'
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+x509userproxy = $ENV(X509_USER_PROXY)
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX250_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX250_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX250_MH125_2016pre_$(Process).log
+Arguments = MX250_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX260_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX260_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX260_MH125_2016pre_$(Process).log
+Arguments = MX260_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX270_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX270_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX270_MH125_2016pre_$(Process).log
+Arguments = MX270_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX280_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX280_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX280_MH125_2016pre_$(Process).log
+Arguments = MX280_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX300_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX300_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX300_MH125_2016pre_$(Process).log
+Arguments = MX300_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX320_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX320_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX320_MH125_2016pre_$(Process).log
+Arguments = MX320_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX350_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX350_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX350_MH125_2016pre_$(Process).log
+Arguments = MX350_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX400_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX400_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX400_MH125_2016pre_$(Process).log
+Arguments = MX400_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX450_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX450_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX450_MH125_2016pre_$(Process).log
+Arguments = MX450_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX500_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX500_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX500_MH125_2016pre_$(Process).log
+Arguments = MX500_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX550_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX550_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX550_MH125_2016pre_$(Process).log
+Arguments = MX550_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX600_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX600_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX600_MH125_2016pre_$(Process).log
+Arguments = MX600_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX650_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX650_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX650_MH125_2016pre_$(Process).log
+Arguments = MX650_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX700_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX700_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX700_MH125_2016pre_$(Process).log
+Arguments = MX700_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX750_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX750_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX750_MH125_2016pre_$(Process).log
+Arguments = MX750_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX800_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX800_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX800_MH125_2016pre_$(Process).log
+Arguments = MX800_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX850_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX850_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX850_MH125_2016pre_$(Process).log
+Arguments = MX850_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX900_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX900_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX900_MH125_2016pre_$(Process).log
+Arguments = MX900_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
+Output = ./condor_logs/cat34/240604_2234/finalfit_MX1000_MH125_2016pre_$(Process).stdout
+Error  = ./condor_logs/cat34/240604_2234/finalfit_MX1000_MH125_2016pre_$(Process).err
+Log  = ./condor_logs/cat34/240604_2234/finalfit_MX1000_MH125_2016pre_$(Process).log
+Arguments = MX1000_MH125 2016pre /eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong/hhwwgg_workspace/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 

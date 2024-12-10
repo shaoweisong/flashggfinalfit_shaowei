@@ -14,10 +14,15 @@ signalScriptCfg = {
   'massPoints':'125',
 
   #Photon shape systematics  
-  'scales':'scale', # separate nuisance per year
-  'scalesCorr':'material,fnuf', # correlated across years
+  # 'scales':'scale', # separate nuisance per year
+  'scales':'', # separate nuisance per year
+  'scalesCorr':'', # correlated across years
   'scalesGlobal':'', # affect all processes equally, correlated across years
-  'smears':'smear', # separate nuisance per year
+  'smears':'', # separate nuisance per year
+
+  # 'scalesCorr':'material,fnuf', # correlated across years
+  # 'scalesGlobal':'', # affect all processes equally, correlated across years
+  # 'smears':'smear', # separate nuisance per year
 
   # Job submission options
   'batch':'local', # ['condor','SGE','IC','local']

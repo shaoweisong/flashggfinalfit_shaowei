@@ -1,0 +1,127 @@
++JobFlavour   = "microcentury"
+Executable = condor_cat12_nosys.sh
+Universe = vanilla
+Notification = ERROR
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+x509userproxy = $ENV(X509_USER_PROXY)
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX500_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX500_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX500_MH125_2018_$(Process).log
+Arguments = MX500_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX550_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX550_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX550_MH125_2018_$(Process).log
+Arguments = MX550_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX600_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX600_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX600_MH125_2018_$(Process).log
+Arguments = MX600_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX650_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX650_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX650_MH125_2018_$(Process).log
+Arguments = MX650_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX700_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX700_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX700_MH125_2018_$(Process).log
+Arguments = MX700_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX750_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX750_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX750_MH125_2018_$(Process).log
+Arguments = MX750_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX800_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX800_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX800_MH125_2018_$(Process).log
+Arguments = MX800_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX850_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX850_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX850_MH125_2018_$(Process).log
+Arguments = MX850_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1000_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1000_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1000_MH125_2018_$(Process).log
+Arguments = MX1000_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1100_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1100_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1100_MH125_2018_$(Process).log
+Arguments = MX1100_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1200_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1200_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1200_MH125_2018_$(Process).log
+Arguments = MX1200_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1300_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1300_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1300_MH125_2018_$(Process).log
+Arguments = MX1300_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1400_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1400_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1400_MH125_2018_$(Process).log
+Arguments = MX1400_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1500_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1500_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1500_MH125_2018_$(Process).log
+Arguments = MX1500_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1600_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1600_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1600_MH125_2018_$(Process).log
+Arguments = MX1600_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1700_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1700_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1700_MH125_2018_$(Process).log
+Arguments = MX1700_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1800_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1800_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1800_MH125_2018_$(Process).log
+Arguments = MX1800_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1900_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1900_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX1900_MH125_2018_$(Process).log
+Arguments = MX1900_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX2000_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX2000_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX2000_MH125_2018_$(Process).log
+Arguments = MX2000_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX2200_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX2200_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX2200_MH125_2018_$(Process).log
+Arguments = MX2200_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX2400_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX2400_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX2400_MH125_2018_$(Process).log
+Arguments = MX2400_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX2600_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX2600_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX2600_MH125_2018_$(Process).log
+Arguments = MX2600_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX2800_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX2800_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX2800_MH125_2018_$(Process).log
+Arguments = MX2800_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 
+Output = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX3000_MH125_2018_$(Process).stdout
+Error  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX3000_MH125_2018_$(Process).err
+Log  = ./condor_logs/Run2018_v9/240526_2234/finalfit_MX3000_MH125_2018_$(Process).log
+Arguments = MX3000_MH125 2018 /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/checkboundary/sigeff08/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor 2018_08
+Queue 

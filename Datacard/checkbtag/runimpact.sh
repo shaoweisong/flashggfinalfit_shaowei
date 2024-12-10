@@ -1,0 +1,5 @@
+text2workspace.py MX500_MH125.txt -m 125 -o MX500_MH125.root
+combineTool.py -M Impacts -d MX500_MH125.root -m 125 --freezeParameters MH -n .impacts --setParameterRanges r=-50,50 --doInitialFit -t -1 --expectSignal 1 --robustFit 1 --X-rt MINIMIZER_freezeDisassociatedParams   --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --cminDefaultMinimizerStrategy 0 
+combineTool.py -M Impacts -d MX500_MH125.root -m 125 --freezeParameters MH -n .impacts --setParameterRanges r=-50,50 --doFits --robustFit 1 -t -1 --expectSignal 1   --X-rt MINIMIZER_freezeDisassociatedParams   --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --cminDefaultMinimizerStrategy 0 
+combineTool.py -M Impacts -d MX500_MH125.root -m 125 --freezeParameters MH -n .impacts --setParameterRanges r=-50,50 -o MX500_MH125.json -t -1 --X-rt MINIMIZER_freezeDisassociatedParams   --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --cminDefaultMinimizerStrategy 0 
+plotImpacts.py -i MX500_MH125.json -o MX500_MH125

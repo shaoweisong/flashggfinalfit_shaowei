@@ -661,7 +661,8 @@ void plotAllPdfs(RooRealVar *mgg, RooAbsData *data, RooMultiPdf *mpdf, RooCatego
 	leg->SetFillColor(0);
 	leg->SetLineColor(0);
 	leg->SetBorderSize(0);
-	leg->SetTextSize(0.03);
+	//try to make it pretty
+	leg->SetTextSize(0.01);
 
 	int color[10] = {kBlue,kOrange,kGreen,kRed,kMagenta,kPink,kViolet,kCyan,kYellow,kBlack};
 	for (int pInd=0; pInd<mpdf->getNumPdfs(); pInd++){
@@ -844,7 +845,7 @@ int main(int argc, char* argv[]){
 	cout << "[INFO] "<< "Current PDF and data:" << endl;
 	cout<< "[INFO] " << "\t"; mpdf->getCurrentPdf()->Print();
 	cout << "[INFO] "<< "\t"; data->Print();
-
+	
 	// plot all the pdfs for reference
 	if (isMultiPdf || verbose_) plotAllPdfs(mgg,data,mpdf,mcat,Form("%s/allPdfs_%s",outDir.c_str(),catname.c_str()),cat,unblind, isFlashgg_, flashggCats_, year_);
 

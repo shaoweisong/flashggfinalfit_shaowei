@@ -5,7 +5,6 @@ let see if the magic can work
 '''
 import codecs
 import uproot 
-import awkward as ak
 import json
 from collections import defaultdict
 # import ROOT
@@ -127,7 +126,7 @@ def run_signal_plot(outputExt, cats, exts,log_packaged_name,ws_path,inputpath_na
     command = "cp outdir_packaged_" + ws_path + "/*.root" + " " + inputpath_name +  process + "_"+ ws_path + "/" + cp_name
     cp_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     logging.info("run cp the signalfit output root file to ws \n command :{0}".format(command))
-    command = "cp outdir_packaged_" + ws_path + "/Plots/*.png" + " " + inputpath_name +  process + "_"+ ws_path + "/" 
+    command = "cp outdir_packaged_" + ws_path + "/Plots/*.pdf" + " " + inputpath_name +  process + "_"+ ws_path + "/" 
     cppng_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     logging.info("run cp the signalfit output root file to ws \n command :{0}".format(command))
     logging.info("end: {}".format(time.time()))
@@ -167,7 +166,7 @@ def run_backgroundfit(ws_data_path, log_name, inputpath_name, ext_name, cp_name)
     cp_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     logging.info("end: {}".format(time.time()))
     
-    command = "cp outdir_" + ext_name + "/bkgfTest-Data/*.png" +  " " + inputpath_name + ws_data_path +"/" 
+    command = "cp outdir_" + ext_name + "/bkgfTest-Data/*.pdf" +  " " + inputpath_name + ws_data_path +"/" 
     cppng_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     logging.info("end: {}".format(time.time()))
 
@@ -191,21 +190,24 @@ def run_makeDatacard(ws_sig_path,output_card_name,log_name,channel,process):
 
     run_makeDatacard_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     logging.info("run makeDatacard \n command :{0}".format(command))
-    # write the branching ratio info in it 
-    # if("FHSL" in channel):
     add_br_note = open(output_card_name+".txt", 'a')
-    # add_br_note.write("CMS_wwgg_br_HH_WWgg      rateParam  *  " +process+ "*  0.000970198 \n CMS_wwgg_br_WW_4Q_2Qlnu     rateParam  *  " +process+ "*  0.8899 \n nuisance  edit  freeze  CMS_wwgg_br_HH_WWgg \n nuisance  edit  freeze  CMS_wwgg_br_WW_4Q_2Qlnu")
-    logging.info("end: {}".format(time.time()))
 
-mass_list=['MX3000_MH125']
+    add_br_note.write("CMS_wwgg_br_HH_WWgg      rateParam  *  " +process+ "*  2 \n nuisance  edit  freeze  CMS_wwgg_br_HH_WWgg")
+    logging.info("end: {}".format(time.time()))
+# mass_list=['MX500_MH125','MX550_MH125','MX600_MH125','MX650_MH125','MX700_MH125','MX750_MH125','MX800_MH125', 'MX1100_MH125', 'MX1200_MH125', 'MX1300_MH125', 'MX1400_MH125', 'MX1500_MH125', 'MX1600_MH125', 'MX1700_MH125', 'MX1800_MH125','MX1900_MH125', 'MX2600_MH125', 'MX2800_MH125','MX2400_MH125','MX3000_MH125']
+    # 缺少'MX2000_MH125', 'MX2200_MH125',
+mass_list=['MX500_MH125','MX250_MH125','MX1000_MH125']
+# mass_list=['MX500_MH125']
 final_state = ""
-cat_list = ['combineFHSL_cat12highpurity']
+# cat_list = ['combineFHSL_cat34highpurity','combineFHSL_cat34lowpurity','bbgg_cat34highpurity','bbgg_cat34lowpurity','zzgg_cat34highpurity','zzgg_cat34lowpurity']
+cat_list = ['combineFHSL_cat34highpurity','combineFHSL_cat34lowpurity']
 for mass in mass_list:
     for cat in cat_list:
         # ------------------------------------- log path -------------------------------------
-        log_path = "/eos/user/s/shsong/hhwwgg_workspace/Final_limit/cat12log/"
+        log_path = "/eos/user/s/shsong/hhwwgg_workspace/Final_limit/cat34log/"
         # ------------------------------------- background fit -------------------------------------
-        input_path_name = "/eos/user/s/shsong/" + mass + "/"
+        # input_path_name = "/eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/2017/" + mass + "/"
+        input_path_name = "/afs/cern.ch/user/s/shsong/WWggDNN/bdt/PBDT_HH_FHSL_combine_2017/flashgginput/" + mass + "/"
         ws_data_path = "ws_2017_"+ cat
         output_data_root_name = "Data_2017_"+ cat + "_"+ mass + ".root"
         log_name_data = log_path + "bkg_2017_"+cat+".log"

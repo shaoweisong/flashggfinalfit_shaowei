@@ -1,6 +1,7 @@
 # Editors temp files
 *.swp
 *~
+*.txt
 
 # SCRAM business
 __init__.py
@@ -29,11 +30,14 @@ AutoDict_*
 *.log
 *.png
 *.pdf
+*.err
 *.out
 *.tmp
 *.pcm
 *.o
-
+Signal/config_ggh*.py
 # Output dirs in signal and bkg
 Signal/outdir_*
 Background/outdir_*
+Datacard/yield*
+createddatacard_condor/condor_logs/

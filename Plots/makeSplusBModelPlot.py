@@ -184,6 +184,7 @@ else:
 
 # Fill datasets
 print " --> Extracting datasets"
+print cats
 # Loop over bins and add entry for each "weight" to cat datasets 
 for i in range(d_obs.numEntries()):
   p = d_obs.get(i)
@@ -415,7 +416,6 @@ for cidx in range(len(cats)):
 	  h_wbpdf_ratio_sum += h_wbpdf_ratio.Clone()
 	  for b,h in h_wspdf.iteritems(): h_wspdf_sum[b] += h.Clone()
 	  h_wspdf_ratio_sum += h_wspdf_ratio.Clone()
-
   # Make plot for individual cats
   if not opt.skipIndividualCatPlots:
     print "    * making plot"

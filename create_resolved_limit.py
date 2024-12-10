@@ -25,7 +25,7 @@ def run_Tree2WS_sig(inputpath_name, inputfile_name, log_file_name, ws_path, outp
     print("process_prefix: ", process_prefix)
     os.chdir("/afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Trees2WS")
     # no need to change the config file since all are auto set
-    command = " python trees2ws.py --inputConfig config_sys.py --inputTreeFile " + inputpath_name+inputfile_name + " --inputMass 125  --doSystematics --productionMode " + process_prefix + " --year 2017  > " + log_file_name+ " 2>&1"
+    command = " python trees2ws.py --inputConfig config_sys16post.py --inputTreeFile " + inputpath_name+inputfile_name + " --inputMass 125  --doSystematics --productionMode " + process_prefix + " --year 2016post  > " + log_file_name+ " 2>&1"
     logging.info("the Tree2WS command:")
     logging.info(command)
     # run trees2ws at shell
@@ -60,17 +60,17 @@ def run_ftest(ws_path, log_name, inputpath_name, process):
     logging.info("begin: {}".format(time.time()))
     os.chdir("/afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Signal")
     # modify the config file
-    #copy config_toy2017.py
+    #copy config_toy2016post.py
     # remove the old output dir
-    command = "rm -rf outdir_dcb_2017_" + ws_path
+    command = "rm -rf outdir_dcb_2016post_" + ws_path
     rm_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     # remove the old packaged dir
     command = "rm -rf outdir_packaged_" + ws_path
     rm_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
-    #copy config_toy2017.py
-    command = "cp config_toy2017.py " + "config_" +process+ ws_path + ".py"
+    #copy config_toy2016post.py
+    command = "cp config_toy2016post.py " + "config_" +process+ ws_path + ".py"
     run_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
-    logging.info("copy config_toy2017.py \n command :{0}".format(command))
+    logging.info("copy config_toy2016post.py \n command :{0}".format(command))
     time.sleep(2)
     # sed config_*.py
     print("ws_path: ", ws_path)
@@ -109,7 +109,7 @@ def run_signalfit(ws_path, log_name, inputpath_name, process):
     logging.info("run signalfit \n command :{0}".format(command))
     run_signalfit_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     # cp the signalfit output root file to ws
-    command = "cp outdir_dcb_2017_" + ws_path + "/signalFit/output/*.root" + " " + inputpath_name +  process + "_"+ws_path
+    command = "cp outdir_dcb_2016post_" + ws_path + "/signalFit/output/*.root" + " " + inputpath_name +  process + "_"+ws_path
     cp_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     logging.info("run cp the signalfit output root file to ws \n command :{0}".format(command))
 
@@ -119,18 +119,20 @@ def run_signal_plot(outputExt, cats, exts,log_packaged_name,ws_path,inputpath_na
     logging.info("begin: {}".format(time.time()))
     os.chdir("/afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Signal")
     # run packaged
-    command = "python RunPackager.py --cats " + cats + " --exts " + exts + "  --batch local  --massPoints 125 --year 2017 --outputExt " + outputExt + " > " + log_packaged_name + " 2>&1"
+    command = "python RunPackager.py --cats " + cats + " --exts " + exts + "  --batch local  --massPoints 125 --year 2016post --outputExt " + outputExt + " > " + log_packaged_name + " 2>&1"
+    print(command)
     run_packaged_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     logging.info("run packaged \n command :{0}".format(command))
     # run plotter
-    command = "python RunPlotter2017.py --cats " + cats + " --procs all --years 2017 --ext " + outputExt + " > " + log_plotter_name + " 2>&1"
+    command = "python RunPlotter2016post.py --cats " + cats + " --procs all --years 2016post --ext " + outputExt + " > " + log_plotter_name + " 2>&1"
     run_plotter_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
+    print(command)
     logging.info("run plotter \n command :{0}".format(command))
     # cp the signalfit output root file to ws
     command = "cp outdir_packaged_" + ws_path + "/*.root" + " " + inputpath_name +  process + "_"+ ws_path + "/" + cp_name
     cp_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     logging.info("run cp the signalfit output root file to ws \n command :{0}".format(command))
-    command = "cp outdir_packaged_" + ws_path + "/Plots/*.png" + " " + inputpath_name +  process + "_"+ ws_path + "/" 
+    command = "cp outdir_packaged_" + ws_path + "/Plots/*.pdf" + " " + inputpath_name +  process + "_"+ ws_path + "/" 
     cppng_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     logging.info("run cp the signalfit output root file to ws \n command :{0}".format(command))
     logging.info("end: {}".format(time.time()))
@@ -142,10 +144,10 @@ def run_backgroundfit(ws_data_path, log_name, inputpath_name, ext_name, cp_name)
     command = "rm -rf outdir_" + ext_name
     rm_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     # modify the config file
-    #copy config_toy2017.py
-    command = "cp config_toy2017.py " + "config_" + ws_data_path + ".py"
+    #copy config_toy2016post.py
+    command = "cp config_toy2016post.py " + "config_" + ws_data_path + ".py"
     run_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
-    logging.info("copy config_toy2017.py \n command :{0}".format(command))
+    logging.info("copy config_toy2016post.py \n command :{0}".format(command))
     time.sleep(2)
     # sed config_*.py
     command1 = 'sed -i "s#ws_path#' + ws_data_path + '#g" ' +  "config_" + ws_data_path + ".py" 
@@ -170,7 +172,7 @@ def run_backgroundfit(ws_data_path, log_name, inputpath_name, ext_name, cp_name)
     cp_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     logging.info("end: {}".format(time.time()))
     
-    command = "cp outdir_" + ext_name + "/bkgfTest-Data/*.png" +  " " + inputpath_name + ws_data_path +"/" 
+    command = "cp outdir_" + ext_name + "/bkgfTest-Data/*.pdf" +  " " + inputpath_name + ws_data_path +"/" 
     cppng_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     logging.info("end: {}".format(time.time()))
  
@@ -190,7 +192,7 @@ def run_yields(ws_sig_path,ws_bkg_path, inputpath_name,log_name, process):
     logging.info("begin: {}".format(time.time()))
     os.chdir("/afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard")
     # run Runyields
-    command = "python RunYields.py --inputWSDirMap 2017=" +inputpath_name+ process + "_" + ws_sig_path+" --sigModelWSDir " + inputpath_name+ process + "_" + ws_sig_path+" --bkgModelWSDir " + inputpath_name+  ws_bkg_path + " --cats auto --doSystematics --procs auto --batch local --ext "+ ws_sig_path+ ">" + log_name+ " 2>&1"
+    command = "python RunYields_16resolved.py --inputWSDirMap 2016post=" +inputpath_name+ process + "_" + ws_sig_path+" --sigModelWSDir " + inputpath_name+ process + "_" + ws_sig_path+" --bkgModelWSDir " + inputpath_name+  ws_bkg_path + " --cats auto --doSystematics --procs auto --batch local --ext "+ ws_sig_path+ ">" + log_name+ " 2>&1"
 
     run_yields_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     logging.info("run yields \n command :{0}".format(command))
@@ -201,7 +203,7 @@ def run_makeDatacard(ws_sig_path,output_card_name,log_name,channel,process):
     os.chdir("/afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard")
     # run RunmakeDatacard
       
-    command = "python makeDatacard.py --years 2017 --doSystematics --prune --ext " + ws_sig_path + " --output "+ output_card_name+  ">" + log_name+ " 2>&1"
+    command = "python makeDatacard_16resolved.py --years 2016post --doSystematics --prune --ext " + ws_sig_path + " --output "+ output_card_name+  ">" + log_name+ " 2>&1"
 
     run_makeDatacard_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     logging.info("run makeDatacard \n command :{0}".format(command))
@@ -209,6 +211,7 @@ def run_makeDatacard(ws_sig_path,output_card_name,log_name,channel,process):
     # if("FHSL" in channel):
     add_br_note = open(output_card_name+".txt", 'a')
     # add_br_note.write("CMS_wwgg_br_HH_WWgg      rateParam  *  " +process+ "*  0.000970198 \n CMS_wwgg_br_WW_4Q_2Qlnu     rateParam  *  " +process+ "*  0.8899 \n nuisance  edit  freeze  CMS_wwgg_br_HH_WWgg \n nuisance  edit  freeze  CMS_wwgg_br_WW_4Q_2Qlnu")
+    add_br_note.write("CMS_wwgg_br_HH_WWgg      rateParam  *  " +process+ "*  2 \n nuisance  edit  freeze  CMS_wwgg_br_HH_WWgg")
     logging.info("end: {}".format(time.time()))
 
 def run_combine(output_card_name,log_name,output_file_name):
@@ -220,32 +223,33 @@ def run_combine(output_card_name,log_name,output_file_name):
     logging.info("run combine \n command :{0}".format(command))
     logging.info("end: {}".format(time.time()))
 
-# mass_list=['MX1000_MH125', 'MX250_MH125', 'MX260_MH125', 'MX270_MH125', 'MX280_MH125', 'MX300_MH125', 'MX320_MH125', 'MX350_MH125', 'MX400_MH125', 'MX450_MH125', 'MX500_MH125', 'MX550_MH125', 'MX600_MH125', 'MX650_MH125', 'MX700_MH125', 'MX750_MH125', 'MX800_MH125', 'MX850_MH125']
-mass_list=['MX320_MH125']
+# mass_list=['MX250_MH125','MX260_MH125', 'MX270_MH125', 'MX280_MH125', 'MX300_MH125', 'MX320_MH125', 'MX350_MH125', 'MX400_MH125', 'MX450_MH125', 'MX500_MH125', 'MX550_MH125', 'MX600_MH125', 'MX650_MH125', 'MX700_MH125', 'MX750_MH125', 'MX800_MH125', 'MX850_MH125','MX1000_MH125']
+mass_list=['MX1000_MH125']
 final_state = ""
-cat_list = ['combineFHSL_cat34highpurity','combineFHSL_cat34lowpurity','bbgg_cat34highpurity','bbgg_cat34lowpurity','zzgg_cat34highpurity','zzgg_cat34lowpurity']
+# cat_list = ['combineFHSL_cat34lowpurity','combineFHSL_cat34highpurity','bbgg_cat34highpurity','bbgg_cat34lowpurity','zzgg_cat34highpurity','zzgg_cat34lowpurity']
+cat_list = ['bbgg_cat34highpurity']
 for mass in mass_list:
     for cat in cat_list:
         # ------------------------------------- log path -------------------------------------
         log_path = "/eos/user/s/shsong/hhwwgg_workspace/Final_limit/cat34log/"
         # ------------------------------------- background fit -------------------------------------
-        input_path_name = "/eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/2017/" + mass + "/"
-        ws_data_path = "ws_2017_"+ cat
-        output_data_root_name = "Data_2017_"+ cat + "_"+ mass + ".root"
-        log_name_data = log_path + "bkg_2017_"+cat+".log"
-        run_Tree2WS_data(inputpath_name = input_path_name , ws_data_path=ws_data_path, output_data_root_name=output_data_root_name)
-        ext_name = "ws_2017_" + cat
-        run_backgroundfit(ws_data_path=ws_data_path, log_name = log_name_data , inputpath_name = input_path_name , ext_name=ext_name, cp_name="CMS-HGG_multipdf_"+cat+"_2017.root")
-        # # ------------------------------------- signal fit -------------------------------------
+        input_path_name = "/eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/2016post/" + mass + "/"
+        ws_data_path = "ws_2016post_"+ cat
+        output_data_root_name = "Data_2016post_"+ cat + "_"+ mass + ".root"
+        log_name_data = log_path + "bkg_2016post_"+cat+".log"
+        # run_Tree2WS_data(inputpath_name = input_path_name , ws_data_path=ws_data_path, output_data_root_name=output_data_root_name)
+        ext_name = "ws_2016post_" + cat
+        # run_backgroundfit(ws_data_path=ws_data_path, log_name = log_name_data , inputpath_name = input_path_name , ext_name=ext_name, cp_name="CMS-HGG_multipdf_"+cat+"_2016post.root")
+        # # # ------------------------------------- signal fit -------------------------------------
 
-        input_file_name_signal = "CombineFHSL_"+ mass +"_2017_"+cat+".root"
-        log_file_name_signal = mass +"_hhwwgg_MC_2017_"+cat+".log"
-        ws_path_signal = mass +"_2017_"+cat
-        output_root_name_signal = "output_Signal"+mass + cat + "_M125_2017_13TeV_amcatnloFXFX_pythia8_gghh" + final_state + ".root"
+        input_file_name_signal = "CombineFHSL_"+ mass +"_2016post_"+cat+".root"
+        log_file_name_signal = mass +"_hhwwgg_MC_2016post_"+cat+".log"
+        ws_path_signal = mass +"_2016post_"+cat
+        output_root_name_signal = "output_Signal"+mass + cat + "_M125_2016post_13TeV_amcatnloFXFX_pythia8_gghh" + final_state + ".root"
         run_Tree2WS_sig(inputpath_name = input_path_name ,inputfile_name=input_file_name_signal,log_file_name= log_path + "Tree2WS_" + log_file_name_signal, ws_path = ws_path_signal, output_sig_root_name=output_root_name_signal, process='ws_gghh'+ final_state)
         run_ftest(ws_path = ws_path_signal, log_name = log_path + "signal_ftest_" + log_file_name_signal, inputpath_name= input_path_name, process='gghh'+ final_state)
         run_signalfit(ws_path = ws_path_signal, log_name = log_path +  "signal_signalfit_" + log_file_name_signal, inputpath_name=input_path_name, process='ws_gghh'+ final_state)
-        run_signal_plot(cats=cat, exts="dcb_2017_" + mass +"_2017_" + cat, outputExt="packaged_" + mass +"_2017_" + cat, log_packaged_name = log_path + "packaged_" + mass + cat+".log", ws_path=ws_path_signal, inputpath_name =input_path_name, log_plotter_name = log_path + "plotter_" + mass + cat+".log", cp_name="CMS-HGG_sigfit_packaged_"+cat+"_2017.root", process = 'ws_gghh'+ final_state)
-        run_yields(ws_sig_path=ws_path_signal, log_name = log_path + mass +"_2017_" + cat +"_yields.log" , inputpath_name = input_path_name, ws_bkg_path = ws_data_path, process='ws_gghh'+ final_state )
-        run_makeDatacard(ws_sig_path=ws_path_signal, log_name = log_path + mass + cat + "_makeDatacard.log" , output_card_name = "Datacard_" + mass +"_2017_" + cat, channel=mass,process='gghh'+ final_state) 
+        run_signal_plot(cats=cat, exts="dcb_2016post_" + mass +"_2016post_" + cat, outputExt="packaged_" + mass +"_2016post_" + cat, log_packaged_name = log_path + "packaged_" + mass + cat+".log", ws_path=ws_path_signal, inputpath_name =input_path_name, log_plotter_name = log_path + "plotter_" + mass + cat+".log", cp_name="CMS-HGG_sigfit_packaged_"+cat+"_2016post.root", process = 'ws_gghh'+ final_state)
+        # run_yields(ws_sig_path=ws_path_signal, log_name = log_path + mass +"_2016post_" + cat +"_yields.log" , inputpath_name = input_path_name, ws_bkg_path = ws_data_path, process='ws_gghh'+ final_state )
+        # run_makeDatacard(ws_sig_path=ws_path_signal, log_name = log_path + mass + cat + "_makeDatacard.log" , output_card_name = "Datacard_" + mass +"_2016post_" + cat, channel=mass,process='gghh'+ final_state) 
 

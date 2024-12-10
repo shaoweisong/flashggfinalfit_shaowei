@@ -1,0 +1,48 @@
+mkdir 2016postdatacard/datacard_MX500_MH125/
+mkdir 2016postdatacard/datacard_MX550_MH125/
+mkdir 2016postdatacard/datacard_MX600_MH125/
+mkdir 2016postdatacard/datacard_MX650_MH125/
+mkdir 2016postdatacard/datacard_MX700_MH125/
+mkdir 2016postdatacard/datacard_MX750_MH125/
+mkdir 2016postdatacard/datacard_MX800_MH125/
+mkdir 2016postdatacard/datacard_MX850_MH125/
+mkdir 2016postdatacard/datacard_MX1000_MH125/
+mkdir 2016postdatacard/datacard_MX1100_MH125/
+mkdir 2016postdatacard/datacard_MX1200_MH125/
+mkdir 2016postdatacard/datacard_MX1300_MH125/
+mkdir 2016postdatacard/datacard_MX1400_MH125/
+mkdir 2016postdatacard/datacard_MX1500_MH125/
+mkdir 2016postdatacard/datacard_MX1600_MH125/
+mkdir 2016postdatacard/datacard_MX1700_MH125/
+mkdir 2016postdatacard/datacard_MX1800_MH125/
+mkdir 2016postdatacard/datacard_MX1900_MH125/
+mkdir 2016postdatacard/datacard_MX2000_MH125/
+mkdir 2016postdatacard/datacard_MX2200_MH125/
+mkdir 2016postdatacard/datacard_MX2400_MH125/
+mkdir 2016postdatacard/datacard_MX2600_MH125/
+mkdir 2016postdatacard/datacard_MX2800_MH125/
+mkdir 2016postdatacard/datacard_MX3000_MH125/
+cp Datacard_MX500_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX500_MH125/
+cp Datacard_MX550_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX550_MH125/
+cp Datacard_MX600_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX600_MH125/
+cp Datacard_MX650_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX650_MH125/
+cp Datacard_MX700_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX700_MH125/
+cp Datacard_MX750_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX750_MH125/
+cp Datacard_MX800_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX800_MH125/
+cp Datacard_MX850_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX850_MH125/
+cp Datacard_MX1000_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX1000_MH125/
+cp Datacard_MX1100_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX1100_MH125/
+cp Datacard_MX1200_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX1200_MH125/
+cp Datacard_MX1300_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX1300_MH125/
+cp Datacard_MX1400_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX1400_MH125/
+cp Datacard_MX1500_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX1500_MH125/
+cp Datacard_MX1600_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX1600_MH125/
+cp Datacard_MX1700_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX1700_MH125/
+cp Datacard_MX1800_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX1800_MH125/
+cp Datacard_MX1900_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX1900_MH125/
+cp Datacard_MX2000_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX2000_MH125/
+cp Datacard_MX2200_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX2200_MH125/
+cp Datacard_MX2400_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX2400_MH125/
+cp Datacard_MX2600_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX2600_MH125/
+cp Datacard_MX2800_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX2800_MH125/
+cp Datacard_MX3000_MH125_2016post_*_cat12*.txt 2016postdatacard/datacard_MX3000_MH125/
