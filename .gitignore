@@ -2,6 +2,7 @@
 *.swp
 *~
 *.txt
+log.sh
 
 # SCRAM business
 __init__.py
