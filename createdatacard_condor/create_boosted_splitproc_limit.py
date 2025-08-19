@@ -14,7 +14,8 @@ import sys
 import subprocess
 import time
 import argparse
-
+import logging
+logger = logging.getLogger(__name__)
 parser = argparse.ArgumentParser(description='Process some integers.')
 parser.add_argument('--mass',type=str,default="MX3000_MH125", help='mass')
 parser.add_argument('--year',type=str,default="2018", help='year')
@@ -101,7 +102,7 @@ def run_signalfit(ws_path, inputpath_name, process):
     command = "python RunSignalScripts.py --inputConfig " +  "config_" +process_prefix+ ws_path + ".py"+ " --mode 'signalFit'  "
     run_signalfit_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     # cp the signalfit output root file to ws
-    command = "cp outdir_dcb_"+year+"_" + ws_path + "/signalFit/output/*.root" + " " + inputpath_name +  process + "_"+ws_path
+    command = "cp outdir_"+year+"_" + ws_path + "/signalFit/output/*.root" + " " + inputpath_name +  process + "_"+ws_path
     cp_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     os.chdir("..")
 def run_signal_plot(outputExt, cats, exts,ws_path,inputpath_name, cp_name, process):
@@ -170,7 +171,8 @@ def run_yields(ws_sig_path,ws_bkg_path, inputpath_name, process):
         print("bbgg in process")
         command = "python RunYields_"+yield_cat+"_bbgg.py --inputWSDirMap "+year+"=" +inputpath_name+ process + "_" + ws_sig_path+" --sigModelWSDir " + inputpath_name+ process + "_" + ws_sig_path+" --bkgModelWSDir " + inputpath_name+  ws_bkg_path + " --cats auto --doSystematics --procs "+process.split("ws_")[-1]+" --batch local --ext "+ ws_sig_path
     else:
-        command = "python RunYields_"+yield_cat+".py --inputWSDirMap "+year+"=" +inputpath_name+ process + "_" + ws_sig_path+" --sigModelWSDir " + inputpath_name+ process + "_" + ws_sig_path+" --bkgModelWSDir " + inputpath_name+  ws_bkg_path + " --cats auto --doSystematics --procs "+process.split("ws_")[-1]+" --batch local --ext "+ ws_sig_path
+        command = "python RunYields_"+yield_cat+".py  --inputWSDirMap "+year+"=" +inputpath_name+ process + "_" + ws_sig_path+" --sigModelWSDir " + inputpath_name+ process + "_" + ws_sig_path+" --bkgModelWSDir " + inputpath_name+  ws_bkg_path + " --cats auto --doSystematics --procs "+process.split("ws_")[-1]+" --batch local --ext "+ ws_sig_path
+    logger.debug("Yield command for process %s: %s", process, command)
     run_yields_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     os.chdir("..")
 def run_makeDatacard(ws_sig_path,output_card_name,channel,process):
@@ -182,19 +184,18 @@ def run_makeDatacard(ws_sig_path,output_card_name,channel,process):
         command = "python makeDatacard_"+yield_cat+"_bbgg.py --years "+year+" --doSystematics --prune --ext " + ws_sig_path + " --output "+ output_card_name  
     elif "zzgg" in process:
         command = "python makeDatacard_"+yield_cat+"_zzgg.py --years "+year+" --doSystematics --prune --ext " + ws_sig_path + " --output "+ output_card_name  
+    elif "ttgg" in process:
+        command = "python makeDatacard_"+yield_cat+"_ttgg.py --years "+year+" --doSystematics --prune --ext " + ws_sig_path + " --output "+ output_card_name  
     else:
         command = "python makeDatacard_"+yield_cat+"_singlehiggs.py --years "+year+" --doSystematics --prune --ext " + ws_sig_path + " --output "+ output_card_name
+    logger.debug("Datacard command for process %s: %s", process, command)        
+
     run_makeDatacard_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     # write the branching ratio info in it 
     # if("FHSL" in channel):
     add_br_note = open(output_card_name+".txt", 'a')
     # add_br_note.write("CMS_wwgg_br_HH_WWgg      rateParam  *  " +process+ "*  0.000970198 \n CMS_wwgg_br_WW_4Q_2Qlnu     rateParam  *  " +process+ "*  0.8899 \n nuisance  edit  freeze  CMS_wwgg_br_HH_WWgg \n nuisance  edit  freeze  CMS_wwgg_br_WW_4Q_2Qlnu")
     add_br_note.write("CMS_wwgg_br_HH_WWgg      rateParam  *  " +process+ "*  2 \n nuisance  edit  freeze  CMS_wwgg_br_HH_WWgg")
-    os.chdir("..")
-def clean_directory():
-    os.chdir("./Signal")
-    command = "rm -rf outdir_*/"
-    rm_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     os.chdir("..")
     os.chdir("./Datacard")
     command = "rm -rf yields_*/"
@@ -203,23 +204,24 @@ def clean_directory():
     print("cleaned")
 
 cat_list = ['cat12lowpurity','cat12highpurity']
-final_state_list = ["wwgg","bbgg","zzgg","VBF","GGH","VH","TTH"]
+final_state_list = ["wwgg","bbgg","zzgg","ttgg","VBF","GGH","VH","TTH"]
+# final_state_list = ["wwgg"]
 for cat in cat_list:
     # ------------------------------------- background fit -------------------------------------
     ws_data_path = "ws_"+year+"_"+ cat
     output_data_root_name = "Data_"+year+"_"+ cat + "_"+ mass + ".root"
     run_Tree2WS_data(inputpath_name = input_path_name , ws_data_path=ws_data_path, output_data_root_name=output_data_root_name)
-    ext_name = "ws_"+year+"_" + cat
+    ext_name = "ws_"+year+"_" + cat + "_"+ mass
     run_backgroundfit(ws_data_path=ws_data_path, inputpath_name = input_path_name , ext_name=ext_name, cp_name="CMS-HGG_multipdf_"+cat+"_"+year+".root")
     for final_state in final_state_list:   
         # # # ------------------------------------- signal fit -------------------------------------
         input_file_name_signal = mass +"_"+year+"_"+final_state+"_"+cat+".root"
-        ws_path_signal = mass +"_"+year+"_"+cat
+        ws_path_signal = mass +"_"+year+"_"+cat + "_"+final_state
         output_root_name_signal = "output_Signal"+mass + cat + "_M125_"+year+"_13TeV_amcatnloFXFX_pythia8_gghh" + final_state + ".root"
         run_Tree2WS_sig(inputpath_name = input_path_name ,inputfile_name=input_file_name_signal, ws_path = ws_path_signal, output_sig_root_name=output_root_name_signal, process='ws_gghh'+ final_state)
         run_ftest(ws_path = ws_path_signal, inputpath_name= input_path_name, process='gghh'+ final_state)
         run_signalfit(ws_path = ws_path_signal, inputpath_name=input_path_name, process='ws_gghh'+ final_state)
-        run_signal_plot(cats=cat, exts="dcb_"+year+"_" + mass +"_"+year+"_" + cat, outputExt="packaged_" + mass +"_"+year+"_" + cat, ws_path=ws_path_signal, inputpath_name =input_path_name,  cp_name="CMS-HGG_sigfit_packaged_"+cat+"_"+year+".root", process = 'ws_gghh'+ final_state)
+        run_signal_plot(cats=cat, exts=""+year+"_" + mass +"_"+year+"_" + cat+"_"+final_state, outputExt="packaged_" + mass +"_"+year+"_" + cat+"_"+final_state, ws_path=ws_path_signal, inputpath_name =input_path_name,  cp_name="CMS-HGG_sigfit_packaged_"+cat+"_"+year+".root", process = 'ws_gghh'+ final_state)
         run_yields(ws_sig_path=ws_path_signal, inputpath_name = input_path_name, ws_bkg_path = ws_data_path, process='ws_gghh'+ final_state)
         run_makeDatacard(ws_sig_path=ws_path_signal, output_card_name = "Datacard_" + mass +"_"+year+"_" +final_state +"_"+ cat, channel=mass,process='gghh'+ final_state) 
-        clean_directory()
+        

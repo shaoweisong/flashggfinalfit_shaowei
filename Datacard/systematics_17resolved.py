@@ -53,13 +53,13 @@ theory_systematics = [
 
 experimental_systematics = [
                 {'name':'lumi_13TeV_Uncorrelated','title':'lumi_13TeV_Uncorrelated','type':'constant','prior':'lnN','correlateAcrossYears':0,'value':{'2016':'1.010','2016pre':'1.010','2016post':'1.010','2017':'1.020','2018':'1.015'}},
-                # {'name':'lumi_13TeV_Correlated','title':'lumi_13TeV_Correlated','type':'constant','prior':'lnN','correlateAcrossYears':-1,'value':{'2016':'1.006','2017':'1.009','2018':'1.020'}},
-                {'name':'lumi_13TeV_Correlated_1718','title':'lumi_13TeV_Correlated_1718','type':'constant','prior':'lnN','correlateAcrossYears':-1,'value':{'2016':'-','2017':'1.006','2018':'1.002'}},
+                {'name':'lumi_13TeV_Correlated_1718','title':'lumi_13TeV_Correlated_1718','type':'constant','prior':'lnN','correlateAcrossYears':-1,'value':{'2016pre':'-','2017':'1.006','2018':'1.002'}},
                 {'name':'photon_id_sf_Diphoton_Photon_','title':'CMS_hgg_MVASF','type':'factory','prior':'lnN','correlateAcrossYears':0},
                 {'name':'photon_presel_sf_Diphoton_Photon_','title':'CMS_hgg_PreselSF','type':'factory','prior':'lnN','correlateAcrossYears':0},
                 {'name':'electron_veto_sf_Diphoton_Photon_','title':'CMS_hgg_electronVetoSF','type':'factory','prior':'lnN','correlateAcrossYears':0},
                 {'name':'muon_highptid_sf_','title':'CMS_hgg_muonhighptIDSF','type':'factory','prior':'lnN','correlateAcrossYears':0},
                 {'name':'muon_highptreco_sf_','title':'CMS_zmuon_highpt_recoSF','type':'factory','prior':'lnN','correlateAcrossYears':0},
+                # {'name':'PNXbb_sf_','title':'PNXbb_sf','type':'factory','prior':'lnN','correlateAcrossYears':0},
                 {'name':'isomuon_id_sf_SelectedMuon_iso_','title':'CMS_hgg_isomuonIDSF','type':'factory','prior':'lnN','correlateAcrossYears':0},
                 {'name':'isomuon_iso_sf_SelectedMuon_iso_','title':'CMS_hgg_isomuonIsoSF','type':'factory','prior':'lnN','correlateAcrossYears':0},
                 {'name':'nonisoelectron_id_sf_SelectedElectron_noiso_','title':'CMS_hgg_nonisoelectronnonisoIDSF','type':'factory','prior':'lnN','correlateAcrossYears':0},
@@ -87,8 +87,8 @@ experimental_systematics = [
                 {'name':'btag_reshape_hf_sf_','title':'btag_hf','type':'factory','prior':'lnN','correlateAcrossYears':1},
                 {'name':'btag_reshape_lfstats1_sf_','title':'btag_lfstats1','type':'factory','prior':'lnN','correlateAcrossYears':0},
                 {'name':'btag_reshape_lfstats2_sf_','title':'btag_lfstats2','type':'factory','prior':'lnN','correlateAcrossYears':0},                          
-                {'name':'PTransformerHtagger_sf_','title':'PTransformerHtaggerSF','type':'factory','prior':'lnN','correlateAcrossYears':0}            
-        
+                {'name':'PNetWvsQCDW1_sf_','title':'PNWvsQCDSF','type':'factory','prior':'lnN','correlateAcrossYears':0},            
+                {'name':'PNetWvsQCDW1_mistagging_sf_','title':'PNWvsQCD_mistaggingSF','type':'factory','prior':'lnN','correlateAcrossYears':0}        
         
               ]
 

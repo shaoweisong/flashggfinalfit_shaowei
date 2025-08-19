@@ -25,7 +25,7 @@ python create_resolved_splitproc_limit.py --mass ${1} --year ${2} --input_dir ${
 echo "====> Getting Datacard : " 
 ls ./Datacard/*.txt
 cp ./Datacard/*.txt ${4}
-# cp -r ./Signal/outdir_dcb_*/ ${3}${2}/${1}/
-# cp -r ./Signal/outdir_packaged*/ ${3}${2}/${1}/
+rm -rf /eos/user/s/shsong/hhwwgg_workspace/Final_limit/Signal/outdir_*${1}*${2}*cat34*/ 
+cp -r ./Signal/outdir_*${1}*${2}*cat34*/ /eos/user/s/shsong/hhwwgg_workspace/Final_limit/Signal/
 cd ../../../
 rm -rf CMSSW_10_6_20

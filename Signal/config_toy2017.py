@@ -9,7 +9,7 @@ signalScriptCfg = {
   'inputWSDir':'input_pathws_gghh_ws_path',
   'procs':'auto', # if auto: inferred automatically from filenames
   'cats':'auto', # if auto: inferred automatically from (0) workspace
-  'ext':'dcb_%s_ws_path'%_year,
+  'ext':'%s_ws_path'%_year,
   'analysis':'STXS', # To specify which replacement dataset mapping (defined in ./python/replacementMap.py)
   'year':'%s'%_year, # Use 'combined' if merging all years: not recommended
   'massPoints':'125',
@@ -23,7 +23,7 @@ signalScriptCfg = {
   # Job submission options
   'batch':'local', # ['condor','SGE','IC','local']
   'queue':'hep.q'
-  #'batch':'condor', # ['condor','SGE','IC','local']
-  #'queue':'espresso',
+  # 'batch':'condor', # ['condor','SGE','IC','local']
+  # 'queue':'espresso',
 
 }

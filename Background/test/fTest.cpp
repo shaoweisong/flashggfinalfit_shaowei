@@ -263,7 +263,6 @@ double getGoodnessOfFit(RooRealVar *mass, RooAbsPdf *mpdf, RooDataSet *data, std
       int nToyEvents = RandomGen->Poisson(ndata);
       RooDataHist *binnedtoy = pdf->generateBinned(RooArgSet(*mass),nToyEvents,0,1);
       pdf->fitTo(*binnedtoy,RooFit::Minimizer("Minuit2","minimize"),RooFit::Minos(0),RooFit::Hesse(0),RooFit::PrintLevel(-1),RooFit::Strategy(0),RooFit::SumW2Error(kTRUE)); //FIXME
-
       RooPlot *plot_t = mass->frame();
       binnedtoy->plotOn(plot_t);
       pdf->plotOn(plot_t);//,RooFit::NormRange("fitdata_1,fitdata_2"));
@@ -279,7 +278,21 @@ double getGoodnessOfFit(RooRealVar *mass, RooAbsPdf *mpdf, RooDataSet *data, std
     TCanvas *can = new TCanvas();
     double medianChi2 = toy_chi2[(int)(((float)ntoys)/2)];
     double rms = TMath::Sqrt(medianChi2);
-
+    if (medianChi2 < 0) {
+        std::cerr << "[WARNING] medianChi2 is negative (" << medianChi2 << "), setting prob = 0 and exiting." << std::endl;
+        prob = 0;
+        return prob;  
+    }
+    if (chi2*(nBinsForMass-np)>medianChi2+5*rms) {
+        std::cerr << "[WARNING] chi2*(nBinsForMass-np) is greater than medianChi2+5*rms (" << chi2*(nBinsForMass-np) << " > " << medianChi2+5*rms << "), setting prob = 0 and exiting." << std::endl;
+        prob = 0;
+        return prob;
+    }
+    if (chi2*(nBinsForMass-np)<medianChi2-5*rms) {
+        std::cerr << "[WARNING] chi2*(nBinsForMass-np) is less than medianChi2-5*rms (" << chi2*(nBinsForMass-np) << " < " << medianChi2-5*rms << "), setting prob = 0 and exiting." << std::endl;
+        prob = 0;
+        return prob;
+    }
     TH1F toyhist(Form("gofTest_%s.pdf",pdf->GetName()),";Chi2;",50,medianChi2-5*rms,medianChi2+5*rms);
     for (std::vector<double>::iterator itx = toy_chi2.begin();itx!=toy_chi2.end();itx++){
       toyhist.Fill((*itx));
@@ -316,7 +329,8 @@ void plot(RooRealVar *mass, RooAbsPdf *pdf, RooDataSet *data, string name,vector
   *prob = getGoodnessOfFit(mass,pdf,data,name);
   RooPlot *plot = mass->frame();
   mass->setRange("unblindReg_1",mgg_low,115);
-  mass->setRange("unblindReg_2",135,mgg_high);
+  // mass->setRange("unblindReg_2",135,mgg_high);
+  mass->setRange("unblindReg_2",115,mgg_high);
   if (BLIND) {
     data->plotOn(plot,Binning(mgg_high-mgg_low),CutRange("unblindReg_1"));
     data->plotOn(plot,Binning(mgg_high-mgg_low),CutRange("unblindReg_2"));
@@ -353,7 +367,8 @@ void plot(RooRealVar *mass, RooMultiPdf *pdfs, RooCategory *catIndex, RooDataSet
   // change the text size for the bkg modeling legend
   leg->SetTextSize(0.03); 
   mass->setRange("unblindReg_1",mgg_low,115);
-  mass->setRange("unblindReg_2",135,mgg_high);
+  mass->setRange("unblindReg_2",115,mgg_high);
+  // mass->setRange("unblindReg_2",135,mgg_high);
   if (BLIND) {
     data->plotOn(plot,Binning(mgg_high-mgg_low),CutRange("unblindReg_1"));
     data->plotOn(plot,Binning(mgg_high-mgg_low),CutRange("unblindReg_2"));
@@ -416,9 +431,9 @@ void plot(RooRealVar *mass, RooMultiPdf *pdfs, RooCategory *catIndex, RooDataSet
   //double bkgval = hbplottmp->GetBinContent(ipoint+1);
   plotdata->GetPoint(ipoint, xtmp,ytmp);
   double bkgval = nomBkgCurve->interpolate(xtmp);
-  if (BLIND) {
-   if ((xtmp > 115 ) && ( xtmp < 135) ) continue;
-  }
+  // if (BLIND) {
+  //  if ((xtmp > 115 ) && ( xtmp < 135) ) continue;
+  // }
   std::cout << "[INFO] plotdata->Integral() " <<  plotdata->Integral() << " ( bins " << npoints  << ") hbkgplots[i]->Integral() " << hbplottmp->Integral() << " (bins " << hbplottmp->GetNbinsX() << std::endl;
  double errhi = plotdata->GetErrorYhigh(ipoint);
  double errlow = plotdata->GetErrorYlow(ipoint);
@@ -470,7 +485,8 @@ void plot(RooRealVar *mass, map<string,RooAbsPdf*> pdfs, RooDataSet *data, strin
   RooPlot *plot = mass->frame();
 
   mass->setRange("unblindReg_1",mgg_low,115);
-  mass->setRange("unblindReg_2",135,mgg_high);
+  // mass->setRange("unblindReg_2",135,mgg_high);
+  mass->setRange("unblindReg_2",115,mgg_high);
   if (BLIND) {
     data->plotOn(plot,Binning(mgg_high-mgg_low),CutRange("unblindReg_1"));
     data->plotOn(plot,Binning(mgg_high-mgg_low),CutRange("unblindReg_2"));
@@ -647,7 +663,7 @@ int main(int argc, char* argv[]){
   po::notify(vm);
   if (vm.count("help")) { cout << desc << endl; exit(1); }
   if (vm.count("is2011")) is2011=true;
-	if (vm.count("unblind")) BLIND=false;
+	if (vm.count("unblind")) BLIND=false;//FIXME
   saveMultiPdf = vm.count("saveMultiPdf");
 
   if (vm.count("verbose")) verbose=true;
@@ -718,13 +734,13 @@ int main(int argc, char* argv[]){
 	}
 
 	vector<string> functionClasses;
-	functionClasses.push_back("Bernstein");
-	functionClasses.push_back("Exponential");
+	// functionClasses.push_back("Bernstein");
+	functionClasses.push_back("Exponential"); //FIXME
 	functionClasses.push_back("PowerLaw");
 	functionClasses.push_back("Laurent");
 	map<string,string> namingMap;
-	namingMap.insert(pair<string,string>("Bernstein","pol"));
-	namingMap.insert(pair<string,string>("Exponential","exp"));
+	// namingMap.insert(pair<string,string>("Bernstein","pol"));
+	namingMap.insert(pair<string,string>("Exponential","exp")); //FIXME
 	namingMap.insert(pair<string,string>("PowerLaw","pow"));
 	namingMap.insert(pair<string,string>("Laurent","lau"));
 
@@ -741,7 +757,7 @@ int main(int argc, char* argv[]){
 	RooRealVar *mass = (RooRealVar*)inWS->var("CMS_hgg_mass");
 	std:: cout << "[INFO] Got mass from ws " << mass << std::endl;
 	pdfsModel.setObsVar(mass);
-	double upperEnvThreshold = 0.1; // upper threshold on delta(chi2) to include function in envelope (looser than truth function)
+	double upperEnvThreshold = 0.5; // upper threshold on delta(chi2) to include function in envelope (looser than truth function)
 
 	fprintf(resFile,"Truth Model & d.o.f & $\\Delta NLL_{N+1}$ & $p(\\chi^{2}>\\chi^{2}_{(N\\rightarrow N+1)})$ \\\\\n");
 	fprintf(resFile,"\\hline\n");
@@ -914,11 +930,9 @@ int main(int argc, char* argv[]){
 						// Calculate goodness of fit for the thing to be included (will use toys for lowstats)!
 						double gofProb =0; 
 						plot(mass,bkgPdf,data,Form("%s/%s%d_cat%d.pdf",outDir.c_str(),funcType->c_str(),order,(cat+catOffset)),flashggCats_,fitStatus,&gofProb);
-
 						if ((prob < upperEnvThreshold) ) { // Looser requirements for the envelope
-
-							if (gofProb > 0.01 || order == truthOrder ) {  // Good looking fit or one of our regular truth functions
-
+							if (gofProb > 0.01) {  // Good looking fit or one of our regular truth functions
+							// if (gofProb > 0.01 | order == truthOrder ) {  // Good looking fit or one of our regular truth functions
 								std::cout << "[INFO] Adding to Envelope " << bkgPdf->GetName() << " "<< gofProb 
 									<< " 2xNLL + c is " << myNll + bkgPdf->getVariables()->getSize() <<  std::endl;
 								allPdfs.insert(pair<string,RooAbsPdf*>(Form("%s%d",funcType->c_str(),order),bkgPdf));

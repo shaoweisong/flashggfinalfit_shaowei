@@ -1021,7 +1021,7 @@ int main(int argc, char* argv[]){
 		//RooRealVar *lumi = (RooRealVar*)inWS->var("IntLumi");
 		RooRealVar *lumi = intLumi_;
 		plot->Draw();
-
+		//print unblind to the terminal
 		if (!unblind) {
 			mgg->setRange("unblind_up",135,180);
 			mgg->setRange("unblind_down",100,115);

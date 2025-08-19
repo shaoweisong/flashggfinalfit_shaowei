@@ -45,6 +45,11 @@ Error  = ./condor_logs/cat12/240604_2234/finalfit_MX850_MH125_2016post_$(Process
 Log  = ./condor_logs/cat12/240604_2234/finalfit_MX850_MH125_2016post_$(Process).log
 Arguments = MX850_MH125 2016post /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
 Queue 
+Output = ./condor_logs/cat12/240604_2234/finalfit_MX900_MH125_2016post_$(Process).stdout
+Error  = ./condor_logs/cat12/240604_2234/finalfit_MX900_MH125_2016post_$(Process).err
+Log  = ./condor_logs/cat12/240604_2234/finalfit_MX900_MH125_2016post_$(Process).log
+Arguments = MX900_MH125 2016post /eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/ /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Datacard/ /eos/user/s/shsong /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/createdatacard_condor
+Queue 
 Output = ./condor_logs/cat12/240604_2234/finalfit_MX1000_MH125_2016post_$(Process).stdout
 Error  = ./condor_logs/cat12/240604_2234/finalfit_MX1000_MH125_2016post_$(Process).err
 Log  = ./condor_logs/cat12/240604_2234/finalfit_MX1000_MH125_2016post_$(Process).log

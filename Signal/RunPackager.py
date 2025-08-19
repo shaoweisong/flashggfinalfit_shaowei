@@ -33,6 +33,7 @@ def leave():
 # Store all opts in orderedDict for submissionTools
 options = od()
 options['inputWSDir'] = opt.inputWSDir
+print(opt.inputWSDir)
 options['cats'] = opt.cats
 options['ext'] = opt.outputExt
 options['massPoints'] = opt.massPoints
@@ -49,6 +50,7 @@ options['groupSignalFitJobsByCat'] = False # dummy
 # Extract cats from input workspace dir
 if options['cats'] == "auto":
   WSFileNames = extractWSFileNames(options['inputWSDir'])
+  print(WSFileNames)
   options['cats'] = extractListOfCats(WSFileNames)
 options['nCats'] = len(options['cats'].split(","))
 

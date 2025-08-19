@@ -23,21 +23,7 @@ theory_systematics = [
                 # Normalisation uncertainties: enter interpretations
                 {'name':'BR_hgg','title':'BR_hgg','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"0.98/1.021"},
                 # New scheme for ggH stage 1.2 
-                {'name':'BR_hZZ','title':'BR_hZZ','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},
-                {'name':'BR_hWW','title':'BR_hWW','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},
-                {'name':'BR_hbb','title':'BR_hbb','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},         
-                {'name':'QCDscale_ttH','title':'QCDscale_ttH','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},         
-                {'name':'pdf_Higgs_ttH','title':'pdf_Higgs_ttH','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},         
-                {'name':'alphaS_ttH','title':'alphaS_ttH','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},         
-                {'name':'QCDscale_ggH','title':'QCDscale_ggH','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},         
-                {'name':'pdf_Higgs_ggH','title':'pdf_Higgs_ggH','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},         
-                {'name':'alphaS_ggH','title':'alphaS_ggH','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},         
-                {'name':'QCDscale_VH','title':'QCDscale_VH','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},         
-                {'name':'pdf_Higgs_VH','title':'pdf_Higgs_VH','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},         
-                {'name':'alphaS_VH','title':'alphaS_VH','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},         
-                {'name':'QCDscale_qqH','title':'QCDscale_qqH','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},         
-                {'name':'pdf_Higgs_qqH','title':'pdf_Higgs_qqH','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},         
-                {'name':'alphaS_qqH','title':'alphaS_qqH','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"}  
+                {'name':'BR_hZZ','title':'BR_hZZ','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"}      
               ]
 # PDF weight
 # for i in range(1,60): theory_systematics.append( {'name':'pdfWeight_%g'%i, 'title':'CMS_hgg_pdfWeight_%g'%i, 'type':'factory','prior':'lnN','correlateAcrossYears':1,'tiers':['shape']} )
@@ -50,7 +36,7 @@ theory_systematics = [
 # correlateAcrossYears = -1 : partially correlated
 
 experimental_systematics = [
-               {'name':'lumi_13TeV_Uncorrelated','title':'lumi_13TeV_Uncorrelated','type':'constant','prior':'lnN','correlateAcrossYears':0,'value':{'2016pre':'1.010','2016post':'1.010','2017':'1.020','2018':'1.015'}},
+                {'name':'lumi_13TeV_Uncorrelated','title':'lumi_13TeV_Uncorrelated','type':'constant','prior':'lnN','correlateAcrossYears':0,'value':{'2016pre':'1.010','2016post':'1.010','2017':'1.020','2018':'1.015'}},
                 {'name':'lumi_13TeV_Correlated','title':'lumi_13TeV_Correlated','type':'constant','prior':'lnN','correlateAcrossYears':-1,'value':{'2016pre':'1.006','2016post':'1.006','2017':'1.009','2018':'1.020'}},                
                 {'name':'photon_id_sf_Diphoton_Photon_','title':'CMS_hgg_MVASF','type':'factory','prior':'lnN','correlateAcrossYears':0},
                 {'name':'photon_presel_sf_Diphoton_Photon_','title':'CMS_hgg_PreselSF','type':'factory','prior':'lnN','correlateAcrossYears':0},
@@ -84,9 +70,10 @@ experimental_systematics = [
                 {'name':'btag_reshape_hf_sf_','title':'btag_hf','type':'factory','prior':'lnN','correlateAcrossYears':1},
                 {'name':'btag_reshape_lfstats1_sf_','title':'btag_lfstats1','type':'factory','prior':'lnN','correlateAcrossYears':0},
                 {'name':'btag_reshape_lfstats2_sf_','title':'btag_lfstats2','type':'factory','prior':'lnN','correlateAcrossYears':0},                          
-                {'name':'PTransformerHtagger_sf_','title':'PTransformerHtaggerSF','type':'factory','prior':'lnN','correlateAcrossYears':0}            
+                {'name':'PNetWvsQCDW1_sf_','title':'PNWvsQCDSF','type':'factory','prior':'lnN','correlateAcrossYears':0},            
+                {'name':'PNetWvsQCDW1_mistagging_sf_','title':'PNWvsQCD_mistaggingSF','type':'factory','prior':'lnN','correlateAcrossYears':0}     
         
-        
+         
               ]
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -65,7 +65,7 @@ def run_ftest(ws_path, log_name, inputpath_name, process,isclean=False):
     #copy config_toy2017.py
     # remove the old output dir
     if isclean:
-        command = "rm -rf outdir_dcb_2017_" + ws_path
+        command = "rm -rf outdir_2017_" + ws_path
         rm_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
         # remove the old packaged dir
         command = "rm -rf outdir_packaged_" + ws_path
@@ -94,6 +94,7 @@ def run_ftest(ws_path, log_name, inputpath_name, process,isclean=False):
     # run ftest
     command = "python RunSignalScripts.py --inputConfig " +  "config_" +process+ ws_path + ".py"+ " --mode 'fTest' --modeOpts '--doPlots' " + " > " + log_name + " 2>&1"
     run_ftest_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
+    print(command)
     command2 = "python RunSignalScripts.py --inputConfig " +  "config_" +process+ ws_path + ".py"+ " --mode 'calcPhotonSyst'" + " > " + log_name + " 2>&1"
     run_ftest_p = subprocess.call(command2, shell=True, stdout=subprocess.PIPE)
     
@@ -112,7 +113,7 @@ def run_signalfit(ws_path, log_name, inputpath_name, process):
     logging.info("run signalfit \n command :{0}".format(command))
     run_signalfit_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     # cp the signalfit output root file to ws
-    command = "cp outdir_dcb_2017_" + ws_path + "/signalFit/output/*.root" + " " + inputpath_name +  process + "_"+ws_path
+    command = "cp outdir_2017_" + ws_path + "/signalFit/output/*.root" + " " + inputpath_name +  process + "_"+ws_path
     cp_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
     logging.info("run cp the signalfit output root file to ws \n command :{0}".format(command))
 
@@ -216,8 +217,10 @@ def run_makeDatacard(ws_sig_path,output_card_name,log_name,channel,process):
     elif "bbgg" in output_card_name:
         print("bbgg datacard")
         command = "python makeDatacard_17boosted_bbgg.py --years 2017 --doSystematics --prune --ext " + ws_sig_path + " --output "+ output_card_name+  ">" + log_name+ " 2>&1"
-    elif "zzgg" in output_card_name:
+    elif "zzgg"  in output_card_name:
         command = "python makeDatacard_17boosted_zzgg.py --years 2017 --doSystematics --prune --ext " + ws_sig_path + " --output "+ output_card_name+  ">" + log_name+ " 2>&1"
+    elif "ttgg" in output_card_name:
+        command = "python makeDatacard_17boosted_ttgg.py --years 2017 --doSystematics --prune --ext " + ws_sig_path + " --output "+ output_card_name+  ">" + log_name+ " 2>&1"
     else:
         command = "python makeDatacard_17boosted.py --years 2017 --doSystematics --prune --ext " + ws_sig_path + " --output "+ output_card_name+  ">" + log_name+ " 2>&1"
     run_makeDatacard_p = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
@@ -230,34 +233,35 @@ def run_makeDatacard(ws_sig_path,output_card_name,log_name,channel,process):
     logging.info("end: {}".format(time.time()))
 
 
-# mass_list=['MX550_MH125','MX500_MH125','MX600_MH125','MX650_MH125','MX700_MH125','MX750_MH125','MX800_MH125','MX850_MH125','MX1000_MH125', 'MX1100_MH125', 'MX1200_MH125', 'MX1300_MH125', 'MX1400_MH125', 'MX1500_MH125', 'MX1600_MH125', 'MX1700_MH125', 'MX1800_MH125','MX1900_MH125', 'MX2000_MH125', 'MX2200_MH125', 'MX2600_MH125', 'MX2800_MH125','MX2400_MH125','MX3000_MH125']
-mass_list=['MX3000_MH125']
+# mass_list=['MX550_MH125','MX500_MH125','MX600_MH125','MX650_MH125','MX700_MH125','MX750_MH125','MX800_MH125','MX900_MH125','MX1000_MH125', 'MX1100_MH125', 'MX1200_MH125', 'MX1300_MH125', 'MX1400_MH125', 'MX1500_MH125', 'MX1600_MH125', 'MX1700_MH125', 'MX1800_MH125','MX1900_MH125', 'MX2000_MH125', 'MX2200_MH125', 'MX2600_MH125', 'MX2800_MH125','MX2400_MH125','MX3000_MH125']
+# mass_list=['MX550_MH125','MX500_MH125','MX600_MH125','MX650_MH125','MX700_MH125','MX750_MH125','MX800_MH125','MX900_MH125','MX1000_MH125', 'MX1250_MH125', 'MX1500_MH125',  'MX1750_MH125', 'MX2000_MH125','MX2500_MH125','MX3000_MH125']
+mass_list=['MX1000_MH125']
 final_state = ""
 cat_list = ['cat12highpurity','cat12lowpurity']
+# cat_list = ['cat12highpurity']
+final_state_list = ["wwgg","zzgg","bbgg","ttgg","VBF","VH","TTH","GGH"]
 final_state_list = ["wwgg"]
-# final_state_list = ["wwgg","zzgg","bbgg","VBF","VH","TTH","GGH"]
-# cat_list = []
 for mass in mass_list:
     for cat in cat_list:
         # ------------------------------------- log path -------------------------------------
         log_path = "/eos/user/s/shsong/hhwwgg_workspace/Final_limit/cat12log/"
         # ------------------------------------- background fit -------------------------------------
-        input_path_name = "/eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/2017/" + mass + "/"
+        input_path_name = "/eos/cms/store/group/phys_b2g/shsong/flashggws/cat12_graviton/2017/" + mass + "/"
         ws_data_path = "ws_2017_"+ cat
         output_data_root_name = "Data_2017_"+ cat + "_"+ mass + ".root"
         log_name_data = log_path + "bkg_2017_"+cat+".log"
         # run_Tree2WS_data(inputpath_name = input_path_name , ws_data_path=ws_data_path, output_data_root_name=output_data_root_name)
-        ext_name = "ws_2017_" + cat
+        ext_name = "ws_2017_" + cat + "_"+ mass
         # run_backgroundfit(ws_data_path=ws_data_path, log_name = log_name_data , inputpath_name = input_path_name , ext_name=ext_name, cp_name="CMS-HGG_multipdf_"+cat+"_2017.root")
         for final_state in final_state_list:        
             # # # ------------------------------------- signal fit -------------------------------------
             input_file_name_signal = mass +"_2017_"+final_state+"_"+cat+".root"
             log_file_name_signal = mass +"_hhwwgg_MC_2017_"+cat+final_state+".log"
-            ws_path_signal = mass +"_2017_"+cat
+            ws_path_signal = mass +"_2017_"+cat+"_"+final_state
             output_root_name_signal = "output_Signal"+mass + cat + "_M125_2017_13TeV_amcatnloFXFX_pythia8_gghh" + final_state + ".root"
-            run_Tree2WS_sig(inputpath_name = input_path_name ,inputfile_name=input_file_name_signal,log_file_name= log_path + "Tree2WS_" + log_file_name_signal, ws_path = ws_path_signal, output_sig_root_name=output_root_name_signal, process='ws_gghh'+ final_state)
+            # run_Tree2WS_sig(inputpath_name = input_path_name ,inputfile_name=input_file_name_signal,log_file_name= log_path + "Tree2WS_" + log_file_name_signal, ws_path = ws_path_signal, output_sig_root_name=output_root_name_signal, process='ws_gghh'+ final_state)
             run_ftest(ws_path = ws_path_signal, log_name = log_path + "signal_ftest_" + log_file_name_signal, inputpath_name= input_path_name, process='gghh'+ final_state, isclean=False)
             run_signalfit(ws_path = ws_path_signal, log_name = log_path +  "signal_signalfit_" + log_file_name_signal, inputpath_name=input_path_name, process='ws_gghh'+ final_state)
-            run_signal_plot(cats=cat, exts="dcb_2017_" + mass +"_2017_" + cat, outputExt="packaged_" + mass +"_2017_" + cat, log_packaged_name = log_path + "packaged_" + mass + cat+".log", ws_path=ws_path_signal, inputpath_name =input_path_name, log_plotter_name = log_path + "plotter_" + mass + cat+".log", cp_name="CMS-HGG_sigfit_packaged_"+cat+"_2017.root", process = 'ws_gghh'+ final_state)
+            # run_signal_plot(cats=cat, exts="2017_" + mass +"_2017_" + cat +"_"+ final_state, outputExt="packaged_" + mass +"_2017_" + cat +"_"+final_state, log_packaged_name = log_path + "packaged_" + mass + cat+".log", ws_path=ws_path_signal, inputpath_name =input_path_name, log_plotter_name = log_path + "plotter_" + mass + cat+".log", cp_name="CMS-HGG_sigfit_packaged_"+cat+"_2017.root", process = 'ws_gghh'+ final_state)
             # run_yields(ws_sig_path=ws_path_signal, log_name = log_path + mass +"_2017_" + cat +"_yields.log" , inputpath_name = input_path_name, ws_bkg_path = ws_data_path, process='ws_gghh'+ final_state )
             # run_makeDatacard(ws_sig_path=ws_path_signal, log_name = log_path + mass + cat + "_makeDatacard.log" , output_card_name = "Datacard_" + mass +"_2017_" +final_state +"_"+ cat, channel=mass,process='gghh'+ final_state) 

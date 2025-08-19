@@ -68,6 +68,8 @@ chan = w.cat("CMS_channel")
 
 # Extract the total SB/B models
 sb_model, b_model = w.pdf("model_s"), w.pdf("model_b")
+data_obs = w.data("data_obs")
+nData = data_obs.numEntries()
 
 # Extract cats for opt.cats
 if opt.cats == 'all':
@@ -83,12 +85,14 @@ _columns = ['cat','effSigma','sig','bkg','bkg_per_GeV','SoverSplusB']
 catinfo_data = pd.DataFrame(columns=_columns)
 
 for c in cats:
+  print("category: %s"%c)
   sbpdf, bpdf = sb_model.getPdf(c), b_model.getPdf(c)
   h_sbpdf_tmp = sbpdf.createHistogram("h_sb_tmp_pdfNBins_%s"%c,xvar,ROOT.RooFit.Binning(opt.pdfNBins))
   h_bpdf_tmp = bpdf.createHistogram("h_b_tmp_pdfNBins_%s"%c,xvar,ROOT.RooFit.Binning(opt.pdfNBins))
   # Calculate yields
   SB, B = sbpdf.expectedEvents(xvar_argset), bpdf.expectedEvents(xvar_argset)
   S = SB-B 
+  print("  SB: %.2f, B: %.2f, S: %.2f"%(SB,B,S))
   # If option doBkfRenormalization: renormalize B pdf to be S+B-S
   if opt.doBkgRenormalization:
     Bcorr = B-S
@@ -107,6 +111,11 @@ for c in cats:
   rangeName = "effSigma_%s"%c
   xvar.setRange(rangeName,w.var("MH").getVal()-effSigma,w.var("MH").getVal()+effSigma)
   Beff = bpdf.createIntegral(xvar_argset,xvar_argset,rangeName).getVal()*B
+  ###ShaoweiFixed######
+  if effSigma <= 0:
+    print("Error: effSigma <= 0 for category %s, skipping..." % c)
+    continue
+  #########
   Beff_per_GeV = Beff/effSigma
   Seff = math.erf(1./math.sqrt(2))*S
   # Calc S/S+B

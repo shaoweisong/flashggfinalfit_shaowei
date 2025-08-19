@@ -93,7 +93,9 @@ def writeSubFiles(_opts):
       for cidx in range(_opts['nCats']):
         c = _opts['cats'].split(",")[cidx]
         _f.write("if [ $1 -eq %g ]; then\n"%cidx)
+
         _f.write("  python %s/scripts/packageSignal.py --cat %s --outputExt %s --massPoints %s %s\n"%(swd__,c,_opts['ext'],_opts['massPoints'],_opts['modeOpts']))
+        
         _f.write("fi\n")
 
     # For single script
@@ -166,9 +168,22 @@ def writeSubFiles(_opts):
     elif _opts['mode'] == "packageSignal":
       for cidx in range(_opts['nCats']):
         c = _opts['cats'].split(",")[cidx]
+        
         _f = open("%s/%s_%s.sh"%(_jobdir,_executable,c),"w")
         writePreamble(_f)
-        _f.write("python %s/scripts/packageSignal.py --cat %s --outputExt %s --massPoints %s %s\n"%(swd__,c,_opts['ext'],_opts['massPoints'],_opts['modeOpts']))
+        #Shaowei FIXED: if there are multiple modes, we need to split the modeOpts by comma
+        if (_opts['nCats'] > 1) & ("mergeYears" not in _opts['modeOpts']):
+          year = " --year "+_opts['modeOpts'].split("--year")[-1]
+          mode = "--exts "+(_opts['modeOpts'].split("--year")[0].split(","))[cidx].replace("--exts ","") + year
+          _f.write("python %s/scripts/packageSignal.py --cat %s --outputExt %s --massPoints %s %s\n"%(swd__,c,_opts['ext'],_opts['massPoints'],mode))  
+        elif (_opts['nCats'] > 1) & ("mergeYears" in _opts['modeOpts']):
+          mode = "--exts "+(_opts['modeOpts'].split("--mergeYears")[0].split(","))[cidx].replace("--exts ","") + " --mergeYears"
+          print("mode: ", mode)
+          print("python %s/scripts/packageSignal.py --cat %s --outputExt %s --massPoints %s %s\n"%(swd__,c,_opts['ext'],_opts['massPoints'],mode))
+          _f.write("python %s/scripts/packageSignal.py --cat %s --outputExt %s --massPoints %s %s\n"%(swd__,c,_opts['ext'],_opts['massPoints'],mode))  
+        else:      
+          _f.write("python %s/scripts/packageSignal.py --cat %s --outputExt %s --massPoints %s %s\n"%(swd__,c,_opts['ext'],_opts['massPoints'],_opts['modeOpts']))
+        # _f.write("python %s/scripts/packageSignal.py --cat %s --outputExt %s --massPoints %s %s\n"%(swd__,c,_opts['ext'],_opts['massPoints'],_opts['modeOpts'])) #Shaowei FIXED
         _f.close()
         os.system("chmod 775 %s/%s_%s.sh"%(_jobdir,_executable,c))
 

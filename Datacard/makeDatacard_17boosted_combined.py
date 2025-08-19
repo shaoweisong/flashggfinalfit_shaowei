@@ -136,8 +136,7 @@ if opt.prune:
 
   else:
     print " --> Using nominal yield of process (sumEntries) for pruning"
-    print(data)
-    print("xixixxi")
+
   #   mask = (data['type']=='sig')
 
   #   # Extract per category yields

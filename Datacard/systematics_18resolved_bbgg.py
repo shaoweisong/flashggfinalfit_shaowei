@@ -77,8 +77,10 @@ experimental_systematics = [
                 {'name':'btag_reshape_lfstats2_sf_','title':'btag_lfstats2','type':'factory','prior':'lnN','correlateAcrossYears':0},                          
 
                 {'name':'FJHEM','title':'CMS_Fatjet_JetHEM','type':'factory','prior':'lnN','correlateAcrossYears':0},
-                {'name':'JetHEM','title':'CMS_JetHEM','type':'factory','prior':'lnN','correlateAcrossYears':0}
-
+                {'name':'JetHEM','title':'CMS_JetHEM','type':'factory','prior':'lnN','correlateAcrossYears':0},
+                {'name':'PNetWvsQCDW1_sf_','title':'PNWvsQCDSF','type':'factory','prior':'lnN','correlateAcrossYears':0},            
+                {'name':'PNetWvsQCDW1_mistagging_sf_','title':'PNWvsQCD_mistaggingSF','type':'factory','prior':'lnN','correlateAcrossYears':0}        
+      
               ]
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

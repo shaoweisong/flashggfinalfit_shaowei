@@ -17,7 +17,9 @@ echo "========================================="
 echo "..."
 echo "====> Getting limit : " 
 cp ${2}/${3} .
-combine -M AsymptoticLimits -m 125 -n ${4} -d ${3} --freezeParameters MH
+combine -M AsymptoticLimits -m 125 -n ${4} -d ${3} --freezeParameters MH --setParameters MH=125.38
 cp higgs*.AsymptoticLimits.mH125.root ${5}
 cd ../../
 rm -rf CMSSW_11_3_4
+
+

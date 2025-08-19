@@ -42,3 +42,12 @@ Signal/outdir_*
 Background/outdir_*
 Datacard/yield*
 createddatacard_condor/condor_logs/log.sh
+Datacard/Datacard_MX*
+Datacard/checkphotonID/        
+Datacard/individual_cat/
+Datacard/loose_phoID_2016pre/
+Datacard/unblind1_March/       
+Datacard/graviton_datacards/
+Datacard/run2_unblind_new/
+Datacard/tight_phoID_2016pre/
+createdatacard_condor/

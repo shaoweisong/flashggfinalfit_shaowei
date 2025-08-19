@@ -68,9 +68,13 @@ def getEffSigma(_h):
 # Ftest: plots
 # Plot possible nGauss fits and chi2 values
 def plotFTest(ssfs,_opt=1,_outdir='./',_extension='',_proc='',_cat='',_mass='125'):
-  canv = ROOT.TCanvas()
+  # canv = ROOT.TCanvas()
+  canv = ROOT.TCanvas("canv", "Canvas Title", 800, 600)
+
   canv.SetLeftMargin(0.15)
-  LineColorMap = {'1':ROOT.kAzure+1,'2':ROOT.kRed-4,'3':ROOT.kGreen+2,'4':ROOT.kMagenta-9,'5':ROOT.kOrange}
+  LineColorMap = {'1':ROOT.kViolet+6,'2':ROOT.kRed-4,'3':ROOT.kGreen+2,'4':ROOT.kMagenta-9,'5':ROOT.kOrange}
+  # LineColorMap = {'1':ROOT.kAzure+1,'2':ROOT.kRed-4,'3':ROOT.kGreen+2,'4':ROOT.kMagenta-9,'5':ROOT.kOrange,'6':ROOT.kCyan,'7':ROOT.kYellow-7,'8':ROOT.kViolet+6,'9':ROOT.kTeal+1,'10':ROOT.kPink+1}
+  
   pdfs = od()
   hists = od()
   hmax, hmin = 0, 0
@@ -86,7 +90,7 @@ def plotFTest(ssfs,_opt=1,_outdir='./',_extension='',_proc='',_cat='',_mass='125
     hists[k].SetMinimum(0)
     if hists[k].GetMaximum()>hmax: hmax = hists[k].GetMaximum()
     if hists[k].GetMinimum()<hmin: hmin = hists[k].GetMinimum()
-    hists[k].GetXaxis().SetRangeUser(115,140)
+    hists[k].GetXaxis().SetRangeUser(115,135)
   # Extract data histogram
   hists['data'] = ssf.xvar.createHistogram("h_data%s"%_extension,ROOT.RooFit.Binning(ssf.nBins))
   ssf.DataHists[_mass].fillHistogram(hists['data'],ROOT.RooArgList(ssf.xvar))
@@ -97,7 +101,7 @@ def plotFTest(ssfs,_opt=1,_outdir='./',_extension='',_proc='',_cat='',_mass='125
   hists['data'].SetTitle("")
   hists['data'].GetXaxis().SetTitle("m_{#gamma#gamma} [GeV]")
   hists['data'].SetMinimum(0)
-  hists['data'].GetXaxis().SetRangeUser(115,140)
+  hists['data'].GetXaxis().SetRangeUser(115,135)
   if hists['data'].GetMaximum()>hmax: hmax = hists['data'].GetMaximum()
   if hists['data'].GetMinimum()<hmin: hmin = hists['data'].GetMinimum()
 
@@ -105,6 +109,7 @@ def plotFTest(ssfs,_opt=1,_outdir='./',_extension='',_proc='',_cat='',_mass='125
   hists['data'].SetMaximum(1.2*hmax)
   hists['data'].SetMinimum(1.2*hmin)
   hists['data'].Draw("PE")
+
   for k,h in hists.iteritems():
     if k == "data": continue
     h.Draw("HIST SAME")
@@ -187,7 +192,8 @@ def plotPdfComponents(ssf,_outdir='./',_extension='',_proc='',_cat=''):
   canv = ROOT.TCanvas()
   canv.SetLeftMargin(0.15)
   ssf.MH.setVal(125)
-  LineColorMap = {0:ROOT.kAzure+1,1:ROOT.kRed-4,2:ROOT.kOrange,3:ROOT.kGreen+2,4:ROOT.kMagenta-9}
+  LineColorMap = {'1':ROOT.kViolet+6,'2':ROOT.kRed-4,'3':ROOT.kGreen+2,'4':ROOT.kMagenta-9,'5':ROOT.kOrange}
+  # LineColorMap = {0:ROOT.kAzure+1,1:ROOT.kRed-4,2:ROOT.kOrange,3:ROOT.kGreen+2,4:ROOT.kMagenta-9,5:ROOT.kCyan,6:ROOT.kYellow-7,7:ROOT.kViolet+6,8:ROOT.kTeal+1,9:ROOT.kPink+1,10:ROOT.kBlue+1}
   pdfs = od()
   hists = od()
   hmax, hmin = 0, 0
@@ -244,7 +250,7 @@ def plotPdfComponents(ssf,_outdir='./',_extension='',_proc='',_cat=''):
   # Add legend
   leg = ROOT.TLegend(0.58,0.6,0.86,0.8)
   leg.SetFillStyle(0)
-  leg.SetLineColor(0)
+  leg.SetLineColor(3)
   leg.SetTextSize(0.04)
   leg.AddEntry(hists['data'],"Simulation","ep")
   leg.AddEntry(hists['final'],"Parametric Model","L")
@@ -252,7 +258,7 @@ def plotPdfComponents(ssf,_outdir='./',_extension='',_proc='',_cat=''):
   if len(pdfs.keys())!=1:
     leg1 = ROOT.TLegend(0.6,0.4,0.86,0.6)
     leg1.SetFillStyle(0)
-    leg1.SetLineColor(0)
+    leg1.SetLineColor(3)
     leg1.SetTextSize(0.035)
     for k,v in pdfs.iteritems(): leg1.AddEntry(hists[k],k,"L")
     leg1.Draw("Same")
@@ -278,7 +284,7 @@ def plotPdfComponents(ssf,_outdir='./',_extension='',_proc='',_cat=''):
 def plotInterpolation(_finalModel,_outdir='./',_massPoints='120,121,122,123,124,125,126,127,128,129,130'):
 
   canv = ROOT.TCanvas()
-  colors = [ROOT.kRed,ROOT.kCyan,ROOT.kBlue+1,ROOT.kOrange-3,ROOT.kMagenta-7,ROOT.kGreen+1,ROOT.kYellow-7,ROOT.kViolet+6,ROOT.kTeal+1,ROOT.kPink+1,ROOT.kAzure+1]
+  colors = [ROOT.kRed,ROOT.kCyan,ROOT.kBlue+1,ROOT.kOrange-3,ROOT.kGreen+1,ROOT.kMagenta-7,ROOT.kYellow-7,ROOT.kViolet+6,ROOT.kTeal+1,ROOT.kPink+1,ROOT.kAzure+1]
   colorMap = {}
   for i, mp in enumerate(_massPoints.split(",")): colorMap[mp] = colors[i]
   # Set luminosity
@@ -317,6 +323,7 @@ def plotInterpolation(_finalModel,_outdir='./',_massPoints='120,121,122,123,124,
   haxes = hists[hists.keys()[0]].Clone()
   haxes.GetXaxis().SetTitle("m_{#gamma#gamma} [GeV]")
   haxes.GetYaxis().SetTitle("Events / %.2f GeV"%((_finalModel.xvar.getMax()-_finalModel.xvar.getMin())/_finalModel.xvar.getBins()))
+
   haxes.SetMinimum(0)
   haxes.SetMaximum(hmax*1.2)
   haxes.GetXaxis().SetRangeUser(100,150)
@@ -424,7 +431,7 @@ def plotSplines(_finalModel,_outdir="./",_nominalMass='125',splinesToPlot=['xs',
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Function for plotting final signal model: neat
 def plotSignalModel(_hists,_opt,_outdir=".",offset=0.02):
-  colorMap = {'2016':38,'2017':30,'2018':46,'2016pre':55,'2016post':38}
+  colorMap = {'2016':38,'2017':30,'2018':46,'2016pre':25,'2016post':38}
   canv = ROOT.TCanvas("c","c",650,600)
   canv.SetBottomMargin(0.12)
   canv.SetLeftMargin(0.15)
@@ -442,6 +449,9 @@ def plotSignalModel(_hists,_opt,_outdir=".",offset=0.02):
   h_axes.GetXaxis().SetTitleOffset(1.)
   h_axes.GetYaxis().SetTitleSize(0.05)
   h_axes.GetYaxis().SetTitleOffset(1.2)
+  # h_axes.GetYaxis().SetExponentOffset(-0.06, 0.01)
+  ROOT.TGaxis.SetMaxDigits(4)
+  ROOT.TGaxis.SetExponentOffset(-0.08, 0.01, "y")
   h_axes.Draw()
   
   # Extract effSigma
@@ -527,12 +537,10 @@ def plotSignalModel(_hists,_opt,_outdir=".",offset=0.02):
   _hists['pdf'].Draw("Same Hist C")
   if len(_opt.years.split(","))>1:
     for year in _opt.years.split(","):
-      print(colorMap)
-      print(colorMap[year])
-      
+
       _hists['pdf_%s'%year].SetLineColor( colorMap[year] )  
-      _hists['pdf_%s'%year].SetLineStyle(1)
-      # _hists['pdf_%s'%year].SetLineStyle(2)
+      # _hists['pdf_%s'%year].SetLineStyle(1)
+      _hists['pdf_%s'%year].SetLineStyle(2)
       _hists['pdf_%s'%year].SetLineWidth(2)
       _hists['pdf_%s'%year].Draw("Same Hist C")
   # Set style: data
@@ -550,9 +558,11 @@ def plotSignalModel(_hists,_opt,_outdir=".",offset=0.02):
   lat0.SetNDC()
   lat0.SetTextSize(0.045)
   lat0.DrawLatex(0.15,0.92,"#bf{CMS} #it{%s}"%_opt.label)
-  lat0.DrawLatex(0.77,0.92,"%s TeV"%(sqrts__.split("TeV")[0]))
-  lat0.DrawLatex(0.16+offset,0.83,"H #rightarrow #gamma#gamma")
-
+  lat0.DrawLatex(0.77,0.92,"%s TeV"%(sqrts__.split("TeV")[0]))  
+  lat0.DrawLatex(0.16+offset, 0.85, "H #rightarrow #gamma#gamma")
+  lat0.SetTextSize(0.035)
+  lat0.DrawLatex(0.16+offset, 0.81, "Spin-2")
+  
   # Load translations
   translateCats = {} if _opt.translateCats is None else LoadTranslations(_opt.translateCats)
   translateProcs = {} if _opt.translateProcs is None else LoadTranslations(_opt.translateProcs)
@@ -573,7 +583,12 @@ def plotSignalModel(_hists,_opt,_outdir=".",offset=0.02):
   elif _opt.cats == 'wall': catStr, catExt = "#splitline{All categories}{S/(S+B) weighted}", "wall"
   elif len(_opt.cats.split(","))>1: procStr, procExt = "Multiple categories", "multipleCats"
   else: catStr, catExt = Translate(_opt.cats,translateCats), _opt.cats
- 
+  if "cat34FHhighpurity" in _opt.cats: catStr = "cat0"
+  if "cat34FHlowpurity" in _opt.cats: catStr = "cat1"
+  if "cat34SLhighpurity" in _opt.cats: catStr = "cat2"
+  if "cat34SLlowpurity" in _opt.cats: catStr = "cat3"
+  if "cat12highpurity" in _opt.cats: catStr = "cat4"
+  if "cat12lowpurity" in _opt.cats: catStr = "cat5"
   lat1.DrawLatex(0.85,0.86,"%s"%catStr)
   lat1.DrawLatex(0.83,0.8,"%s %s"%(procStr,yearStr))
 

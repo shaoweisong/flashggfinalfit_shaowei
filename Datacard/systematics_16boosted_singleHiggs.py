@@ -61,7 +61,10 @@ experimental_systematics = [
                 {'name':'JER','title':'CMS_res_j','type':'factory','prior':'lnN','correlateAcrossYears':0},
                 {'name':'MET_JES','title':'CMS_res_JET_MET','type':'factory','prior':'lnN','correlateAcrossYears':0},
                 {'name':'MET_Unclustered','title':'CMS_MET','type':'factory','prior':'lnN','correlateAcrossYears':0},
-                {'name':'Muon_pt','title':'CMS_Muon_Momentumscale','type':'factory','prior':'lnN','correlateAcrossYears':0}
+                {'name':'Muon_pt','title':'CMS_Muon_Momentumscale','type':'factory','prior':'lnN','correlateAcrossYears':0},
+                {'name':'PNetWvsQCDW1_sf_','title':'PNWvsQCDSF','type':'factory','prior':'lnN','correlateAcrossYears':0},            
+                {'name':'PNetWvsQCDW1_mistagging_sf_','title':'PNWvsQCD_mistaggingSF','type':'factory','prior':'lnN','correlateAcrossYears':0},            
+                {'name':'PTransformerHtagger_sf_','title':'PTransformerHtaggerSF','type':'factory','prior':'lnN','correlateAcrossYears':0}       
         
               ]
 

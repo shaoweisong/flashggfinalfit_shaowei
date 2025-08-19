@@ -35,7 +35,7 @@ def get_options():
   parser.add_option("--cat", dest='cat', default='', help="RECO category")
   parser.add_option('--mass', dest='mass', default='125', help="Mass point to fit")
   parser.add_option('--doPlots', dest='doPlots', default=False, action="store_true", help="Produce Signal fTest plots")
-  parser.add_option('--nBins', dest='nBins', default=80, type='int', help="Number of bins for fit")
+  parser.add_option('--nBins', dest='nBins', default=160, type='int', help="Number of bins for fit")
   parser.add_option('--threshold', dest='threshold', default=5, type='int', help="Threshold number of events")
   # parser.add_option('--threshold', dest='threshold', default=30, type='int', help="Threshold number of events")
   parser.add_option('--nGaussMax', dest='nGaussMax', default=5, type='int', help="Max number of gaussians to test")
@@ -108,6 +108,9 @@ for pidx, proc in enumerate(procsToFTest):
       ssf = SimultaneousFit("fTest_RV_%g"%nGauss,proc,opt.cat,datasets_RV,xvar.Clone(),MH,MHLow,MHHigh,opt.mass,opt.nBins,0,opt.minimizerMethod,opt.minimizerTolerance,verbose=False)
       ssf.buildNGaussians(nGauss)
       ssf.runFit()
+      print(nGauss)
+      print(ssf.printFitParameters())
+      # print("nbins:",ssf.nBins)      
       ssf.buildSplines()
       if ssf.Ndof >= 1: 
 	ssfs[k] = ssf
@@ -134,6 +137,8 @@ for pidx, proc in enumerate(procsToFTest):
       ssf.buildNGaussians(nGauss)
       ssf.runFit()
       ssf.buildSplines()
+
+
       if ssf.Ndof >= 1:
 	ssfs[k] = ssf
 	if ssfs[k].getReducedChi2() < min_reduced_chi2:
@@ -166,4 +171,3 @@ for ir,r in df.sort_values('sumEntries',ascending=False).iterrows():
   pitr += 1
 ff.write("}")
 ff.close()
-

@@ -1,4 +1,4 @@
-+JobFlavour   = "tomorrow"
++JobFlavour   = "workday"
 Executable = condor_cat34.sh
 Universe = vanilla
 Notification = ERROR

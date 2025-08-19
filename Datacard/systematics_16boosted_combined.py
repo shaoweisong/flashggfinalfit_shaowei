@@ -24,6 +24,7 @@ theory_systematics = [
                 {'name':'BR_hgg','title':'BR_hgg','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"0.98/1.021"},
                 # New scheme for ggH stage 1.2 
                 {'name':'BR_hZZ','title':'BR_hZZ','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},
+                {'name':'BR_htt','title':'BR_htt','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},
                 {'name':'BR_hWW','title':'BR_hWW','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},
                 {'name':'BR_hbb','title':'BR_hbb','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},         
                 {'name':'QCDscale_ttH','title':'QCDscale_ttH','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},         
@@ -77,6 +78,8 @@ experimental_systematics = [
                 {'name':'MET_Unclustered','title':'CMS_MET','type':'factory','prior':'lnN','correlateAcrossYears':0},
                 {'name':'Muon_pt','title':'CMS_Muon_Momentumscale','type':'factory','prior':'lnN','correlateAcrossYears':0},
                          
+                {'name':'PNetWvsQCDW1_sf_','title':'PNWvsQCDSF','type':'factory','prior':'lnN','correlateAcrossYears':0},            
+                {'name':'PNetWvsQCDW1_mistagging_sf_','title':'PNWvsQCD_mistaggingSF','type':'factory','prior':'lnN','correlateAcrossYears':0},            
                 {'name':'PTransformerHtagger_sf_','title':'PTransformerHtaggerSF','type':'factory','prior':'lnN','correlateAcrossYears':0}            
         
               ]

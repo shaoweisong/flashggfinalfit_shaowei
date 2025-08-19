@@ -138,7 +138,7 @@ class FinalModel:
   def buildXSBRSplines(self):
     mh = np.linspace(120.,130.,101)
     # XS
-    if(self.proc == 'gghh' or self.proc == 'gghhSL' or self.proc == 'gghhFH' or self.proc == 'gghhwwgg' or self.proc == 'gghhbbgg' or self.proc == 'gghhzzgg' or self.proc == 'gghhwwbbgg' or self.proc == 'gghhcombineFHSL' or self.proc == 'gghhTTH' or self.proc=='gghhVH' or self.proc=='gghhGGH' or self.proc=='gghhVBF'):
+    if(self.proc == 'gghh' or self.proc == 'gghhSL' or self.proc == 'gghhFH' or self.proc == 'gghhwwgg' or self.proc == 'gghhbbgg' or self.proc == 'gghhzzgg'or self.proc == 'gghhttgg' or self.proc == 'gghhwwbbgg' or self.proc == 'gghhcombineFHSL' or self.proc == 'gghhTTH' or self.proc=='gghhVH' or self.proc=='gghhGGH' or self.proc=='gghhVBF'):
       xs = np.ones(101)
     else:
       mp = self.xsbrMap[self.proc]['mode']
@@ -147,7 +147,7 @@ class FinalModel:
     
     self.Splines['xs'] = ROOT.RooSpline1D("fxs_%s_%s"%(self.proc,self.sqrts),"fxs_%s_%s"%(self.proc,self.sqrts),self.MH,len(mh),mh,xs)
     # BR
-    if(self.proc == 'gghh' or self.proc == 'gghhSL' or self.proc == 'gghhFH' or self.proc == 'gghhwwgg' or self.proc == 'gghhbbgg' or self.proc == 'gghhzzgg' or self.proc == 'gghhwwbbgg' or self.proc == 'gghhcombineFHSL' or self.proc == 'gghhTTH' or self.proc=='gghhVH' or self.proc=='gghhGGH' or self.proc=='gghhVBF'):
+    if(self.proc == 'gghh' or self.proc == 'gghhSL' or self.proc == 'gghhFH' or self.proc == 'gghhwwgg' or self.proc == 'gghhbbgg' or self.proc == 'gghhzzgg' or self.proc == 'gghhttgg' or self.proc == 'gghhwwbbgg' or self.proc == 'gghhcombineFHSL' or self.proc == 'gghhTTH' or self.proc=='gghhVH' or self.proc=='gghhGGH' or self.proc=='gghhVBF'):
       br = np.ones(101)
     else:
       md = self.xsbrMap['decay']['mode']

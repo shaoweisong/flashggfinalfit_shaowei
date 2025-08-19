@@ -69,8 +69,8 @@ def poisson_interval(x,eSumW2,level=0.68):
 
 # Function to calc chi2 for binned fit given pdf, RooDataHist and xvar as inputs
 #def calcChi2(x,pdf,d,errorType="Sumw2",_verbose=False,fitRange=[100,180]):
-#def calcChi2(x,pdf,d,errorType="Poisson",_verbose=False,fitRange=[110,140]):
-def calcChi2(x,pdf,d,errorType="Poisson",_verbose=False,fitRange=[105,150]):
+def calcChi2(x,pdf,d,errorType="Sumw2",_verbose=False,fitRange=[115,135]):
+# def calcChi2(x,pdf,d,errorType="Poisson",_verbose=False,fitRange=[105,150]):
 
   k = 0. # number of non empty bins (for calc degrees of freedom)
   normFactor = d.sumEntries()
@@ -136,7 +136,7 @@ def nChi2Addition(X,ssf,verbose=False):
   chi2sum = 0
   K = 0 # number of non empty bins
   C = len(X)-1 # number of fit params (-1 for MH)
-  for mp,d in ssf.DataHists.iteritems():
+  for mp,d in ssf.DataHists.items():
     ssf.MH.setVal(int(mp))
     chi2, k  = calcChi2(ssf.xvar,ssf.Pdfs['final'],d,_verbose=verbose)
     chi2sum += chi2
@@ -284,13 +284,21 @@ class SimultaneousFit:
       for f in ['dm','sigma']: 
 	k = "%s_g%g"%(f,g)
 	self.Varlists[k] = ROOT.RooArgList("%s_coeffs"%k)
-	# Create coeff for polynominal of order MHPolyOrder: y = a+bx+cx^2+...
+	# Create coeff for polynominal of order MHPolyOrder: y = a+bx+cx^2+... 
+	# for po in range(0,self.MHPolyOrder+1):
+  #         # p0 value of sigma is function of g (creates gaussians of increasing width)
+  #         if(f == "sigma")&(po==0): 
+  #           self.Vars['%s_p%g'%(k,po)] = ROOT.RooRealVar("%s_p%g"%(k,po),"%s_p%g"%(k,po),(g+1)*1.0,pLUT['Gaussian']["%s_p%s"%(f,po)][1],pLUT['Gaussian']["%s_p%s"%(f,po)][2])
+	#   else:
+  #           self.Vars['%s_p%g'%(k,po)] = ROOT.RooRealVar("%s_p%g"%(k,po),"%s_p%g"%(k,po),pLUT['Gaussian']["%s_p%s"%(f,po)][0],pLUT['Gaussian']["%s_p%s"%(f,po)][1],pLUT['Gaussian']["%s_p%s"%(f,po)][2])
 	for po in range(0,self.MHPolyOrder+1):
           # p0 value of sigma is function of g (creates gaussians of increasing width)
-          if(f == "sigma")&(po==0): 
-            self.Vars['%s_p%g'%(k,po)] = ROOT.RooRealVar("%s_p%g"%(k,po),"%s_p%g"%(k,po),(g+1)*1.0,pLUT['Gaussian']["%s_p%s"%(f,po)][1],pLUT['Gaussian']["%s_p%s"%(f,po)][2])
-	  else:
-            self.Vars['%s_p%g'%(k,po)] = ROOT.RooRealVar("%s_p%g"%(k,po),"%s_p%g"%(k,po),pLUT['Gaussian']["%s_p%s"%(f,po)][0],pLUT['Gaussian']["%s_p%s"%(f,po)][1],pLUT['Gaussian']["%s_p%s"%(f,po)][2])
+          if(f == "dm")&(po==0): 
+            self.Vars['%s_p%g'%(k,po)] = ROOT.RooRealVar("%s_p%g"%(k,po),"%s_p%g"%(k,po), -0.1*(1.+g), -0.75*(1.0+g), 0.75*(1.0+g))  
+
+	  elif(f == "sigma")&(po==0):
+            self.Vars['%s_p%g'%(k,po)] = ROOT.RooRealVar("%s_p%g"%(k,po),"%s_p%g"%(k,po),0.8*(1.+0.5*g), 0.25*(1.+0.5*g), 4.*(1.+0.5*g))
+
 	  self.Varlists[k].add( self.Vars['%s_p%g'%(k,po)] ) 
 	# Define polynominal
 	self.Polynomials[k] = ROOT.RooPolyVar(k,k,self.dMH,self.Varlists[k])

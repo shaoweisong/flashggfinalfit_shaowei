@@ -86,7 +86,8 @@ experimental_systematics = [
                 {'name':'btag_reshape_hf_sf_','title':'btag_hf','type':'factory','prior':'lnN','correlateAcrossYears':1},
                 {'name':'btag_reshape_lfstats1_sf_','title':'btag_lfstats1','type':'factory','prior':'lnN','correlateAcrossYears':0},
                 {'name':'btag_reshape_lfstats2_sf_','title':'btag_lfstats2','type':'factory','prior':'lnN','correlateAcrossYears':0},                          
-                {'name':'PTransformerHtagger_sf_','title':'PTransformerHtaggerSF','type':'factory','prior':'lnN','correlateAcrossYears':0}            
+                {'name':'PNetWvsQCDW1_sf_','title':'PNWvsQCDSF','type':'factory','prior':'lnN','correlateAcrossYears':0},            
+                {'name':'PNetWvsQCDW1_mistagging_sf_','title':'PNWvsQCD_mistaggingSF','type':'factory','prior':'lnN','correlateAcrossYears':0}     
         
          
               ]

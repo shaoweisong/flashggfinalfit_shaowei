@@ -37,8 +37,10 @@ inputFiles = od()
 citr = 0
 if opt.cats in ['all','wall']:
   fs = glob.glob("%s/outdir_%s/CMS-HGG_sigfit_%s_*.root"%(swd__,opt.ext,opt.ext))
+  print("glob:","%s/outdir_%s/CMS-HGG_sigfit_%s_*.root"%(swd__,opt.ext,opt.ext))
   for f in fs:
     cat = re.sub(".root","",f.split("/")[-1].split("_%s_"%opt.ext)[-1])
+    print("cat:",cat)
     inputFiles[cat] = f
     if citr == 0:
       w = ROOT.TFile(f).Get("wsig_13TeV")
@@ -82,7 +84,15 @@ for cat,f in inputFiles.iteritems():
   print " --> Processing %s: file = %s"%(cat,f)
 
   # Define cat weight
-  wcat = catsWeights[cat] if opt.loadCatWeights != '' else 1.
+#Shaowei Fixed##############
+  if 'all' in opt.cats:
+    allcats=catsWeights.keys()
+    for c in allcats:
+      if cat in c:
+          cat = c
+          break
+############################
+  wcat = catsWeights[cat][u'SoverSplusB'] if opt.loadCatWeights != '' else 1.
 
   # Open signal workspace
   fin = ROOT.TFile(f)
@@ -99,7 +109,13 @@ for cat,f in inputFiles.iteritems():
       for norm in rooiter(allNorms):
         proc = norm.GetName().split("%s_"%outputWSObjectTitle__)[-1].split("_%s"%year)[0]
         k  =  "%s__%s"%(proc,year)
-        _id = "%s_%s_%s_%s"%(proc,year,cat,sqrts__)
+        ######Shaowei FIXED##############
+        # _id = "%s_%s_%s_%s"%(proc,year,cat,sqrts__)    
+        if opt.cats in ['all','wall']:
+          _id = "%s_%s_%s_%s"%(proc,year,str(cat.split("_20")[0]),sqrts__)
+        else:
+          _id = "%s_%s_%s_%s"%(proc,year,cat,sqrts__)
+        ##############################
         norms[k] = w.function("%s_%s_normThisLumi"%(outputWSObjectTitle__,_id))
     else:
       for proc in opt.procs.split(","):
@@ -117,7 +133,14 @@ for cat,f in inputFiles.iteritems():
   # Iterate over norms and extract data sets + pdfs
   for k, norm in norms.iteritems():
     proc, year = k.split("__")
-    _id = "%s_%s_%s_%s"%(proc,year,cat,sqrts__)
+    ######Shaowei FIXED##############
+    # _id = "%s_%s_%s_%s"%(proc,year,cat,sqrts__)
+    if opt.cats in ['all','wall']:
+      _id = "%s_%s_%s_%s"%(proc,year,str(cat.split("_20")[0]),sqrts__)
+    else:
+      _id = "%s_%s_%s_%s"%(proc,year,cat,sqrts__)  
+    ##############################
+
     w.var("IntLumi").setVal(lumiScaleFactor*lumiMap[year])
 
     # Prune

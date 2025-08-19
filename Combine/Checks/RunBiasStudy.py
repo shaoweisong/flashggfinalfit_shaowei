@@ -62,19 +62,19 @@ if opts.toys:
         name = shortName(pdfName)
         if opts.nToys > opts.split:
             for isplit in range(opts.nToys//opts.split):
-                print("debug indexName", indexName)
-                print("debug ipdf", ipdf)
-                print("debug isplit", isplit)
-                print("debug toyName(name,split=isplit)", toyName(name,split=isplit))
+                # print("debug indexName", indexName)
+                # print("debug ipdf", ipdf)
+                # print("debug isplit", isplit)
+                # print("debug toyName(name,split=isplit)", toyName(name,split=isplit))
                 print('mv -f higgsCombine_%s* %s'%(name, toyName(name,split=isplit)))
                 toyCmd = toyCmdBase + ' -t %g -n _%s_split%g --setParameters %s=%g --freezeParameters %s'%(opts.split, name, isplit, indexName, ipdf, indexName)
                 run(toyCmd, dry=opts.dryRun)
-                print(toyCmd)
+                print("toy command is: ",toyCmd)
                 system('mv -f higgsCombine_%s* %s'%(name, toyName(name,split=isplit)))
         else: 
             toyCmd = toyCmdBase + ' -t %g -n _%s --setParameters %s=%g --freezeParameters %s'%(opts.nToys, name, indexName, ipdf, indexName)
             run(toyCmd, dry=opts.dryRun)
-            print(toyCmd)
+            print("toy command is: ",toyCmd)
             system('mv -f higgsCombine_%s* %s'%(name, toyName(name)))
 
 if opts.fits:
@@ -92,13 +92,13 @@ if opts.fits:
             for isplit in range(opts.nToys//opts.split):
                 fitCmd = fitCmdBase + ' -t %g -n _%s_split%g --toysFile=%s'%(opts.split, name, isplit, toyName(name,split=isplit))
                 run(fitCmd, dry=opts.dryRun)
-                print("debug command: %s"%fitCmd)
+                print("fit command: %s"%fitCmd)
                 system('mv -f higgsCombine_%s* %s'%(name, fitName(name,split=isplit)))
             run('hadd %s BiasFits/*%s*split*.root'%(fitName(name),name), dry=opts.dryRun)
         else:
             fitCmd = fitCmdBase + ' -t %g -n _%s --toysFile=%s'%(opts.nToys, name, toyName(name))
             run(fitCmd, dry=opts.dryRun)
-            print(fitCmd)
+            print("fit command: %s"%fitCmd)
             system('mv -f higgsCombine_%s* %s'%(name, fitName(name)))
 
 if opts.plots:

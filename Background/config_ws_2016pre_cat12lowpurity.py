@@ -3,10 +3,10 @@
 backgroundScriptCfg = {
   
   # Setup
-  'inputWSDir':'/eos/cms/store/group/phys_b2g/shsong/flashggws/cat12/2016pre/MX550_MH125/ws_2016pre_cat12lowpurity', # location of 'allData.root' file
+  'inputWSDir':'/eos/cms/store/group/phys_b2g/shsong/flashggws/cat12_graviton/2016pre/MX500_MH125/ws_2016pre_cat12lowpurity', # location of 'allData.root' file
   'cats':'auto', # auto: automatically inferred from input ws
   'catOffset':0, # add offset to category numbers (useful for categories from different allData.root files)  
-  'ext':'ws_2016pre_cat12lowpurity', # extension to add to output directory
+  'ext':'ws_2016pre_cat12lowpurity_MX500_MH125', # extension to add to output directory
   # 'year':'2016pre', # Use combined when merging all years in category (for plots)
   'year':'2016pre', # Use combined when merging all years in category (for plots)
 

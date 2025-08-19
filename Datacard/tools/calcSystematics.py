@@ -240,7 +240,6 @@ def calcSystYields(_nominalDataName,_nominalDataContents,_inputWS,_systFactoryTy
 # EXPERIMENTAL SYSTEMATICS FACTORY:
 # d - dataFrame, systs - dict of systematics, ftype - dict of factoryTypes
 def experimentalSystFactory(d,systs,ftype,options,_removal=False):
-
   # Loop over systematics and add new column in dataFrame
   for s in systs:
     if s['type'] == 'constant': continue
@@ -266,7 +265,6 @@ def experimentalSystFactory(d,systs,ftype,options,_removal=False):
       if f in ['a_h','a_w']: 
 	for direction in ['up','down']: d.drop(['%s_%s_yield'%(s['name'],direction)], axis=1, inplace=True)
       else: d.drop(['%s_yield'%s['name']], axis=1, inplace=True)
-
   return d
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
