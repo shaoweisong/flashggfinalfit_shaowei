@@ -1,7 +1,0 @@
-# python create_resolved_splitproc_limit16post.py
-# python create_resolved_splitproc_limit17.py
-python create_resolved_splitproc_limit18.py
-python create_boosted_splitproc_limit16pre.py
-python create_boosted_splitproc_limit16post.py
-python create_boosted_splitproc_limit17.py
-python create_boosted_splitproc_limit18.py

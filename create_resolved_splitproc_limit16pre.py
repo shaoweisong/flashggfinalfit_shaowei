@@ -234,7 +234,7 @@ for mass in mass_list:
         # ------------------------------------- log path -------------------------------------
         log_path = "/eos/user/s/shsong/hhwwgg_workspace/Final_limit/cat34log/"
         # ------------------------------------- background fit -------------------------------------
-        input_path_name = "/eos/cms/store/group/phys_b2g/shsong/flashggws/cat34_graviton/2016pre/" + mass + "/"
+        input_path_name = "/eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/2016pre/" + mass + "/"
         ws_data_path = "ws_2016pre_"+ cat
         output_data_root_name = "Data_2016pre_"+ cat + "_"+ mass + ".root"
         log_name_data = log_path + "bkg_2016pre_"+cat+".log"
@@ -247,7 +247,7 @@ for mass in mass_list:
             log_file_name_signal = mass +"_hhwwgg_MC_2016pre_"+cat+final_state+".log"
             ws_path_signal = mass +"_2016pre_"+cat+"_"+final_state
             output_root_name_signal = "output_Signal"+mass + cat + "_M125_2016pre_13TeV_amcatnloFXFX_pythia8_gghh" + final_state + ".root"
-            run_Tree2WS_sig(inputpath_name = input_path_name ,inputfile_name=input_file_name_signal,log_file_name= log_path + "Tree2WS_" + log_file_name_signal, ws_path = ws_path_signal, output_sig_root_name=output_root_name_signal, process='ws_gghh'+ final_state)
+            # run_Tree2WS_sig(inputpath_name = input_path_name ,inputfile_name=input_file_name_signal,log_file_name= log_path + "Tree2WS_" + log_file_name_signal, ws_path = ws_path_signal, output_sig_root_name=output_root_name_signal, process='ws_gghh'+ final_state)
             run_ftest(ws_path = ws_path_signal, log_name = log_path + "signal_ftest_" + log_file_name_signal, inputpath_name= input_path_name, process='gghh'+ final_state, isclean=False)
             run_signalfit(ws_path = ws_path_signal, log_name = log_path +  "signal_signalfit_" + log_file_name_signal, inputpath_name=input_path_name, process='ws_gghh'+ final_state)
             # run_signal_plot(cats=cat, exts="2016pre_" + mass +"_2016pre_" + cat +"_"+ final_state, outputExt="packaged_" + mass +"_2016pre_" + cat +"_"+final_state, log_packaged_name = log_path + "packaged_" + mass + cat+".log", ws_path=ws_path_signal, inputpath_name =input_path_name, log_plotter_name = log_path + "plotter_" + mass + cat+".log", cp_name="CMS-HGG_sigfit_packaged_"+cat+"_2016pre.root", process = 'ws_gghh'+ final_state)

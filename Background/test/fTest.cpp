@@ -734,12 +734,12 @@ int main(int argc, char* argv[]){
 	}
 
 	vector<string> functionClasses;
-	// functionClasses.push_back("Bernstein");
+	functionClasses.push_back("Bernstein");
 	functionClasses.push_back("Exponential"); //FIXME
 	functionClasses.push_back("PowerLaw");
 	functionClasses.push_back("Laurent");
 	map<string,string> namingMap;
-	// namingMap.insert(pair<string,string>("Bernstein","pol"));
+	namingMap.insert(pair<string,string>("Bernstein","pol"));
 	namingMap.insert(pair<string,string>("Exponential","exp")); //FIXME
 	namingMap.insert(pair<string,string>("PowerLaw","pow"));
 	namingMap.insert(pair<string,string>("Laurent","lau"));

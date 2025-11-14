@@ -446,8 +446,10 @@ def plotSignalModel(_hists,_opt,_outdir=".",offset=0.02):
   h_axes.SetTitle("")
   h_axes.GetXaxis().SetTitle("%s (%s)"%(_opt.xvar.split(":")[1],_opt.xvar.split(":")[2]))
   h_axes.GetXaxis().SetTitleSize(0.05)
+  h_axes.GetXaxis().SetLabelSize(0.05)
   h_axes.GetXaxis().SetTitleOffset(1.)
   h_axes.GetYaxis().SetTitleSize(0.05)
+  h_axes.GetYaxis().SetLabelSize(0.05)
   h_axes.GetYaxis().SetTitleOffset(1.2)
   # h_axes.GetYaxis().SetExponentOffset(-0.06, 0.01)
   ROOT.TGaxis.SetMaxDigits(4)
@@ -471,25 +473,27 @@ def plotSignalModel(_hists,_opt,_outdir=".",offset=0.02):
   
   # Legend
   if len(_opt.years.split(","))>1:
-    leg0 = ROOT.TLegend(0.15+offset,0.6,0.5+offset,0.82)
+    # leg0 = ROOT.TLegend(0.15+offset,0.6,0.5+offset,0.82)
+    leg0 = ROOT.TLegend(0.15+offset,0.6,0.45+offset,0.75)
     leg0.SetFillStyle(0)
     leg0.SetLineColor(0)
-    leg0.SetTextSize(0.03)
+    leg0.SetTextSize(0.035)
     leg0.AddEntry(_hists['data'],"Simulation","ep")
-    leg0.AddEntry(_hists['pdf'],"#splitline{Parametric}{model}","l")
+    # leg0.AddEntry(_hists['pdf'],"#splitline{Parametric}{model}","l")
+    leg0.AddEntry(_hists['pdf'],"Parametric model","l")
     leg0.Draw("Same")
 
     leg1 = ROOT.TLegend(0.17+offset,0.45,0.4+offset,0.61)
     leg1.SetFillStyle(0)
     leg1.SetLineColor(0)
-    leg1.SetTextSize(0.03)
+    leg1.SetTextSize(0.035)
     for year in _opt.years.split(","): leg1.AddEntry(_hists['pdf_%s'%year],"%s: #scale[0.8]{#sigma_{eff} = %1.2f GeV}"%(year,getEffSigma(_hists['pdf_%s'%year])),"l")
     leg1.Draw("Same")
 
     leg2 = ROOT.TLegend(0.15+offset,0.3,0.5+offset,0.45)
     leg2.SetFillStyle(0)
     leg2.SetLineColor(0)
-    leg2.SetTextSize(0.03)
+    leg2.SetTextSize(0.035)
     leg2.AddEntry(h_effSigma,"#sigma_{eff} = %1.2f GeV"%(0.5*(effSigma_high-effSigma_low)),"fl")
     leg2.Draw("Same")
   else:
@@ -497,7 +501,7 @@ def plotSignalModel(_hists,_opt,_outdir=".",offset=0.02):
     leg = ROOT.TLegend(0.15+offset,0.4,0.5+offset,0.82)
     leg.SetFillStyle(0)
     leg.SetLineColor(0)
-    leg.SetTextSize(0.03)
+    leg.SetTextSize(0.035)
     leg.AddEntry(_hists['data'],"Simulation","lep")
     leg.AddEntry(_hists['pdf'],"#splitline{Parametric}{model (%s)}"%year,"l")
     leg.AddEntry(h_effSigma,"#sigma_{eff} = %1.2f GeV"%(0.5*(effSigma_high-effSigma_low)),"fl")
@@ -528,7 +532,7 @@ def plotSignalModel(_hists,_opt,_outdir=".",offset=0.02):
     fwhmText.SetTextFont(42)
     fwhmText.SetTextAlign(11)
     fwhmText.SetNDC()
-    fwhmText.SetTextSize(0.03)
+    fwhmText.SetTextSize(0.035)
     fwhmText.DrawLatex(0.17+offset,0.25,"FWHM = %1.2f GeV"%(fwhm_high-fwhm_low))
 
   # Set style pdf
@@ -557,11 +561,13 @@ def plotSignalModel(_hists,_opt,_outdir=".",offset=0.02):
   lat0.SetTextAlign(11)
   lat0.SetNDC()
   lat0.SetTextSize(0.045)
-  lat0.DrawLatex(0.15,0.92,"#bf{CMS} #it{%s}"%_opt.label)
+  # lat0.DrawLatex(0.16+offset,0.84,"#bf{CMS} #it{%s}"%_opt.label)
+  lat0.DrawLatex(0.16+offset,0.84,"#bf{CMS} #it{#scale[0.85]{%s}}"%_opt.label)
   lat0.DrawLatex(0.77,0.92,"%s TeV"%(sqrts__.split("TeV")[0]))  
-  lat0.DrawLatex(0.16+offset, 0.85, "H #rightarrow #gamma#gamma")
+  lat0.SetTextSize(0.04)
+  lat0.DrawLatex(0.16+offset, 0.8, "H #rightarrow #gamma#gamma")
   lat0.SetTextSize(0.035)
-  lat0.DrawLatex(0.16+offset, 0.81, "Spin-2")
+  lat0.DrawLatex(0.16+offset, 0.76, "Spin-0")
   
   # Load translations
   translateCats = {} if _opt.translateCats is None else LoadTranslations(_opt.translateCats)

@@ -51,3 +51,14 @@ Datacard/graviton_datacards/
 Datacard/run2_unblind_new/
 Datacard/tight_phoID_2016pre/
 createdatacard_condor/
+Datacard/*root
+Datacard/*txt
+Signal/outdir_*/
+Signal/config_ggyhGGH*
+Signal/config_ggyhVBF*
+Signal/config_ggyhVH*
+Signal/config_ggyhTTH*
+Signal/config_ggyhwwgg*
+Signal/config_ggyhbbgg*
+Signal/config_ggyhzzgg*
+Signal/config_ggyhttgg*

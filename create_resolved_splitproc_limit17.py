@@ -234,7 +234,7 @@ for mass in mass_list:
         # ------------------------------------- log path -------------------------------------
         log_path = "/eos/user/s/shsong/hhwwgg_workspace/Final_limit/cat34log/"
         # ------------------------------------- background fit -------------------------------------
-        input_path_name = "/eos/cms/store/group/phys_b2g/shsong/flashggws/cat34_graviton/2017/" + mass + "/"
+        input_path_name = "/eos/cms/store/group/phys_b2g/shsong/flashggws/cat34/2017/" + mass + "/"
         ws_data_path = "ws_2017_"+ cat
         output_data_root_name = "Data_2017_"+ cat + "_"+ mass + ".root"
         log_name_data = log_path + "bkg_2017_"+cat+".log"
