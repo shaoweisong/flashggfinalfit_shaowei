@@ -41,6 +41,7 @@ Signal/config_ggh*.py
 Signal/outdir_*
 Background/outdir_*
 Datacard/yield*
+createddatacard_condor/condor_logs/
 createddatacard_condor/condor_logs/log.sh
 Datacard/Datacard_MX*
 Datacard/checkphotonID/        
@@ -62,3 +63,8 @@ Signal/config_ggyhwwgg*
 Signal/config_ggyhbbgg*
 Signal/config_ggyhzzgg*
 Signal/config_ggyhttgg*
+Datacard/YH_cat34_impact_unblind_statonly/
+Datacard/YHboosted/
+Datacard/YHboosted_datacard_23April2026/
+Datacard/YHrun2/
+Datacard/YHrun2oldmodel/

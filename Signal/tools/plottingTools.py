@@ -487,8 +487,9 @@ def plotSignalModel(_hists,_opt,_outdir=".",offset=0.02):
     leg1.SetFillStyle(0)
     leg1.SetLineColor(0)
     leg1.SetTextSize(0.035)
-    for year in _opt.years.split(","): leg1.AddEntry(_hists['pdf_%s'%year],"%s: #scale[0.8]{#sigma_{eff} = %1.2f GeV}"%(year,getEffSigma(_hists['pdf_%s'%year])),"l")
-    leg1.Draw("Same")
+    for year in _opt.years.split(","): 
+      leg1.AddEntry(_hists['pdf_%s'%year],"%s: #scale[0.8]{#sigma_{eff} = %1.2f GeV}"%(year,getEffSigma(_hists['pdf_%s'%year])),"l")
+      leg1.Draw("Same")
 
     leg2 = ROOT.TLegend(0.15+offset,0.3,0.5+offset,0.45)
     leg2.SetFillStyle(0)
@@ -567,7 +568,7 @@ def plotSignalModel(_hists,_opt,_outdir=".",offset=0.02):
   lat0.SetTextSize(0.04)
   lat0.DrawLatex(0.16+offset, 0.8, "H #rightarrow #gamma#gamma")
   lat0.SetTextSize(0.035)
-  lat0.DrawLatex(0.16+offset, 0.76, "Spin-0")
+  # lat0.DrawLatex(0.16+offset, 0.76, "Spin-0")
   
   # Load translations
   translateCats = {} if _opt.translateCats is None else LoadTranslations(_opt.translateCats)

@@ -80,8 +80,9 @@ if( len(opt.massPoints.split(",")) == 1 )&( opt.MHPolyOrder > 0 ):
 if opt.analysis not in globalReplacementMap:
   print " --> [ERROR] replacement map does not exist for analysis (%s). Please add to tools/replacementMap.py"%opt.analysis
   leave()
-else: rMap = globalReplacementMap[opt.analysis]
-
+else: 
+  rMap = globalReplacementMap[opt.analysis]
+  print rMap #Shaowei
 # Load XSBR map
 if opt.analysis not in globalXSBRMap:
   print " --> [ERROR] XS * BR map does not exist for analysis (%s). Please add to tools/XSBRMap.py"%opt.analysis

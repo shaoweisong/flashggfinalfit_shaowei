@@ -64,9 +64,9 @@ RooRealVar *intLumi_ = new RooRealVar("IntLumi","hacked int lumi", 1000.);
 TRandom3 *RandomGen = new TRandom3();
 
 RooAbsPdf* getPdf(PdfModelBuilder &pdfsModel, string type, int order, const char* ext=""){
-  if (type=="Bernstein") return pdfsModel.getBernstein(Form("%s_bern%d",ext,order),order); 
-  else if (type=="Chebychev") return pdfsModel.getChebychev(Form("%s_cheb%d",ext,order),order); 
-  else if (type=="Exponential") return pdfsModel.getExponentialSingle(Form("%s_exp%d",ext,order),order); 
+  // if (type=="Bernstein") return pdfsModel.getBernstein(Form("%s_bern%d",ext,order),order); 
+  // else if (type=="Chebychev") return pdfsModel.getChebychev(Form("%s_cheb%d",ext,order),order); 
+  if (type=="Exponential") return pdfsModel.getExponentialSingle(Form("%s_exp%d",ext,order),order); 
   else if (type=="PowerLaw") return pdfsModel.getPowerLawSingle(Form("%s_pow%d",ext,order),order); 
   else if (type=="Laurent") return pdfsModel.getLaurentSeries(Form("%s_lau%d",ext,order),order); 
   else {
@@ -734,12 +734,12 @@ int main(int argc, char* argv[]){
 	}
 
 	vector<string> functionClasses;
-	functionClasses.push_back("Bernstein");
+	// functionClasses.push_back("Bernstein");
 	functionClasses.push_back("Exponential"); //FIXME
 	functionClasses.push_back("PowerLaw");
 	functionClasses.push_back("Laurent");
 	map<string,string> namingMap;
-	namingMap.insert(pair<string,string>("Bernstein","pol"));
+	// namingMap.insert(pair<string,string>("Bernstein","pol"));
 	namingMap.insert(pair<string,string>("Exponential","exp")); //FIXME
 	namingMap.insert(pair<string,string>("PowerLaw","pow"));
 	namingMap.insert(pair<string,string>("Laurent","lau"));
@@ -847,7 +847,7 @@ int main(int argc, char* argv[]){
 
 			int counter =0;
 			//	while (prob<0.05){
-			while (prob<0.05 && order < 7){ //FIXME
+			while (prob<0.05 && order < 5){ //FIXME
 				RooAbsPdf *bkgPdf = getPdf(pdfsModel,*funcType,order,Form("ftest_pdf_%d_%s",(cat+catOffset),ext.c_str()));
 				if (!bkgPdf){
 					// assume this order is not allowed
@@ -931,8 +931,8 @@ int main(int argc, char* argv[]){
 						double gofProb =0; 
 						plot(mass,bkgPdf,data,Form("%s/%s%d_cat%d.pdf",outDir.c_str(),funcType->c_str(),order,(cat+catOffset)),flashggCats_,fitStatus,&gofProb);
 						if ((prob < upperEnvThreshold) ) { // Looser requirements for the envelope
-							if (gofProb > 0.01) {  // Good looking fit or one of our regular truth functions
-							// if (gofProb > 0.01 | order == truthOrder ) {  // Good looking fit or one of our regular truth functions
+							// if (gofProb > 0.01) {  // Good looking fit or one of our regular truth functions
+							if (gofProb > 0.01 | order == truthOrder ) {  // Good looking fit or one of our regular truth functions
 								std::cout << "[INFO] Adding to Envelope " << bkgPdf->GetName() << " "<< gofProb 
 									<< " 2xNLL + c is " << myNll + bkgPdf->getVariables()->getSize() <<  std::endl;
 								allPdfs.insert(pair<string,RooAbsPdf*>(Form("%s%d",funcType->c_str(),order),bkgPdf));

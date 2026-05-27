@@ -202,9 +202,10 @@ def run_makeDatacard(ws_sig_path,output_card_name,log_name,channel,process):
     add_br_note = open(output_card_name+".txt", 'a')
     # add_br_note.write("CMS_wwgg_br_HH_WWgg      rateParam  *  " +process+ "*  2 \n nuisance  edit  freeze  CMS_wwgg_br_HH_WWgg")
     logging.info("end: {}".format(time.time()))
-mass_list=["MX500_MY250"]
+mass_list=["MX500_MY250","MX1000_MY250"]
 cat_list = ['cat34FHlowpurity','cat34FHhighpurity','cat34SLlowpurity','cat34SLhighpurity']
-final_state_list = ["wwgg","VBF","VH","TTH","GGH"]
+# final_state_list = ["wwgg","VBF","VH","TTH","GGH"]
+final_state_list = ["wwgg"]
 for mass in mass_list:
     for cat in cat_list:
         # ------------------------------------- log path -------------------------------------
@@ -223,9 +224,9 @@ for mass in mass_list:
             log_file_name_signal = mass +"_yhwwgg_MC_2017_"+cat+final_state+".log"
             ws_path_signal = mass +"_2017_"+cat+"_"+final_state
             output_root_name_signal = "output_Signal"+mass + cat + "_M125_2017_13TeV_amcatnloFXFX_pythia8_ggyh" + final_state + ".root"
-            # run_Tree2WS_sig(inputpath_name = input_path_name ,inputfile_name=input_file_name_signal,log_file_name= log_path + "Tree2WS_" + log_file_name_signal, ws_path = ws_path_signal, output_sig_root_name=output_root_name_signal, process='ws_ggyh'+ final_state)
+            run_Tree2WS_sig(inputpath_name = input_path_name ,inputfile_name=input_file_name_signal,log_file_name= log_path + "Tree2WS_" + log_file_name_signal, ws_path = ws_path_signal, output_sig_root_name=output_root_name_signal, process='ws_ggyh'+ final_state)
             run_ftest(ws_path = ws_path_signal, log_name = log_path + "signal_ftest_" + log_file_name_signal, inputpath_name= input_path_name, process='ggyh'+ final_state, isclean=False)
-            # run_signalfit(ws_path = ws_path_signal, log_name = log_path +  "signal_signalfit_" + log_file_name_signal, inputpath_name=input_path_name, process='ws_ggyh'+ final_state)
-            # run_signal_plot(cats=cat, exts="2017_" + mass +"_2017_" + cat +"_"+ final_state, outputExt="packaged_" + mass +"_2017_" + cat +"_"+final_state, log_packaged_name = log_path + "packaged_" + mass + cat+".log", ws_path=ws_path_signal, inputpath_name =input_path_name, log_plotter_name = log_path + "plotter_" + mass + cat+".log", cp_name="CMS-HGG_sigfit_packaged_"+cat+"_2017.root", process = 'ws_ggyh'+ final_state)
+            run_signalfit(ws_path = ws_path_signal, log_name = log_path +  "signal_signalfit_" + log_file_name_signal, inputpath_name=input_path_name, process='ws_ggyh'+ final_state)
+            run_signal_plot(cats=cat, exts="2017_" + mass +"_2017_" + cat +"_"+ final_state, outputExt="packaged_" + mass +"_2017_" + cat +"_"+final_state, log_packaged_name = log_path + "packaged_" + mass + cat+".log", ws_path=ws_path_signal, inputpath_name =input_path_name, log_plotter_name = log_path + "plotter_" + mass + cat+".log", cp_name="CMS-HGG_sigfit_packaged_"+cat+"_2017.root", process = 'ws_ggyh'+ final_state)
             # run_yields(ws_sig_path=ws_path_signal, log_name = log_path + mass +"_2017_" + cat +"_yields.log" , inputpath_name = input_path_name, ws_bkg_path = ws_data_path, process='ws_ggyh'+ final_state )
             # run_makeDatacard(ws_sig_path=ws_path_signal, log_name = log_path + mass + cat + "_makeDatacard.log" , output_card_name = "Datacard_" + mass +"_2017_" +final_state +"_"+ cat, channel=mass,process='ggyh'+ final_state) 

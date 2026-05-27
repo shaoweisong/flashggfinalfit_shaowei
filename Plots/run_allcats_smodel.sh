@@ -44,8 +44,3 @@ python RunPlotter_combined.py --procs all --cats wall  --ext packaged_MX1000_MH1
 
 # python RunPlotter_combined.py --procs all --cats wall  --ext packaged_MX1000_MH125_all_cats --years 2016pre,2016post,2017,2018  --loadCatWeight  /afs/cern.ch/user/s/shsong/CMSSW_10_6_20/src/flashggFinalFit/Plots/pkl/catInfospin0_MX1000_Cats.json
 
-
-
-
-
-

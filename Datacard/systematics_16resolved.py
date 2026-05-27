@@ -20,7 +20,7 @@
 # Specify as list in dict: e.g. 'tiers'=['inc','inorm','norm','ishape','shape']
 
 theory_systematics = [
-                {'name':'BR_hgg','title':'BR_hgg','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"0.98/1.021"},
+                {'name':'BR_hgg','title':'BR_hgg','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},
                 # New scheme for ggH stage 1.2 
                 {'name':'BR_hZZ','title':'BR_hZZ','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},
                 {'name':'BR_hWW','title':'BR_hWW','type':'constant','prior':'lnN','correlateAcrossYears':1,'value':"theory_uncertainties/wwgg.json"},
